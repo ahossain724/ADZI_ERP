@@ -1549,6 +1549,84 @@
           <textarea rows="3" class="form-control"></textarea>
         </div>
       </div>
+      <div class="row mt-2">
+        <hr style="border: 2px solid black;"/>
+      </div>
+       <div class="row mt-2">
+       <div class="col"> 
+          <label style="font-size: 2em">Team Assignment to</label>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-block btn-primary">Save</button>
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col"> 
+             <label>Effectivity Date  ⇑</label>
+             <div class="input-group date" id="reservationdate" data-target-input="nearest">
+              <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+              <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+          </div>
+         </div>
+         <div class="col"> 
+         <label>Team</label>
+            <select class="form-control select2bs4 w-100">
+              <option selected="selected">[Select]</option>
+              <option>Undefined</option>
+              <option>Undefined</option>
+              <option>Undefined</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <hr style="border: 2px solid black;"/>
+        </div>
+        <div class="row mt-2">
+       <div class="col"> 
+          <label style="font-size: 2em">Admin Info</label>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-block btn-primary">Save</button>
+        </div>
+        </div>
+        <div class="row"> 
+        <div class="col"> 
+          <label>Document Type  ⇑ Document Number</label>
+             <select class="form-control select2bs4 w-100">
+               <option selected="selected">[Select]</option>
+               <option>Undefined</option>
+               <option>Undefined</option>
+               <option>Undefined</option>
+             </select>
+           </div>
+           <div class="col"> 
+            <label>Date Issued Expiration Date</label>
+            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+             <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+             </div>
+         </div>
+        </div>
+       </div>
+       <div class="row mt-2"> 
+        <div class="col"> 
+          <input type="text" class="form-control" />
+           </div>
+           <div class="col"> 
+            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+             <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+             </div>
+         </div>
+        </div>
+       </div>
+         
+      </div>
       </div>
       </br>
       
