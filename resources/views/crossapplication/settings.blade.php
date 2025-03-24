@@ -1393,6 +1393,183 @@
        
       </div>
     </div>
+
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title">Vehicles</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="maximize">
+            <i class="fas fa-expand"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+          
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div>
+              <label>Vehicle</label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col">
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label>Vehicle Type</label>
+              <select class="form-control select2bs4 w-100">
+                <option selected="selected">[Select]</option>
+                <option>Car</option>
+                <option>Two wheeler/Bike</option>
+                <option>Truck</option>
+                <option>Bus</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label>Length</label>
+              <input type="text" class="form-control" />
+           </div>
+          </div>
+          <div class="col">
+           <div>
+             <label>Width</label>
+             <input type="text" class="form-control" />
+          </div>
+         </div>
+         <div class="col">
+          <div>
+            <label>Height</label>
+            <input type="text" class="form-control" />
+        </div>
+        </div>
+        <div class="col">
+         <div>
+           <label>CT Size</label>
+           <select class="form-control select2bs4 w-100">
+             <option selected="selected">[Select]</option>
+             <option>Placeholder</option>
+             <option>Placeholder2</option>
+           </select>
+         </div>
+       </div>
+       <div class="col">
+        <div class="row">
+          <div class="col">
+            <label>TG</label>
+          </div>
+          <div class="col">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div>
+            <label>IU Label No</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>Owner</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>MLW/Kg</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>UW/Kg</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>Tonnage</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>Bud Capacity</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label>CT Type</label>
+            <select class="form-control select2bs4 w-100">
+              <option selected="selected">[Select]</option>
+              <option>Placeholder</option>
+              <option>Placeholder2</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+         <div class="row">
+           <div class="col">
+             <label>DG</label>
+           </div>
+           <div class="col">
+             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+           </div>
+         </div>
+       </div>
+       <div class="row">
+        <div class="col-md-2">
+          <div>
+            <label>Delivery Zone</label>
+            <select class="form-control select2bs4 w-100">
+              <option selected="selected">[Select]</option>
+              <option>Delivery Zone A</option>
+              <option>Delivery Zone B</option>
+              <option>Delivery Zone C</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <label>Remarks</label>
+          <textarea rows="3" class="form-control"></textarea>
+        </div>
+      </div>
+      </div>
+      </br>
+      
+      <div class="row">
+          <div class="col-md-2">
+            <button type="button" class="btn btn-block btn-primary">Save</button>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-block btn-primary">Delete</button>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-block btn-primary">Refresh</button>
+          </div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+       
+      </div>
+    </div>
+    
     
     
     
