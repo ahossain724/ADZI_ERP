@@ -1398,7 +1398,7 @@
 
             </div>
         </div>
-
+        <!--Vehicles-->
         <div class="card card-default">
             <div class="card-header">
                 <h3 class="card-title">Vehicles</h3>
@@ -1413,7 +1413,6 @@
 
                 </div>
             </div>
-            <!-- /.card-header -->
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -1556,6 +1555,17 @@
                             <textarea rows="3" class="form-control"></textarea>
                         </div>
                     </div>
+                    <div class="row mt-4">
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-block btn-primary">Save</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-block btn-primary">Delete</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-block btn-primary">Refresh</button>
+                        </div>
+                    </div>
                     <div class="row mt-2">
                         <hr style="border: 2px solid black;" />
                     </div>
@@ -1640,7 +1650,164 @@
                     </div>
 
                 </div>
-                <div class="row mt-4">
+                
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+        
+        
+            <!-- /.card-header -->
+            
+            </br>
+        <!--User Docs-->
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">User Docs</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <label>Document Name</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col">
+                         <label>Title</label>
+                         <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label>Source Documents</label>
+                            <select class="form-control select2bs4 w-100">
+                                <option selected="selected">Customer Order</option>
+                                <option>Alaska</option>
+                                <option>California</option>
+                                <option>Delaware</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label>Order Type</label>
+                            <select class="form-control select2bs4 w-100">
+                                <option selected="selected">[Select]</option>
+                                <option>Alaska</option>
+                                <option>California</option>
+                                <option>Delaware</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label>Reference Field</label>
+                            <select class="form-control select2bs4 w-100">
+                                <option selected="selected">Customer Number</option>
+                                <option>Alaska</option>
+                                <option>California</option>
+                                <option>Delaware</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Info Groups</label>
+                        <select multiple="multiple" class="w-100">
+                            <option></option>
+                            <option selected>Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                </div>
+                    
+                    <div class="col">
+                            <label>Print Org Name</label>
+                    </div>
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        </div>
+                
+                  <div class="col">
+                            <label>Print Org Address</label>
+                     </div>
+                  <div class="col">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                  <div class="col">
+                            <label>Print Logo</label>
+                     </div>
+                  <div class="col">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                  <div class="col">
+                            <label>Print Customer Details</label>
+                     </div>
+                  <div class="col">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                  <div class="col">
+                    <label>Print Delivery Details</label>
+                  </div>
+                  <div class="col">
+                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                  <div class="col">
+                    <label>Print Standard Footer</label>
+                  </div>
+                  <div class="col">
+                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                  <div class="col">
+                   <label>Active</label>
+                  </div>
+                  <div class="col">
+                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                  </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <label>Header</label>
+                        <textarea rows="3" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <label>Footer</label>
+                        <textarea rows="3" class="form-control"></textarea>
+                    </div>
+                </div>
+                </br>
+                <div class="row">
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Save</button>
                     </div>
@@ -1652,12 +1819,14 @@
                     </div>
                 </div>
             </div>
-            </br>
-
-
+            <!-- /.card-body -->
             <div class="card-footer">
 
             </div>
+        </div>
+
+
+            
         </div>
         <!-- /.card-body -->
 
