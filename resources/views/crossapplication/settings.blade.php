@@ -19,8 +19,8 @@
     <!-- Main content -->
     <section class="content">
 
-        <!-- SELECT2 EXAMPLE -->
-        <div class="card card-default w-100">
+        <!-- Defaults -->
+        <div class="card card-default">
             <div class="card-header">
                 <h3 class="card-title">Defaults</h3>
                 <div class="card-tools">
@@ -52,19 +52,13 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                <!-- /.row -->
+                
             </div>
+            <div class="card-footer">
 
+            </div>
         </div>
-        <!-- /.card-header -->
-        <!-- /.card-body -->
-        <div class="card-footer">
-
-        </div>
-
-
-        <!-- /.card -->
-
+        <!--Codes-->
         <div class="card card-default">
             <div class="card-header">
                 <h3 class="card-title">Codes</h3>
@@ -165,9 +159,10 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
+                
+            </div>
+            <div class="card-footer">
 
-                </div>
             </div>
         </div>
         <!-- Transaction Codes-->
@@ -289,9 +284,10 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
+                
+            </div>
+            <div class="card-footer">
 
-                </div>
             </div>
         </div>
         <!--Currencies-->
