@@ -1665,14 +1665,6 @@
             </div>
         </div>
         <!-- /.card-body -->
-        
-        </div>
-
-
-
-
-
-
 
         <!-- /.container-fluid -->
     </section>
