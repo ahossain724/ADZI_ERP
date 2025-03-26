@@ -2669,7 +2669,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                
+
                 <div class="row">
                     <div class="col-md-4">
                         <button type="button" class="btn btn-block btn-primary">Update Standard Costs</button>
@@ -2677,7 +2677,7 @@
                     <div class="col-md-1 w-20">
                         <button type="button" class="btn btn-block btn-primary">+</button>
                     </div>
-                    
+
                 </div>
             </div>
             <!-- /.card-body -->
