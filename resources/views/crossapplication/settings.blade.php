@@ -52,7 +52,7 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                
+
             </div>
             <div class="card-footer">
 
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                
+
             </div>
             <div class="card-footer">
 
@@ -284,7 +284,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                
+
             </div>
             <div class="card-footer">
 
@@ -1650,17 +1650,15 @@
                     </div>
 
                 </div>
-                
+
             </div>
             <div class="card-footer">
 
             </div>
         </div>
-        
-        
-            <!-- /.card-header -->
-            
-            </br>
+        <!-- /.card-header -->
+
+        </br>
         <!--User Docs-->
         <div class="card card-default">
             <div class="card-header">
@@ -1687,8 +1685,8 @@
                     </div>
                     <!-- /.col -->
                     <div class="col">
-                         <label>Title</label>
-                         <input type="text" class="form-control" />
+                        <label>Title</label>
+                        <input type="text" class="form-control" />
                     </div>
                     <div class="col">
                         <div>
@@ -1732,8 +1730,8 @@
                             </select>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -1748,59 +1746,59 @@
                             <option>Texas</option>
                             <option>Washington</option>
                         </select>
-                </div>
-                    
-                    <div class="col">
-                            <label>Print Org Name</label>
                     </div>
-                        <div class="col">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                        </div>
-                
-                  <div class="col">
-                            <label>Print Org Address</label>
-                     </div>
-                  <div class="col">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
-                  <div class="col">
-                            <label>Print Logo</label>
-                     </div>
-                  <div class="col">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
-                  <div class="col">
-                            <label>Print Customer Details</label>
-                     </div>
-                  <div class="col">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
-                  <div class="col">
-                    <label>Print Delivery Details</label>
-                  </div>
-                  <div class="col">
-                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
-                  <div class="col">
-                    <label>Print Standard Footer</label>
-                  </div>
-                  <div class="col">
-                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
-                  <div class="col">
-                   <label>Active</label>
-                  </div>
-                  <div class="col">
-                   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
-                  </div>
+
+                    <div class="col">
+                        <label>Print Org Name</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+
+                    <div class="col">
+                        <label>Print Org Address</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+                    <div class="col">
+                        <label>Print Logo</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+                    <div class="col">
+                        <label>Print Customer Details</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+                    <div class="col">
+                        <label>Print Delivery Details</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+                    <div class="col">
+                        <label>Print Standard Footer</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
+                    <div class="col">
+                        <label>Active</label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                    </div>
                 </div>
-                <div class="row"> 
+                <div class="row">
                     <div class="col-md-12">
                         <label>Header</label>
                         <textarea rows="3" class="form-control"></textarea>
                     </div>
                 </div>
-                <div class="row"> 
+                <div class="row">
                     <div class="col-md-12">
                         <label>Footer</label>
                         <textarea rows="3" class="form-control"></textarea>
@@ -1824,9 +1822,871 @@
 
             </div>
         </div>
+        <!--Site Defaults-->
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Site Defaults</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label>Site Name</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Object</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label style="color: red">Country</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>SIC Code</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Discount %</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label style="color: red">Warehouse</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">General Store</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Sales Person</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Shipping Product</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Section</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Drop Ship?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Print Tax?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Email-Success</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Bank Code</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>PayPal UserID</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Item Group</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label>Customer Prefix</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">RETA</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Unit of Distance</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">KM</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Control Account-AR</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">3100</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Customer Status</label>
+                            </div>
+                            <div class="col">
+                                <label>1-Open</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Agent</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Market</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Project Manager</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Residence?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Project</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Active</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Time Cutoff</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Email-Failure</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Account Number</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Tax Code</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">GST</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label style="color: red;">Fulfillment Category</label>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+
+                                    <div class="col">
+                                        <label class="radio-inline" style="font-size: 0.8em">
+                                            <input type="radio" name="optradio" checked>Auto
+                                        </label>
+                                        <label class="radio-inline" style="font-size: 0.8em;margin-left:10px">
+                                            <input type="radio" name="optradio">Manufacture
+                                        </label>
+                                        <label class="radio-inline" style="font-size: 0.7em">
+                                            <input type="radio" name="optradio" checked>Rework
+                                        </label>
+                                        <label class="radio-inline" style="font-size: 0.8em">
+                                            <input type="radio" name="optradio">ExStock
+                                        </label>
+                                        <label class="radio-inline" style="font-size: 0.6em">
+                                            <input type="radio" name="optradio" checked>Purchase
+                                        </label>
+                                        <label class="radio-inline" style="font-size: 0.8em">
+                                            <input type="radio" name="optradio">Transfer
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label>Order Prefix</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">RETA</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Unit of Weight</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100" tabindex="6">
+                                    <option selected="selected">kg(s)</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Customer Group</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Retail</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Credit Limit</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Commission %</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Region</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Payment Code</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Saturday Delivery?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Code Basis</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Our Code</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Prices Include Tax?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Days To Deliver</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Bank</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Account Name</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Tax Scope</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">11.Local Supply</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Show Supplier?</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked"checked />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label>Quotation Prefix</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">QT</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>City</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100" tabindex="6">
+                                    <option selected="selected">Singapore</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Price Group</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">End-User</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Credit Terms</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label style="color: red">Currency</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">SGD</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Territory</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Shipping Code</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Division</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">[Select]</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Backorder Type</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Future Stock</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Invoicing Rule</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">1-From DO after Confirmation</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Email</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Branch</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Payment Codes</label>
+                            </div>
+                            <div class="col">
+                                <select multiple="multiple" class="w-100">
+                                    <option></option>
+                                    <option selected>Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Tax Category</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control select2bs4 w-100">
+                                    <option selected="selected">Standard Rated</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row h-10"></div>
+                <!-- /.row -->
+                </br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Delete</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Refresh</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+        <!--Update Costs-->
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Update Costs</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-block btn-primary">Update Standard Costs</button>
+                    </div>
+                    <div class="col-md-1 w-20">
+                        <button type="button" class="btn btn-block btn-primary">+</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+
+            </div>
+        </div>
 
 
-            
         </div>
         <!-- /.card-body -->
 
