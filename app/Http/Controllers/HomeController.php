@@ -31,4 +31,7 @@ class HomeController extends Controller
     public function settings(Request $request){
         return view('crossapplication.settings');
     }
+    public function customers(Request $request){
+        return view('crossapplication.customers');
+    }
 }

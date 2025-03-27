@@ -18,6 +18,9 @@ Route::get('/home1', [App\Http\Controllers\HomeController::class, 'home1'])
     //->middleware('auth');
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])
     ->name('crossapplication.settings');
+Route::get('/customers', [App\Http\Controllers\HomeController::class, 'customers'])
+    ->name('crossapplication.customers');
+
 
 /*
 Route::get('/', function () {
