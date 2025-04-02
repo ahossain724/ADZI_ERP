@@ -256,13 +256,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{url('/customers')}}" class="nav-link 
+                @if(app('request')->route()->uri == 'customers')
+                active
+                @endif
+                ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Customers</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{url('/supplier')}}" class="nav-link 
+                @if(app('request')->route()->uri == 'supplier')
+                active
+                @endif
+                ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Suppliers</p>
                 </a>
@@ -1066,6 +1074,11 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,"searching": false,
       "buttons": [ "print" ]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    $("#exampledelivery").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": [ "print" ]
+    }).buttons().container().appendTo('#exampledelivery_wrapper .col-md-6:eq(0)');
 
     //Date range as a button
     $('#daterange-btn').daterangepicker(
