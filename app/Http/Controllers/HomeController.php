@@ -37,4 +37,7 @@ class HomeController extends Controller
     public function supplier(Request $request){
         return view('crossapplication.supplier');
     }
+    public function items(Request $request){
+        return view('crossapplication.items');
+    }
 }

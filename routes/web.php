@@ -22,6 +22,8 @@ Route::get('/customers', [App\Http\Controllers\HomeController::class, 'customers
     ->name('crossapplication.customers');
 Route::get('/supplier', [App\Http\Controllers\HomeController::class, 'supplier'])
     ->name('crossapplication.supplier');
+Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])
+    ->name('crossapplication.items');
 
 
 /*

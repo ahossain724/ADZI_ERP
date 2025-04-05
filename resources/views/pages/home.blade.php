@@ -276,7 +276,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{url('/items')}}" class="nav-link 
+                @if(app('request')->route()->uri == 'items')
+                active
+                @endif
+                ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Items</p>
                 </a>
