@@ -971,6 +971,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -1182,6 +1183,31 @@
     myDropzone.removeAllFiles(true)
   }
   // DropzoneJS Demo Code End
+
+  $('#codes-form').submit(function (e) {
+                e.preventDefault();
+                const codedata = new FormData(this);
+                $.ajax({
+                    url: '{{ route('store') }}',
+                    method: 'post',
+                    data: codedata,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        if (response.status == 200) {
+                            alert("Saved successfully");
+                            $('#codes-form')[0].reset();
+                            
+                        }
+                    }
+                });
+            });
+        
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>

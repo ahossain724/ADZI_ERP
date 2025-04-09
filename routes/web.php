@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CodesController;
 /*
 Route::get('/', function () {
     return view('pages.home');
@@ -24,6 +25,12 @@ Route::get('/supplier', [App\Http\Controllers\HomeController::class, 'supplier']
     ->name('crossapplication.supplier');
 Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])
     ->name('crossapplication.items');
+
+Route::post('/store', [CodesController::class, 'store'])->name('store');
+Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
+Route::get('/employee/{id}/edit', [CodesController::class, 'edit'])->name('edit');
+Route::post('/employee/update', [CodesController::class, 'update'])->name('update');
+Route::delete('/employee/delete', [CodesController::class, 'delete'])->name('delete');
 
 
 /*
