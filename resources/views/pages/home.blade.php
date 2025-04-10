@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <title>AIMS | ERP</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -971,7 +972,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -1021,7 +1022,36 @@
 <script src="plugins/dropzone/min/dropzone.min.js"></script>
 <script src="dist/js/adminlte.js"></script>
 <script src="dist/js/pages/dashboard.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 <script>
+  $.ajaxSetup({
+    headers:{
+      'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $('form#codes_form').on('submit',function(e){
+    e.preventDefault();
+    let form = this;
+    let formdata = new FormData(form);
+    $.ajax({
+      url:$(form).attr('action'),
+      method:$(form).attr('method'),
+      data:formdata,
+      processData:false,
+      dataType:'json',
+      contentType:false,
+      success: function(data) {
+       if (data.status == 1){
+          alert(data.message);
+          $(form)[0].reset();
+       }             
+        
+      }
+      
+      
+      
+    });
+  });
   $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
@@ -1183,31 +1213,7 @@
     myDropzone.removeAllFiles(true)
   }
   // DropzoneJS Demo Code End
-
-  $('#codes-form').submit(function (e) {
-                e.preventDefault();
-                const codedata = new FormData(this);
-                $.ajax({
-                    url: '{{ route('store') }}',
-                    method: 'post',
-                    data: codedata,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.status == 200) {
-                            alert("Saved successfully");
-                            $('#codes-form')[0].reset();
-                            
-                        }
-                    }
-                });
-            });
-        
+  
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>

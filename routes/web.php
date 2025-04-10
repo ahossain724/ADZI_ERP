@@ -28,9 +28,9 @@ Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
-Route::get('/employee/{id}/edit', [CodesController::class, 'edit'])->name('edit');
-Route::post('/employee/update', [CodesController::class, 'update'])->name('update');
-Route::delete('/employee/delete', [CodesController::class, 'delete'])->name('delete');
+Route::get('/codes/{id}/edit', [CodesController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [CodesController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [CodesController::class, 'delete'])->name('delete');
 
 
 /*

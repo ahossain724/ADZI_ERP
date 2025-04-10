@@ -75,13 +75,13 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <form id="codes-form" method="post">
+              <form action="{{route('store')}}" method="POST" id="codes_form">
                 @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>Code Type</label>
-                            <select id="code_type" class="form-control select2bs4 w-100">
+                            <select id="code_type" name="code_type" class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -98,20 +98,20 @@
                     <div class="col">
                         <div class="form-group">
                             <label>Code</label>
-                            <input id="code" class="form-control w-100" data-placeholder="Enter a Code">
+                            <input id="code" name="code" class="form-control w-100" data-placeholder="Enter a Code">
                         </div>
 
                     </div>
                     <div class="col">
                         <div>
                             <label>Detailed Description</label>
-                            <input id="detailed_description" class="form-control w-100" />
+                            <input id="detailed_description" name="detailed_description" class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>Alternate Code</label>
-                            <input id="alternate_code" class="form-control w-100" />
+                            <input id="alternate_code" name="alternate_code" class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
@@ -120,7 +120,7 @@
                                 <label>Active</label>
                             </div>
                             <div class="col">
-                                <input id="active" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input id="active" name="active" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                                     checked />
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                         <div class="col-md-6">
                             <div>
                                 <label>Team</label>
-                                <select id="team" multiple="multiple" class="w-100">
+                                <select id="team" name="team" multiple="multiple" class="w-100">
                                     <option></option>
                                     <option selected>Alabama</option>
                                     <option>Alaska</option>
@@ -145,7 +145,7 @@
                         <div class="col-md-6">
                             <div>
                                 <label>Property List</label>
-                                <textarea id="property_list" rows="3" class="form-control h-100 w-100"></textarea>
+                                <textarea id="property_list" name="property_list" rows="3" class="form-control h-100 w-100"></textarea>
                             </div>
                         </div>
                     </div>
