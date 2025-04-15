@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CodesController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ItemsController;
 /*
 Route::get('/', function () {
     return view('pages.home');
@@ -31,6 +34,24 @@ Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [CodesController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [CodesController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [CodesController::class, 'delete'])->name('delete');
+
+Route::post('/storecustomer', [CustomerController::class, 'storecustomer'])->name('storecustomer');
+Route::get('/getall', [CustomerController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [CustomerController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [CustomerController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [CustomerController::class, 'delete'])->name('delete');
+
+Route::post('/storesupplier', [SupplierController::class, 'storesupplier'])->name('storesupplier');
+Route::get('/getall', [SupplierController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [SupplierController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [SupplierController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [SupplierController::class, 'delete'])->name('delete');
+
+Route::post('/storeitems', [ItemsController::class, 'storeitems'])->name('storeitems');
+Route::get('/getall', [ItemsController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ItemsController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ItemsController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ItemsController::class, 'delete'])->name('delete');
 
 
 /*

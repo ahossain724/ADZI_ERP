@@ -1052,6 +1052,79 @@
       
     });
   });
+  //Customer code insert
+  $('form#customer_form').on('submit',function(e){
+    e.preventDefault();
+    
+    let form = this;
+    let formdata = new FormData(form);
+    
+    $.ajax({
+      url:$(form).attr('action'),
+      method:$(form).attr('method'),
+      data:formdata,
+      processData:false,
+      dataType:'json',
+      contentType:false,
+      
+      success: function(data) {
+       if (data.status == 1){
+          alert(data.message);
+          $(form)[0].reset();
+       }             
+        
+      }
+      
+      
+      
+    });
+  });
+    //Supplier code insert
+  $('form#supplier_form').on('submit',function(e){
+    e.preventDefault();
+    
+    let form = this;
+    let formdata = new FormData(form);
+    
+    $.ajax({
+      url:$(form).attr('action'),
+      method:$(form).attr('method'),
+      data:formdata,
+      
+      processData:false,
+      dataType:'json',
+      contentType:false,
+      
+      success: function(data) {
+       if (data.status == 1){
+          alert(data.message);
+          $(form)[0].reset();
+       }              
+      } 
+    });
+  });
+    //Items code insert
+    $('form#items_form').on('submit',function(e){
+    e.preventDefault();
+    let form = this;
+    let formdata = new FormData(form);
+    
+    $.ajax({
+      url:$(form).attr('action'),
+      method:$(form).attr('method'),
+      data:formdata,
+      processData:false,
+      dataType:'json',
+      contentType:false,
+      
+      success: function(data) {
+       if (data.status == 1){
+          alert(data.message);
+          $(form)[0].reset();
+       }              
+      } 
+    });
+  });
   $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
