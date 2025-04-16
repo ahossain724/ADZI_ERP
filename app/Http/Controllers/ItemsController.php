@@ -11,7 +11,7 @@ class ItemsController extends Controller
     public function storeitems(Request $request)
     {
         $itemsData = [
-           'item_code'=> $request->item_code,
+          'item_code'=> $request->item_code,
           'description'=> $request->description,
           'long_description'=> $request->long_description,
           'links'=> $request->links,
