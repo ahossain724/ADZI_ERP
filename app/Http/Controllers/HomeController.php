@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function home1(){
         return view('pages.home1');
     }
+    //Cross Application Views Routes
     public function settings(Request $request){
         return view('crossapplication.settings');
     }
@@ -39,5 +40,16 @@ class HomeController extends Controller
     }
     public function items(Request $request){
         return view('crossapplication.items');
+    }
+    //Purchase Views Route
+    public function purchaseorder(Request $request){
+        return view('purchase.purchaseorder');
+    }
+    public function requisitionentry(Request $request){
+        return view('purchase.requisitionentry');
+    }
+    //Order Precessing Views Route
+    public function quotations(Request $request){
+        return view('orderprocessing.quotations');
     }
 }
