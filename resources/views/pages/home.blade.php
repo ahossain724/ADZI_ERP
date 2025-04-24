@@ -385,25 +385,46 @@
                                               </a>
                                           </li>
                                           <li class="nav-item">
-                                              <a href="#" class="nav-link">
+                                            <a href="{{ url('/customerorders') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'customerorders') active @endif
+                    ">
                                                   <i class="far fa-dot-circle nav-icon"></i>
                                                   <p>Customer Orders</p>
                                               </a>
                                           </li>
-                                          <li class="nav-item">
-                                              <a href="#" class="nav-link">
-                                                  <i class="far fa-dot-circle nav-icon"></i>
-                                                  <p>In-Store Sales</p>
-                                              </a>
-                                          </li>
+                                          
                                       </ul>
                                   </li>
                                   <li class="nav-item">
-                                      <a href="#" class="nav-link">
-                                          <i class="far fa-circle nav-icon"></i>
-                                          <p>Delivery/Invoices/Returns</p>
-                                      </a>
-                                  </li>
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Delivery/Invoices/Ret..
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                          <a href="{{ url('/quotations') }}"
+                                          class="nav-link 
+                  @if (app('request')->route()->uri == 'quotations') active @endif
+                  ">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Delivery Orders</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="{{ url('/customerorders') }}"
+                                          class="nav-link 
+                  @if (app('request')->route()->uri == 'customerorders') active @endif
+                  ">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Customer Orders</p>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
                               </ul>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
@@ -1244,6 +1265,50 @@
         });
          //Requisition Entry code insert
          $('form#requisitionentry_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Quotations code insert
+         $('form#quotations_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //CustomerOrder code insert
+         $('form#customerorders_form').on('submit', function(e) {
             e.preventDefault();
             let form = this;
             let formdata = new FormData(form);

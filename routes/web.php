@@ -7,6 +7,8 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\PurchaseOrderController;
 use App\Http\Controllers\RequisitionEntryController;
+use App\Http\Controllers\QuotationsController;
+use App\Http\Controllers\CustomerOrderController;
 /*
 Route::get('/', function () {
     return view('pages.home');
@@ -39,6 +41,8 @@ Route::get('/requisitionentry', [App\Http\Controllers\HomeController::class, 're
 //Order Processing Roures
 Route::get('/quotations', [App\Http\Controllers\HomeController::class, 'quotations'])
     ->name('orderprocessing.quotations');
+Route::get('/customerorders', [App\Http\Controllers\HomeController::class, 'customerorders'])
+    ->name('orderprocessing.customerorders');
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
@@ -75,6 +79,18 @@ Route::get('/getall', [RequisitionEntryController::class, 'getall'])->name('geta
 Route::get('/codes/{id}/edit', [RequisitionEntryController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [RequisitionEntryController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [RequisitionEntryController::class, 'delete'])->name('delete');
+
+Route::post('/storequotation', [QuotationsController::class, 'storequotation'])->name('storequotation');
+Route::get('/getall', [QuotationsController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [QuotationsController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [QuotationsController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [QuotationsController::class, 'delete'])->name('delete');
+
+Route::post('/storecustomerorder', [CustomerOrderController::class, 'storecustomerorder'])->name('storecustomerorder');
+Route::get('/getall', [CustomerOrderController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [CustomerOrderController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [CustomerOrderController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [CustomerOrderController::class, 'delete'])->name('delete');
 
 
 

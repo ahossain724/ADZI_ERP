@@ -52,4 +52,8 @@ class HomeController extends Controller
     public function quotations(Request $request){
         return view('orderprocessing.quotations');
     }
+    //Order Precessing Views Route
+    public function customerorders(Request $request){
+        return view('orderprocessing.customerorders');
+    }
 }
