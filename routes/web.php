@@ -9,6 +9,13 @@ use App\Http\Controllers\PurchaseOrderController;
 use App\Http\Controllers\RequisitionEntryController;
 use App\Http\Controllers\QuotationsController;
 use App\Http\Controllers\CustomerOrderController;
+use App\Http\Controllers\DeliveryOrderController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\TransferRequestController;
+use App\Http\Controllers\ReceiptOrderController;
+use App\Http\Controllers\IssueOrderController;
+
+
 /*
 Route::get('/', function () {
     return view('pages.home');
@@ -38,11 +45,26 @@ Route::get('/purchaseorder', [App\Http\Controllers\HomeController::class, 'purch
     ->name('purchase.purchaseorder');
 Route::get('/requisitionentry', [App\Http\Controllers\HomeController::class, 'requisitionentry'])
     ->name('purchase.requisitionentry');
-//Order Processing Roures
+//Order Processing Routes
 Route::get('/quotations', [App\Http\Controllers\HomeController::class, 'quotations'])
     ->name('orderprocessing.quotations');
 Route::get('/customerorders', [App\Http\Controllers\HomeController::class, 'customerorders'])
     ->name('orderprocessing.customerorders');
+Route::get('/deliveryorders', [App\Http\Controllers\HomeController::class, 'deliveryorders'])
+    ->name('orderprocessing.deliveryorders');
+Route::get('/invoices', [App\Http\Controllers\HomeController::class, 'invoices'])
+    ->name('orderprocessing.invoices');
+
+//inventory Routes
+Route::get('/transferrequest', [App\Http\Controllers\HomeController::class, 'transferrequest'])
+    ->name('inventory.transferrequest');
+Route::get('/receiptorder', [App\Http\Controllers\HomeController::class, 'receiptorder'])
+    ->name('inventory.receiptorder');
+Route::get('/issueorder', [App\Http\Controllers\HomeController::class, 'issueorder'])
+    ->name('inventory.issueorder');
+    //General Ledger Routes
+Route::get('/glvoucher', [App\Http\Controllers\HomeController::class, 'glvoucher'])
+    ->name('generalledger.glvoucher');
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
@@ -91,6 +113,38 @@ Route::get('/getall', [CustomerOrderController::class, 'getall'])->name('getall'
 Route::get('/codes/{id}/edit', [CustomerOrderController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [CustomerOrderController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [CustomerOrderController::class, 'delete'])->name('delete');
+
+Route::post('/storedeliveryorder', [DeliveryOrderController::class, 'storedeliveryorder'])->name('storedeliveryorder');
+Route::get('/getall', [DeliveryOrderController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [DeliveryOrderController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [DeliveryOrderController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [DeliveryOrderController::class, 'delete'])->name('delete');
+
+Route::post('/storeinvoice', [InvoiceController::class, 'storeinvoice'])->name('storeinvoice');
+Route::get('/getall', [InvoiceController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [InvoiceController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [InvoiceController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [InvoiceController::class, 'delete'])->name('delete');
+
+
+Route::post('/storetransferrequest', [TransferRequestController::class, 'storetransferrequest'])->name('storetransferrequest');
+Route::get('/getall', [TransferRequestController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [TransferRequestController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [TransferRequestController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [TransferRequestController::class, 'delete'])->name('delete');
+
+Route::post('/storereceiptorder', [ReceiptOrderController::class, 'storereceiptorder'])->name('storereceiptorder');
+Route::get('/getall', [ReceiptOrderController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ReceiptOrderController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ReceiptOrderController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ReceiptOrderController::class, 'delete'])->name('delete');
+
+Route::post('/storeissueorder', [IssueOrderController::class, 'storeissueorder'])->name('storeissueorder');
+Route::get('/getall', [IssueOrderController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [IssueOrderController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [IssueOrderController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [IssueOrderController::class, 'delete'])->name('delete');
+
 
 
 

@@ -56,4 +56,29 @@ class HomeController extends Controller
     public function customerorders(Request $request){
         return view('orderprocessing.customerorders');
     }
+    //Order Precessing Views Route
+    public function deliveryorders(Request $request){
+        return view('orderprocessing.deliveryorders');
+    }
+      //Order Precessing Views Route
+      public function invoices(Request $request){
+        return view('orderprocessing.invoices');
+    }
+
+    //Inventory Views Route
+    public function transferrequest(Request $request){
+        return view('inventory.transferrequest');
+    }
+      //Receipt Views Route
+      public function receiptorder(Request $request){
+        return view('inventory.receiptorder');
+    }
+    //Issue Views Route
+    public function issueorder(Request $request){
+        return view('inventory.issueorder');
+    }
+    //General Ledger Views Route
+    public function glvoucher(Request $request){
+        return view('generalledger.glvoucher');
+    }
 }

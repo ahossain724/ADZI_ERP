@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -399,33 +400,154 @@
                                   <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Delivery/Invoices/Ret..
+                                        <p>Delivery/Invoices/<br>Returns
                                             <i class="right fas fa-angle-left"></i>
                                         </p>
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                          <a href="{{ url('/quotations') }}"
+                                          <a href="{{ url('/deliveryorders') }}"
                                           class="nav-link 
-                  @if (app('request')->route()->uri == 'quotations') active @endif
+                  @if (app('request')->route()->uri == 'deliveryorders') active @endif
                   ">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>Delivery Orders</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                          <a href="{{ url('/customerorders') }}"
+                                          <a href="{{ url('/invoices') }}"
                                           class="nav-link 
-                  @if (app('request')->route()->uri == 'customerorders') active @endif
+                  @if (app('request')->route()->uri == 'invoices') active @endif
                   ">
                                                 <i class="far fa-dot-circle nav-icon"></i>
-                                                <p>Customer Orders</p>
+                                                <p>Invoices</p>
                                             </a>
                                         </li>
-                                        
+                                        <li class="nav-item">
+                                            <a href="{{ url('/customerorders') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'customerorders') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Sales Credit</p>
+                                              </a>
+                                          </li>
                                     </ul>
                                 </li>
                               </ul>
+                              <li class="nav-item">
+                                <a href="#" class="nav-link active">
+                                <i class="fa-solid fa-warehouse"></i>
+                                    <p>
+                                        Inventory
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                              
+                              <ul class="nav nav-treeview">
+                                  
+                                  <li class="nav-item">
+                                      <a href="#" class="nav-link">
+                                          <i class="far fa-circle nav-icon"></i>
+                                          <p>
+                                              Transactions
+                                              <i class="right fas fa-angle-left"></i>
+                                          </p>
+                                      </a>
+                                      <ul class="nav nav-treeview">
+                                          <li class="nav-item">
+                                            <a href="{{ url('/transferrequest') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'transferrequest') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Transfer Request</p>
+                                              </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="{{ url('/receiptorder') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'receiptorder') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Receipt Order</p>
+                                              </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="{{ url('/issueorder') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'issueorder') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Issue Order</p>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                </ul>
+                              <li class="nav-item">
+                                <a href="#" class="nav-link active">
+                                <i class="fa-solid fa-sheet-plastic"></i>
+                                    <p>
+                                        Accounts
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                              
+                              <ul class="nav nav-treeview">
+                                  
+                                  <li class="nav-item">
+                                      <a href="#" class="nav-link">
+                                          <i class="far fa-circle nav-icon"></i>
+                                          <p>
+                                              General Ledger
+                                              <i class="right fas fa-angle-left"></i>
+                                          </p>
+                                      </a>
+                                      <ul class="nav nav-treeview">
+                                  
+                                  <li class="nav-item">
+                                      <a href="#" class="nav-link">
+                                          <i class="far fa-circle nav-icon"></i>
+                                          <p>
+                                              Transactions
+                                              <i class="right fas fa-angle-left"></i>
+                                          </p>
+                                      </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                          <a href="{{ url('/glvoucher') }}"
+                                          class="nav-link 
+                  @if (app('request')->route()->uri == 'glvoucher') active @endif
+                  ">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Gl Voucher</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="{{ url('/invoices') }}"
+                                          class="nav-link 
+                  @if (app('request')->route()->uri == 'invoices') active @endif
+                  ">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Invoices</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ url('/customerorders') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'customerorders') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Sales Credit</p>
+                                              </a>
+                                          </li>
+                                    </ul>
+                                          </li>
+                                        </ul> 
+                                    </li>
+                                </ul>  
+                            
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -1137,8 +1259,13 @@
     <script src="plugins/dropzone/min/dropzone.min.js"></script>
     <script src="dist/js/adminlte.js"></script>
     <script src="dist/js/pages/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-    <script>
+    <script> 
+        toastr.options = {
+            "progressBar":true,
+            "closeButton":true,
+        }
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1324,6 +1451,119 @@
                 success: function(data) {
                     if (data.status == 1) {
                         alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //DeliveryOrder code insert
+         $('form#deliveryorders_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Invoices code insert
+         $('form#invoices_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+            //TransferRequest code insert
+            $('form#transferrequest_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //ReceiptOrder code insert
+         $('form#receiptorder_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //IssueOrder code insert
+        $('form#issueorder_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
                         $(form)[0].reset();
                     }
                 }
