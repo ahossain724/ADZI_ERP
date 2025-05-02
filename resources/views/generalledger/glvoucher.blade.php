@@ -36,7 +36,7 @@
         </div>
         <!-- Card Header -->
         <div class="card-body">
-            <form action="{{ route('storeissueorder') }}" method="POST" id="glvoucher_form">
+            <form action="{{ route('storeglvoucher') }}" method="POST" id="glvoucher_form">
                 @csrf
                 <div class="row">
                     <div class="col">

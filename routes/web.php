@@ -14,6 +14,8 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\TransferRequestController;
 use App\Http\Controllers\ReceiptOrderController;
 use App\Http\Controllers\IssueOrderController;
+use App\Http\Controllers\GLVoucherController;
+
 
 
 /*
@@ -144,6 +146,12 @@ Route::get('/getall', [IssueOrderController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [IssueOrderController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [IssueOrderController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [IssueOrderController::class, 'delete'])->name('delete');
+
+Route::post('/storeglvoucher', [GLVoucherController::class, 'storeglvoucher'])->name('storeglvoucher');
+Route::get('/getall', [GLVoucherController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [GLVoucherController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [GLVoucherController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [GLVoucherController::class, 'delete'])->name('delete');
 
 
 
