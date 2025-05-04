@@ -525,21 +525,21 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                          <a href="{{ url('/invoices') }}"
+                                          <a href="{{ url('/yearendprocessing') }}"
                                           class="nav-link 
-                  @if (app('request')->route()->uri == 'invoices') active @endif
+                  @if (app('request')->route()->uri == 'yearendprocessing') active @endif
                   ">
                                                 <i class="far fa-dot-circle nav-icon"></i>
-                                                <p>Invoices</p>
+                                                <p>Year End Processing</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ url('/customerorders') }}"
+                                            <a href="{{ url('/iouvoucherentry') }}"
                                             class="nav-link 
-                    @if (app('request')->route()->uri == 'customerorders') active @endif
+                    @if (app('request')->route()->uri == 'iouvoucherentry') active @endif
                     ">
                                                   <i class="far fa-dot-circle nav-icon"></i>
-                                                  <p>Sales Credit</p>
+                                                  <p>IOU Voucher Entry</p>
                                               </a>
                                           </li>
                                     </ul>
@@ -1571,6 +1571,52 @@
         });
         //GLVoucher code insert
         $('form#glvoucher_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //Year End code insert
+        $('form#yearend_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //Year End code insert
+        $('form#iouvoucher_form').on('submit', function(e) {
             e.preventDefault();
             let form = this;
             let formdata = new FormData(form);

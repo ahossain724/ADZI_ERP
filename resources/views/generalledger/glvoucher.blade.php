@@ -8,6 +8,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item active"><a href="#">Accounts</a></li>
                         <li class="breadcrumb-item"><a href="#">General Ledger</a></li>
                         <li class="breadcrumb-item active"><a href="#">Transactions</a></li>
                         <li class="breadcrumb-item active">GL Voucher</li>

@@ -81,4 +81,10 @@ class HomeController extends Controller
     public function glvoucher(Request $request){
         return view('generalledger.glvoucher');
     }
+    public function yearendprocessing(Request $request){
+        return view('generalledger.yearendprocessing');
+    }
+    public function iouvoucherentry(Request $request){
+        return view('generalledger.iouvoucherentry');
+    }
 }

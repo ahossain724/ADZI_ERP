@@ -15,6 +15,8 @@ use App\Http\Controllers\TransferRequestController;
 use App\Http\Controllers\ReceiptOrderController;
 use App\Http\Controllers\IssueOrderController;
 use App\Http\Controllers\GLVoucherController;
+use App\Http\Controllers\YearEndProcessingController;
+use App\Http\Controllers\IOUVoucherEntryController;
 
 
 
@@ -67,6 +69,11 @@ Route::get('/issueorder', [App\Http\Controllers\HomeController::class, 'issueord
     //General Ledger Routes
 Route::get('/glvoucher', [App\Http\Controllers\HomeController::class, 'glvoucher'])
     ->name('generalledger.glvoucher');
+Route::get('/yearendprocessing', [App\Http\Controllers\HomeController::class, 'yearendprocessing'])
+    ->name('generalledger.yearendprocessing');
+Route::get('/iouvoucherentry', [App\Http\Controllers\HomeController::class, 'iouvoucherentry'])
+    ->name('generalledger.iouvoucherentry');
+
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
@@ -152,6 +159,18 @@ Route::get('/getall', [GLVoucherController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [GLVoucherController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [GLVoucherController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [GLVoucherController::class, 'delete'])->name('delete');
+
+Route::post('/storeyearendprocessing', [YearEndProcessingController::class, 'storeyearendprocessing'])->name('storeyearendprocessing');
+Route::get('/getall', [YearEndProcessingController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [YearEndProcessingController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [YearEndProcessingController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [YearEndProcessingController::class, 'delete'])->name('delete');
+
+Route::post('/storeiouvoucher', [IOUVoucherEntryController::class, 'storeiouvoucher'])->name('storeiouvoucher');
+Route::get('/getall', [IOUVoucherEntryController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [IOUVoucherEntryController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [IOUVoucherEntryController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [IOUVoucherEntryController::class, 'delete'])->name('delete');
 
 
 
