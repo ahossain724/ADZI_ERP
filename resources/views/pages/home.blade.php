@@ -542,6 +542,15 @@
                                                   <p>IOU Voucher Entry</p>
                                               </a>
                                           </li>
+                                          <li class="nav-item">
+                                            <a href="{{ url('/iouadjustment') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'iouadjustment') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>IOU Adjustment</p>
+                                              </a>
+                                          </li>
                                     </ul>
                                           </li>
                                         </ul> 
@@ -1615,8 +1624,31 @@
                 }
             });
         });
-        //Year End code insert
+        //IOU voucher code insert
         $('form#iouvoucher_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //IOU Adjustment code insert
+        $('form#iouadjustment_form').on('submit', function(e) {
             e.preventDefault();
             let form = this;
             let formdata = new FormData(form);

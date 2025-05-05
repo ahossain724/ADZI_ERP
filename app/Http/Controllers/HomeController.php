@@ -87,4 +87,9 @@ class HomeController extends Controller
     public function iouvoucherentry(Request $request){
         return view('generalledger.iouvoucherentry');
     }
+    public function iouadjustment(Request $request){
+        return view('generalledger.iouadjustment');
+    }
+    
+
 }

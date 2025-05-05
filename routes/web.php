@@ -17,6 +17,7 @@ use App\Http\Controllers\IssueOrderController;
 use App\Http\Controllers\GLVoucherController;
 use App\Http\Controllers\YearEndProcessingController;
 use App\Http\Controllers\IOUVoucherEntryController;
+use App\Http\Controllers\IOUAdjustmentController;
 
 
 
@@ -73,7 +74,8 @@ Route::get('/yearendprocessing', [App\Http\Controllers\HomeController::class, 'y
     ->name('generalledger.yearendprocessing');
 Route::get('/iouvoucherentry', [App\Http\Controllers\HomeController::class, 'iouvoucherentry'])
     ->name('generalledger.iouvoucherentry');
-
+Route::get('/iouadjustment', [App\Http\Controllers\HomeController::class, 'iouadjustment'])
+    ->name('generalledger.iouadjustment');
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
@@ -167,6 +169,12 @@ Route::post('/codes/update', [YearEndProcessingController::class, 'update'])->na
 Route::delete('/codes/delete', [YearEndProcessingController::class, 'delete'])->name('delete');
 
 Route::post('/storeiouvoucher', [IOUVoucherEntryController::class, 'storeiouvoucher'])->name('storeiouvoucher');
+Route::get('/getall', [IOUVoucherEntryController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [IOUVoucherEntryController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [IOUVoucherEntryController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [IOUVoucherEntryController::class, 'delete'])->name('delete');
+
+Route::post('/storeiouadjustment', [IOUAdjustmentController::class, 'storeiouadjustment'])->name('storeiouadjustment');
 Route::get('/getall', [IOUVoucherEntryController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [IOUVoucherEntryController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [IOUVoucherEntryController::class, 'update'])->name('update');
