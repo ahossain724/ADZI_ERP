@@ -555,7 +555,57 @@
                                           </li>
                                         </ul> 
                                     </li>
-                                </ul>  
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                  
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Accounts Receivable
+                                                <i class="right fas fa-angle-left"></i>
+                                            </p>
+                                        </a>
+                                      <ul class="nav nav-treeview">
+                                          <li class="nav-item">
+                                            <a href="{{ url('/receipt') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'receipt') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Receipts</p>
+                                              </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="{{ url('/invoicesimple') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'invoicesimple') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Invoice-Simple</p>
+                                              </a>
+                                          </li>
+                                          <li class="nav-item">
+                                              <a href="{{ url('/iouvoucherentry') }}"
+                                              class="nav-link 
+                      @if (app('request')->route()->uri == 'iouvoucherentry') active @endif
+                      ">
+                                                    <i class="far fa-dot-circle nav-icon"></i>
+                                                    <p>Complex</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a href="{{ url('/iouadjustment') }}"
+                                              class="nav-link 
+                      @if (app('request')->route()->uri == 'iouadjustment') active @endif
+                      ">
+                                                    <i class="far fa-dot-circle nav-icon"></i>
+                                                    <p>placeholder</p>
+                                                </a>
+                                            </li>
+                                      </ul> 
+                                      </li>
+                                  </ul>  
                             
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
@@ -1649,6 +1699,29 @@
         });
         //IOU Adjustment code insert
         $('form#iouadjustment_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //IOU Adjustment code insert
+        $('form#receipt_form').on('submit', function(e) {
             e.preventDefault();
             let form = this;
             let formdata = new FormData(form);

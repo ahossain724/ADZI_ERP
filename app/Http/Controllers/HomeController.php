@@ -90,6 +90,12 @@ class HomeController extends Controller
     public function iouadjustment(Request $request){
         return view('generalledger.iouadjustment');
     }
+    public function receipt(Request $request){
+        return view('accountsreceivable.receipt');
+    }
+    public function invoicesimple(Request $request){
+        return view('accountsreceivable.invoicesimple');
+    }
     
 
 }

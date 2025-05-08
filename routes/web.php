@@ -18,6 +18,8 @@ use App\Http\Controllers\GLVoucherController;
 use App\Http\Controllers\YearEndProcessingController;
 use App\Http\Controllers\IOUVoucherEntryController;
 use App\Http\Controllers\IOUAdjustmentController;
+use App\Http\Controllers\ReceiptController;
+
 
 
 
@@ -76,6 +78,11 @@ Route::get('/iouvoucherentry', [App\Http\Controllers\HomeController::class, 'iou
     ->name('generalledger.iouvoucherentry');
 Route::get('/iouadjustment', [App\Http\Controllers\HomeController::class, 'iouadjustment'])
     ->name('generalledger.iouadjustment');
+Route::get('/receipt', [App\Http\Controllers\HomeController::class, 'receipt'])
+    ->name('accountsreceivable.receipt');
+    Route::get('/invoicesimple', [App\Http\Controllers\HomeController::class, 'invoicesimple'])
+    ->name('accountsreceivable.invoicesimple');
+
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
 Route::get('/getall', [CodesController::class, 'getall'])->name('getall');
@@ -179,6 +186,12 @@ Route::get('/getall', [IOUVoucherEntryController::class, 'getall'])->name('getal
 Route::get('/codes/{id}/edit', [IOUVoucherEntryController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [IOUVoucherEntryController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [IOUVoucherEntryController::class, 'delete'])->name('delete');
+
+Route::post('/storereceipt', [ReceiptController::class, 'storereceipt'])->name('storereceipt');
+Route::get('/getall', [ReceiptController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ReceiptController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ReceiptController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ReceiptController::class, 'delete'])->name('delete');
 
 
 
