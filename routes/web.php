@@ -19,6 +19,9 @@ use App\Http\Controllers\YearEndProcessingController;
 use App\Http\Controllers\IOUVoucherEntryController;
 use App\Http\Controllers\IOUAdjustmentController;
 use App\Http\Controllers\ReceiptController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\InvoiceSimpleController;
+
 
 
 
@@ -32,6 +35,8 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 Auth::routes();
+
+Route::get('langChange', [LanguageController::class, 'langChange'])->name('langChange');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('pages.home');
@@ -188,6 +193,12 @@ Route::post('/codes/update', [IOUVoucherEntryController::class, 'update'])->name
 Route::delete('/codes/delete', [IOUVoucherEntryController::class, 'delete'])->name('delete');
 
 Route::post('/storereceipt', [ReceiptController::class, 'storereceipt'])->name('storereceipt');
+Route::get('/getall', [ReceiptController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ReceiptController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ReceiptController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ReceiptController::class, 'delete'])->name('delete');
+
+Route::post('/storeinvoicesimple', [InvoiceSimpleController::class, 'storeinvoicesimple'])->name('storeinvoicesimple');
 Route::get('/getall', [ReceiptController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [ReceiptController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [ReceiptController::class, 'update'])->name('update');

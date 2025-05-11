@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Purchase Order</h1>
+                    <h1>{{ __('translate.purchaseorder') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Purchase</a></li>
-                        <li class="breadcrumb-item active">Purchase Order</li>
+                        <li class="breadcrumb-item"><a href="#">{{ __('translate.purchase') }}</a></li>
+                        <li class="breadcrumb-item active">{{ __('translate.purchaseorder') }}</li>
                     </ol>
                 </div>
             </div>
@@ -17,9 +17,18 @@
     </section>
     <section class="content">
      <!--Purchase Order-->
+        <div class="row">
+            <div class="col-md-4 m-auto">
+                <select class="form-control changeLang text-center">
+                    <option value="en" {{ session()->get('language') == 'en' ? 'selected' : '' }}>English</option>
+                    <option value="bn" {{ session()->get('language') == 'bn' ? 'selected' : '' }}>Bangla</option>
+                </select>
+            </div>
+        </div>
+
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Purchase Order</h3>
+            <h3 class="card-title">{{ __('translate.purchaseorder') }}</h3>
 
 
             <div class="card-tools">
@@ -41,7 +50,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>PO Number</label>
+                                <label>{{ __('translate.ponumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -61,7 +70,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Reference</label>
+                                <label>{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
                                 <input id="reference" name="reference" class="form-control" tabindex="4" />
@@ -69,11 +78,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Warehouse</label>
+                                <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
                                 <select id="warehouse" name="warehouse" class="form-control select2bs4">
-                                    <option selected="selected">AIMS Store</option>
+                                    <option selected="selected">{{ __('translate.aimsstore') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -85,7 +94,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Supplier Code</label>
+                                <label style="color: red">{{ __('translate.suppliercode') }}</label>
                             </div>
                             <div class="col">
                                 <input id="supplier_code" name="supplier_code" class="form-control" tabindex="4" />
@@ -93,11 +102,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Currency</label>
+                                <label style="color: red">{{ __('translate.currency') }}</label>
                             </div>
                             <div class="col">
                                 <select id="currency" name="currency" class="form-control select2bs4">
-                                    <option selected="selected">BDT</option>
+                                    <option selected="selected">{{ __('translate.bdt') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -109,7 +118,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Gross Amount</label>
+                                <label style="color: red">{{ __('translate.grossamount') }}</label>
                             </div>
                             <div class="col">
                                 <label>0.00</label>
@@ -117,7 +126,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Net Amount</label>
+                                <label style="color: red">{{ __('translate.netamount') }}</label>
                             </div>
                             <div class="col">
                                 <label>0.00</label>
@@ -127,7 +136,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -142,7 +151,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Requisition No</label>
+                                <label>{{ __('translate.requisitionno') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -150,11 +159,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Purchase Type</label>
+                                <label>{{ __('translate.purchasetype') }}</label>
                             </div>
                             <div class="col">
                                 <select id="purchase_type" name="purchase_type" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -166,7 +175,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Supplier Company</label>
+                                <label>{{ __('translate.suppliercompany') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -174,7 +183,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Exchange Rate</label>
+                                <label>{{ __('translate.exchangerate') }}</label>
                             </div>
                             <div class="col">
                                 <label>1.00000</label>
@@ -182,7 +191,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Discount Amount</label>
+                                <label>{{ __('translate.discountamount') }}</label>
                             </div>
                             <div class="col">
                                 <input id="discount_account" name="discount_amount" class="form-control" tabindex="4" />
@@ -190,7 +199,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Tax Amount</label>
+                                <label>{{ __('translate.taxamount') }}</label>
                             </div>
                             <div class="col">
                                 <label>0.00000</label>
@@ -201,7 +210,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="notes" name="notes" rows="3" class="form-control h-100 w-100"></textarea>
@@ -209,7 +218,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Terms and Conditions</label>
+                                    <label>{{ __('translate.termsandconditions') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="terms_and_conditions" name="terms_and_conditions" rows="7" class="form-control h-100 w-100"></textarea>
@@ -221,7 +230,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>LC Number</label>
+                                    <label>{{ __('translate.lcnumber') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -229,7 +238,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>PI No TO Commercial</label>
+                                    <label>{{ __('translate.pinoto') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="pi_no_to" name="pi_no_to" class="form-control" tabindex="4" />
@@ -237,7 +246,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>PO Status</label>
+                                    <label>{{ __('translate.postatus') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -245,7 +254,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Entry Created By</label>
+                                    <label>{{ __('translate.entrycreatedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -253,7 +262,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Submitted By</label>
+                                    <label>{{ __('translate.submittedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -261,7 +270,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approved/Returned By</label>
+                                    <label>{{ __('translate.approvedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -269,7 +278,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approval Undone By</label>
+                                    <label>{{ __('translate.undoneby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -277,7 +286,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Locked By</label>
+                                    <label>{{ __('translate.lockedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -287,7 +296,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Back to Back L/C No</label>
+                                    <label>{{ __('translate.backtoback') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -295,7 +304,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>PI Date</label>
+                                    <label>{{ __('translate.pidate') }}</label>
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -310,7 +319,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>	Entry-Type (System)</label>
+                                    <label>{{ __('translate.entrysystem') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -318,7 +327,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>	Entry-Type (System)</label>
+                                    <label>{{ __('translate.lastupdatedby') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -326,42 +335,34 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Last Updated-By</label>
+                                    <label>{{ __('translate.submittedon') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label></label>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col">
-                                    <label>Submitted-On</label>
-                                </div>
-                                <div class="col">
-                                    <label>[Unknown]</label>
+                                    <label>{{ __('translate.unknown') }}</label>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approved/Returned On</label>
+                                    <label>{{ __('translate.approvedon') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>[Unknown]</label>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col">
-                                    <label>Approval Undone-On</label>
-                                </div>
-                                <div class="col">
-                                    <label>[Unknown]</label>
+                                    <label>{{ __('translate.unknown') }}</label>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Locked-On</label>
+                                    <label>{{ __('translate.undoneon') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>[Unknown]</label>
+                                    <label>{{ __('translate.unknown') }}</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <label>{{ __('translate.lockedon') }}</label>
+                                </div>
+                                <div class="col">
+                                    <label>{{ __('translate.unknown') }}</label>
                                 </div>
                             </div>
                         </div>
