@@ -18,14 +18,6 @@
     </section>
     <section class="content">
      <!--Orders-->
-     <div class="row">
-        <div class="col-md-4 m-auto">
-            <select class="form-control changeLang text-center">
-                <option value="en" {{ session()->get('language') == 'en' ? 'selected' : '' }}>English</option>
-                <option value="bn" {{ session()->get('language') == 'bn' ? 'selected' : '' }}>Bangla</option>
-            </select>
-        </div>
-    </div>
      <div class="card card-default">
         <div class="card-header">
             <h3 class="card-title">{{ __('translate.customerinvoice') }}</h3>

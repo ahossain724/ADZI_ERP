@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Settings</h1>
+                    <h1>{{ __('translate.settings') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -22,7 +22,7 @@
         <!-- Defaults -->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Defaults</h3>
+                <h3 class="card-title">{{ __('translate.defaults') }}</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
                         <i class="fas fa-expand"></i>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label>Multiple</label>
+                            <label>{{ __('translate.multiple') }}</label>
                             <select class="duallistbox w-100" multiple="multiple">
                                 <option selected>Alabama</option>
                                 <option>Alaska</option>
@@ -61,7 +61,7 @@
         <!--Codes-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Codes</h3>
+                <h3 class="card-title">{{ __('translate.codes') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Code Type</label>
+                            <label>{{ __('translate.codetype') }}</label>
                             <select id="code_type" name="code_type" class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -97,27 +97,27 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Code</label>
+                            <label>{{ __('translate.code') }}</label>
                             <input id="code" name="code" class="form-control w-100" data-placeholder="Enter a Code">
                         </div>
 
                     </div>
                     <div class="col">
                         <div>
-                            <label>Detailed Description</label>
+                            <label>{{ __('translate.detaileddescription') }}</label>
                             <input id="detailed_description" name="detailed_description" class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Alternate Code</label>
+                            <label>{{ __('translate.alternatecode') }}</label>
                             <input id="alternate_code" name="alternate_code" class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <label>Active</label>
+                                <label>{{ __('translate.active') }}</label>
                             </div>
                             <div class="col">
                                 <input id="active" name="active" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -129,7 +129,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                <label>Team</label>
+                                <label>{{ __('translate.team') }}</label>
                                 <select id="team" name="team" multiple="multiple" class="w-100">
                                     <option></option>
                                     <option selected>Alabama</option>
@@ -144,7 +144,7 @@
                         </div>
                         <div class="col-md-6">
                             <div>
-                                <label>Property List</label>
+                                <label>{{ __('translate.propertylist') }}</label>
                                 <textarea id="property_list" name="property_list" rows="3" class="form-control h-100 w-100"></textarea>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
         <!-- Transaction Codes-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Transaction Codes</h3>
+                <h3 class="card-title">{{ __('translate.transactioncodes') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -188,7 +188,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Transaction Type</label>
+                            <label>{{ __('translate.transactiontype') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -205,45 +205,45 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Code</label>
+                            <label>{{ __('translate.code') }}</label>
                             <input class="form-control w-100" data-placeholder="Enter a Code">
                         </div>
 
                     </div>
                     <div class="col">
                         <div>
-                            <label>Description</label>
+                            <label>{{ __('translate.description') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Starting</label>
+                            <label>{{ __('translate.starting') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Increment</label>
+                            <label>{{ __('translate.increment') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Prefix</label>
+                            <label>{{ __('translate.prefix') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Suffix</label>
+                            <label>{{ __('translate.suffix') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <label>Active</label>
+                                <label>{{ __('translate.active') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -255,7 +255,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                <label>Team</label>
+                                <label>{{ __('translate.team') }}</label>
                                 <select multiple="multiple" class="w-100">
                                     <option></option>
                                     <option selected>Alabama</option>
@@ -270,7 +270,7 @@
                         </div>
                         <div class="col-md-6">
                             <div>
-                                <label>Format</label>
+                                <label>{{ __('translate.format') }}</label>
                                 <textarea rows="3" class="form-control h-100 w-100"></textarea>
                             </div>
                         </div>
@@ -296,7 +296,7 @@
         <!--Currencies-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Currencies</h3>
+                <h3 class="card-title">{{ __('translate.currencies') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -313,7 +313,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Currency</label>
+                            <label>{{ __('translate.currency') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -330,39 +330,39 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Short Name</label>
+                            <label>{{ __('translate.shortname') }}</label>
                             <input class="form-control w-100" data-placeholder="Enter a Code">
                         </div>
 
                     </div>
                     <div class="col">
                         <div>
-                            <label>Name</label>
+                            <label>{{ __('translate.name') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Cent</label>
+                            <label>{{ __('translate.cent') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Cents</label>
+                            <label>{{ __('translate.cents') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Decimal Places</label>
+                            <label>{{ __('translate.decimalplaces') }}</label>
                             <input class="form-control w-100" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <label>Active</label>
+                                <label>{{ __('translate.active') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -374,31 +374,31 @@
                     <div class="row">
                         <div class="col">
                             <div>
-                                <label>Exchange Rate</label>
+                                <label>{{ __('translate.exchangerate') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div>
-                                <label>Exchange Rate(Sell)</label>
+                                <label>{{ __('translate.exchangeratesell') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div>
-                                <label>Exchange Rate(Buy)</label>
+                                <label>{{ __('translate.exchangeratebuy') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div>
-                                <label>Word Formula</label>
+                                <label>{{ __('translate.wordformula') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label>Effectivity Date</label>
+                                <label>{{ __('translate.effectivitydate') }}</label>
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
                                     <input type="text" class="form-control datetimepicker-input"
                                         data-target="#reservationdate" />
@@ -412,7 +412,7 @@
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                    <label>Active</label>
+                                    <label>{{ __('translate.active') }}</label>
                                 </div>
                                 <div class="col">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -445,7 +445,7 @@
 
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">GL Interface</h3>
+                <h3 class="card-title">{{ __('translate.glinterface') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -462,7 +462,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>GL Interface Type</label>
+                            <label>{{ __('translate.glinterfacetype') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -479,7 +479,7 @@
                     <!-- /.col -->
                     <div class="col">
                         <div>
-                            <label>Item Group</label>
+                            <label>{{ __('translate.itemgroup') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -494,7 +494,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label style="font-size: 0.8em">Customer/Supplier/Agent Group</label>
+                            <label style="font-size: 0.8em">{{ __('translate.customersupplieragentgroup') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -508,7 +508,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Warehouse</label>
+                            <label>{{ __('translate.warehouse') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -522,7 +522,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Account</label>
+                            <label>{{ __('translate.account') }}</label>
                             <div class="input-group">
                                 <input type="text" class="form-control">
                                 <div class="input-group-append">
@@ -555,7 +555,7 @@
 
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Messages</h3>
+                <h3 class="card-title">{{ __('translate.messages') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -574,7 +574,7 @@
                     <div class="row">
                         <div class="col">
                             <div>
-                                <label>Code</label>
+                                <label>{{ __('translate.code') }}</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control">
                                     <div class="input-group-append">
@@ -587,13 +587,13 @@
                         <!-- /.col -->
                         <div class="col">
                             <div>
-                                <label>Format</label>
+                                <label>{{ __('translate.format') }}</label>
                                 <textarea rows="3" class="form-control h-100 w-100"></textarea>
                             </div>
                         </div>
                         <div class="col">
                             <div>
-                                <label>Message Type</label>
+                                <label>{{ __('translate.messagetype') }}</label>
                                 <select class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
@@ -630,7 +630,7 @@
 
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Depots</h3>
+                <h3 class="card-title">{{ __('translate.depots') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -648,7 +648,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Depot Row</label>
+                                <label>{{ __('translate.depotrow') }}</label>
                             </div>
                             <div class="col-sm-4">
                                 <input class="form-control" tabindex="1" />
@@ -656,7 +656,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Address 1</label>
+                                <label>{{ __('translate.address1') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" tabindex="4" />
@@ -664,7 +664,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>State/Province</label>
+                                <label>{{ __('translate.stateprovince') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -672,7 +672,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Salutation</label>
+                                <label>{{ __('translate.salutation') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -688,7 +688,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Last Name</label>
+                                <label>{{ __('translate.lastname') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -696,7 +696,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Phone</label>
+                                <label>{{ __('translate.phone') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -704,7 +704,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Tax Scope</label>
+                                <label>{{ __('translate.taxscope') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -720,7 +720,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Port of Discharge</label>
+                                <label>{{ __('translate.portofdischarge') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -728,7 +728,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Remarks</label>
+                                <label>{{ __('translate.remarks') }}</label>
                             </div>
                             <div class="col">
                                 <textarea rows="3" class="form-control h-100 w-100"></textarea>
@@ -746,7 +746,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Depot Name</label>
+                                <label>{{ __('translate.depotname') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -759,7 +759,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Address 2</label>
+                                <label>{{ __('translate.address2') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" tabindex="5" />
@@ -767,7 +767,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Zip/Postal Code</label>
+                                <label>{{ __('translate.zippostalcode') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -775,7 +775,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>First Name</label>
+                                <label>{{ __('translate.firstname') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -783,7 +783,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Title</label>
+                                <label>{{ __('translate.title') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -791,7 +791,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Fax</label>
+                                <label>{{ __('translate.fax') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -799,7 +799,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Tax Number</label>
+                                <label>{{ __('translate.taxnumber') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -807,7 +807,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Alternate Code</label>
+                                <label>{{ __('translate.alternatecode') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -817,7 +817,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Name</label>
+                                <label>{{ __('translate.name') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" tabindex="3" />
@@ -825,7 +825,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>City</label>
+                                <label>{{ __('translate.city') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100" tabindex="6">
@@ -841,7 +841,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red">Country</label>
+                                <label style="color: red">{{ __('translate.country') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -857,7 +857,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Middle Name</label>
+                                <label>{{ __('translate.middlename') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -865,7 +865,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Email</label>
+                                <label>{{ __('translate.email') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -873,7 +873,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>URL</label>
+                                <label>{{ __('translate.url') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -881,7 +881,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red">Warehouse</label>
+                                <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -897,7 +897,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Short Name</label>
+                                <label>{{ __('translate.shortname') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -905,7 +905,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Depot Type</label>
+                                <label>{{ __('translate.depottype') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -943,7 +943,7 @@
 
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Tax Table</h3>
+                <h3 class="card-title">{{ __('translate.taxtable') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -960,7 +960,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Tax Code</label>
+                            <label>{{ __('translate.taxcode') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">GST</label>
@@ -968,7 +968,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Tax Scope</label>
+                            <label>{{ __('translate.taxscope') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">01. Local-Registered</label>
@@ -976,7 +976,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Tax Category</label>
+                            <label>{{ __('translate.taxcategory') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">Exempted</label>
@@ -986,7 +986,7 @@
 
                     <div class="col">
                         <div>
-                            <label>Tax Rate</label>
+                            <label>{{ __('translate.taxrate') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">0.0000</label>
@@ -994,7 +994,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label style="font-size: 0.6em;">Tax Rate-InterState</label>
+                            <label style="font-size: 0.6em;">{{ __('translate.taxrateinterstate') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">0.0000</label>
@@ -1002,7 +1002,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label style="font-size: 0.6em;">Tax Rate-Concessional</label>
+                            <label style="font-size: 0.6em;">{{ __('translate.taxrateconcensial') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">0.0000</label>
@@ -1010,7 +1010,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Account</label>
+                            <label>{{ __('translate.account') }}</label>
                             <div class="input-group">
                                 <input type="text" class="form-control">
                                 <div class="input-group-append">
@@ -1021,7 +1021,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Alternate Code</label>
+                            <label>{{ __('translate.alternatecode') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">EP</label>
@@ -1029,7 +1029,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Blocked?</label>
+                            <label>{{ __('translate.blocked?') }}</label>
                         </div>
                         <div>
                             <label style="font-size: 0.7em;font-weight:normal;">0</label>
@@ -1061,7 +1061,7 @@
         <!--Locations-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Locations</h3>
+                <h3 class="card-title">{{ __('translate.locations') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1078,7 +1078,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Location</label>
+                            <label>{{ __('translate.location') }}</label>
                             <div class="input-group">
                                 <input type="text" class="form-control">
                                 <div class="input-group-append">
@@ -1092,7 +1092,7 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Location Type</label>
+                            <label>{{ __('translate.locationtype') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1107,7 +1107,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Region</label>
+                            <label>{{ __('translate.region') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1121,7 +1121,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Country</label>
+                            <label>{{ __('translate.country') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1135,7 +1135,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Effectivity Date</label>
+                            <label>{{ __('translate.effectivitydate') }}</label>
                             <div class="input-group date" id="locationeffectivitydate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#locationeffectivitydate" />
@@ -1148,7 +1148,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Expiration Date</label>
+                            <label>{{ __('translate.expirationdate') }}</label>
                             <div class="input-group date" id="locationexpirydate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#locationexpirydate" />
@@ -1163,7 +1163,7 @@
                     <div class="row">
                         <div class="col">
                             <div>
-                                <label>Depot Name</label>
+                                <label>{{ __('translate.depotname') }}</label>
                                 <select class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
@@ -1177,7 +1177,7 @@
                         </div>
                         <div class="col">
                             <div>
-                                <label>Default Payment Code</label>
+                                <label>{{ __('translate.defaultpaymentcode') }}</label>
                                 <select class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
@@ -1191,7 +1191,7 @@
                         </div>
                         <div class="col">
                             <div>
-                                <label>Time Slots</label>
+                                <label>{{ __('translate.timeslots') }}</label>
                                 <select multiple="multiple" class="w-100">
                                     <option selected>Alabama</option>
                                     <option>Alaska</option>
@@ -1205,18 +1205,18 @@
                         </div>
                         <div class="col">
                             <div>
-                                <label>IP Address</label>
+                                <label>{{ __('translate.ipaddress') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label>Title Image URL</label>
+                                <label>{{ __('translate.titleimageurl') }}</label>
                                 <input class="form-control w-100" />
                             </div>
                         </div>
                         <div class="col">
-                            <label>Background Image URL</label>
+                            <label>{{ __('translate.backgroundimageurl') }}</label>
                             <input class="form-control w-100" />
                         </div>
 
@@ -1245,7 +1245,7 @@
         <!--Receipts-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Receipts</h3>
+                <h3 class="card-title">{{ __('translate.receipts') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1262,7 +1262,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Payment Code</label>
+                            <label>{{ __('translate.paymentcode') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1277,7 +1277,7 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Account</label>
+                            <label>{{ __('translate.account') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1291,7 +1291,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Transaction Code</label>
+                            <label>{{ __('translate.transactioncode') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1326,7 +1326,7 @@
         <!--Holidays-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Holidays</h3>
+                <h3 class="card-title">{{ __('translate.holidays') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1343,7 +1343,7 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Locale</label>
+                            <label>{{ __('translate.locale') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
@@ -1358,7 +1358,7 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Date</label>
+                            <label>{{ __('translate.date') }}</label>
                             <div class="input-group date" id="holidaysdate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#holidaysdate" />
@@ -1370,13 +1370,13 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Available %</label>
+                            <label>{{ __('translate.available%') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Notes</label>
+                            <label>{{ __('translate.notes') }}</label>
                             <div class="input-group">
                                 <input type="text" class="form-control">
                                 <div class="input-group-append">
@@ -1407,7 +1407,7 @@
         <!--Vehicles-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Vehicles</h3>
+                <h3 class="card-title">{{ __('translate.vehicles') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1423,22 +1423,22 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Vehicle</label>
+                            <label>{{ __('translate.vehicle') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>{{ __('translate.description') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Vehicle Type</label>
+                            <label>{{ __('translate.vehicletype') }}</label>
                             <select class="form-control select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Car</option>
                                 <option>Two wheeler/Bike</option>
                                 <option>Truck</option>
@@ -1448,25 +1448,25 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Length</label>
+                            <label>{{ __('translate.length') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Width</label>
+                            <label>{{ __('translate.width') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Height</label>
+                            <label>{{ __('translate.height') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>CT Size</label>
+                            <label>{{ __('translate.ctsize') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">[Select]</option>
                                 <option>Placeholder</option>
@@ -1477,7 +1477,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <label>TG</label>
+                                <label>{{ __('translate.notes') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -1489,31 +1489,31 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>IU Label No</label>
+                            <label>{{ __('translate.lulabelno') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Owner</label>
+                            <label>{{ __('translate.owner') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>MLW/Kg</label>
+                            <label>{{ __('translate.mlwkg') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>UW/Kg</label>
+                            <label>{{ __('translate.uwkg') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>Tonnage</label>
+                            <label>{{ __('translate.tonnage') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>

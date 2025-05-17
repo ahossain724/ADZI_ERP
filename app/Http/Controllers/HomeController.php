@@ -96,6 +96,12 @@ class HomeController extends Controller
     public function invoicesimple(Request $request){
         return view('accountsreceivable.invoicesimple');
     }
+        public function complex(Request $request){
+        return view('accountsreceivable.complex');
+    }
+     public function allocation(Request $request){
+        return view('accountsreceivable.allocation');
+    }
     
 
 }

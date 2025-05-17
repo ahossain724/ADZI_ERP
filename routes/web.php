@@ -21,6 +21,10 @@ use App\Http\Controllers\IOUAdjustmentController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\InvoiceSimpleController;
+use App\Http\Controllers\ComplexController;
+use App\Http\Controllers\AllocationController;
+
+
 
 
 
@@ -85,8 +89,13 @@ Route::get('/iouadjustment', [App\Http\Controllers\HomeController::class, 'iouad
     ->name('generalledger.iouadjustment');
 Route::get('/receipt', [App\Http\Controllers\HomeController::class, 'receipt'])
     ->name('accountsreceivable.receipt');
-    Route::get('/invoicesimple', [App\Http\Controllers\HomeController::class, 'invoicesimple'])
+Route::get('/invoicesimple', [App\Http\Controllers\HomeController::class, 'invoicesimple'])
     ->name('accountsreceivable.invoicesimple');
+Route::get('/complex', [App\Http\Controllers\HomeController::class, 'complex'])
+    ->name('accountsreceivable.complex');
+Route::get('/allocation', [App\Http\Controllers\HomeController::class, 'allocation'])
+    ->name('accountsreceivable.allocation');
+
 
 
 Route::post('/store', [CodesController::class, 'store'])->name('store');
@@ -199,10 +208,23 @@ Route::post('/codes/update', [ReceiptController::class, 'update'])->name('update
 Route::delete('/codes/delete', [ReceiptController::class, 'delete'])->name('delete');
 
 Route::post('/storeinvoicesimple', [InvoiceSimpleController::class, 'storeinvoicesimple'])->name('storeinvoicesimple');
-Route::get('/getall', [ReceiptController::class, 'getall'])->name('getall');
-Route::get('/codes/{id}/edit', [ReceiptController::class, 'edit'])->name('edit');
-Route::post('/codes/update', [ReceiptController::class, 'update'])->name('update');
-Route::delete('/codes/delete', [ReceiptController::class, 'delete'])->name('delete');
+Route::get('/getall', [InvoiceSimpleController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [InvoiceSimpleController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [InvoiceSimpleController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [InvoiceSimpleController::class, 'delete'])->name('delete');
+
+Route::post('/storecomplex', [ComplexController::class, 'storecomplex'])->name('storecomplex');
+Route::get('/getall', [ComplexController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ComplexController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ComplexController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ComplexController::class, 'delete'])->name('delete');
+
+Route::post('/storeallocation', [AllocationController::class, 'storeallocation'])->name('storeallocation');
+Route::get('/getall', [ComplexController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ComplexController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ComplexController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ComplexController::class, 'delete'])->name('delete');
+
 
 
 

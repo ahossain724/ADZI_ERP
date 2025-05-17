@@ -70,11 +70,18 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
+              
             </ul>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
+                  <li class="nav-item d-none d-sm-inline-block">
+                     <select class="form-control changeLang text-center">
+                    <option value="en" {{ session()->get('language') == 'en' ? 'selected' : '' }}>English</option>
+                    <option value="bn" {{ session()->get('language') == 'bn' ? 'selected' : '' }}>Bangla</option>
+                </select>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
@@ -307,24 +314,6 @@
                                         <p>Packing Configuration</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Geolocation Hierarchy</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Map_Test</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lists</p>
-                                    </a>
-                                </li>
                             </ul>
                             <li class="nav-item">
                               <a href="#" class="nav-link active">
@@ -371,7 +360,7 @@
                                       <a href="#" class="nav-link">
                                           <i class="far fa-circle nav-icon"></i>
                                           <p>
-                                              Quotations & Orders
+                                              Qoutations & Orders
                                               <i class="right fas fa-angle-left"></i>
                                           </p>
                                       </a>
@@ -586,21 +575,21 @@
                                               </a>
                                           </li>
                                           <li class="nav-item">
-                                              <a href="{{ url('/iouvoucherentry') }}"
+                                              <a href="{{ url('/complex') }}"
                                               class="nav-link 
-                      @if (app('request')->route()->uri == 'iouvoucherentry') active @endif
+                      @if (app('request')->route()->uri == 'complex') active @endif
                       ">
                                                     <i class="far fa-dot-circle nav-icon"></i>
                                                     <p>Complex</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a href="{{ url('/iouadjustment') }}"
+                                              <a href="{{ url('/allocation') }}"
                                               class="nav-link 
-                      @if (app('request')->route()->uri == 'iouadjustment') active @endif
+                      @if (app('request')->route()->uri == 'allocation') active @endif
                       ">
                                                     <i class="far fa-dot-circle nav-icon"></i>
-                                                    <p>placeholder</p>
+                                                    <p>Allocations</p>
                                                 </a>
                                             </li>
                                       </ul> 
@@ -1754,6 +1743,52 @@
         });
          //Invoice Simple insert
          $('form#invoicesimple_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Complex insert
+         $('form#complex_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Allocation insert
+         $('form#allocation_form').on('submit', function(e) {
             e.preventDefault();
             let form = this;
             let formdata = new FormData(form);
