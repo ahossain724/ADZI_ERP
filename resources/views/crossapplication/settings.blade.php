@@ -1519,13 +1519,13 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Bud Capacity</label>
+                            <label>{{ __('translate.budcapacity') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
-                            <label>CT Type</label>
+                            <label>{{ __('translate.cttype') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">[Select]</option>
                                 <option>Placeholder</option>
@@ -1536,7 +1536,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <label>DG</label>
+                                <label>{{ __('translate.dg') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
@@ -1547,9 +1547,9 @@
                     <div class="row">
                         <div class="col-md-2">
                             <div>
-                                <label>Delivery Zone</label>
+                                <label>{{ __('translate.deliveryzone') }}</label>
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Delivery Zone A</option>
                                     <option>Delivery Zone B</option>
                                     <option>Delivery Zone C</option>
@@ -1557,7 +1557,7 @@
                             </div>
                         </div>
                         <div class="col-md-10">
-                            <label>Remarks</label>
+                            <label>{{ __('translate.remarks') }}</label>
                             <textarea rows="3" class="form-control"></textarea>
                         </div>
                     </div>
@@ -1577,7 +1577,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <label style="font-size: 2em">Team Assignment to</label>
+                            <label style="font-size: 2em">{{ __('translate.teamassignmentto') }}</label>
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-block btn-primary">Save</button>
@@ -1586,7 +1586,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <label>Effectivity Date ⇑</label>
+                            <label>{{ __('translate.effectivitydate') }} ⇑</label>
                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#reservationdate" />
@@ -1597,9 +1597,9 @@
                             </div>
                         </div>
                         <div class="col">
-                            <label>Team</label>
+                            <label>{{ __('translate.team') }}</label>
                             <select class="form-control select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Undefined</option>
                                 <option>Undefined</option>
                                 <option>Undefined</option>
@@ -1611,7 +1611,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <label style="font-size: 2em">Admin Info</label>
+                            <label style="font-size: 2em">{{ __('translate.admininfo') }}</label>
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-block btn-primary">Save</button>
@@ -1619,7 +1619,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label>Document Type ⇑ Document Number</label>
+                            <label>{{ __('translate.documenttypedocumentnumber') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">[Select]</option>
                                 <option>Undefined</option>
@@ -1628,7 +1628,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label>Date Issued Expiration Date</label>
+                            <label>{{ __('translate.dateissuedexpirationdate') }}</label>
                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#reservationdate" />
@@ -1668,7 +1668,7 @@
         <!--User Docs-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">User Docs</h3>
+                <h3 class="card-title">{{ __('translate.userdocs') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1685,20 +1685,20 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <label>Document Name</label>
+                            <label>{{ __('translate.documentname') }}</label>
                             <input type="text" class="form-control" />
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col">
-                        <label>Title</label>
+                        <label>{{ __('translate.title') }}</label>
                         <input type="text" class="form-control" />
                     </div>
                     <div class="col">
                         <div>
-                            <label>Source Documents</label>
+                            <label>{{ __('translate.sourcedocuments') }}</label>
                             <select class="form-control select2bs4 w-100">
-                                <option selected="selected">Customer Order</option>
+                                <option selected="selected">{{ __('translate.customerorder') }}</option>
                                 <option>Alaska</option>
                                 <option>California</option>
                                 <option>Delaware</option>
@@ -1710,7 +1710,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Order Type</label>
+                            <label>{{ __('translate.ordertype') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">[Select]</option>
                                 <option>Alaska</option>
@@ -1724,7 +1724,7 @@
                     </div>
                     <div class="col">
                         <div>
-                            <label>Reference Field</label>
+                            <label>{{ __('translate.referencefield') }}</label>
                             <select class="form-control select2bs4 w-100">
                                 <option selected="selected">Customer Number</option>
                                 <option>Alaska</option>
@@ -1741,7 +1741,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label>Info Groups</label>
+                        <label>{{ __('translate.infogroups') }}</label>
                         <select multiple="multiple" class="w-100">
                             <option></option>
                             <option selected>Alabama</option>
@@ -1755,44 +1755,44 @@
                     </div>
 
                     <div class="col">
-                        <label>Print Org Name</label>
+                        <label>{{ __('translate.printorgname') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
 
                     <div class="col">
-                        <label>Print Org Address</label>
+                        <label>{{ __('translate.printorgaddresss') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
-                        <label>Print Logo</label>
+                        <label>{{ __('translate.printlogo') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
-                        <label>Print Customer Details</label>
+                        <label>{{ __('translate.printcustomerdetails') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
-                        <label>Print Delivery Details</label>
+                        <label>{{ __('translate.printdeliverydetails') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
-                        <label>Print Standard Footer</label>
+                        <label>{{ __('translate.printstandardfooter') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
-                        <label>Active</label>
+                        <label>{{ __('translate.active') }}</label>
                     </div>
                     <div class="col">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
@@ -1800,13 +1800,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <label>Header</label>
+                        <label>{{ __('translate.header') }}</label>
                         <textarea rows="3" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <label>Footer</label>
+                        <label>{{ __('translate.footer') }}</label>
                         <textarea rows="3" class="form-control"></textarea>
                     </div>
                 </div>
@@ -1831,7 +1831,7 @@
         <!--Site Defaults-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Site Defaults</h3>
+                <h3 class="card-title">{{ __('translate.sitedefaults') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -1849,7 +1849,7 @@
                     <div class="col-md-3">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Site Name</label>
+                                <label>{{ __('translate.sitename') }}</label>
                             </div>
                             <div class="col-sm-4">
                                 <select class="form-control select2bs4 w-100">
@@ -1865,7 +1865,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Object</label>
+                                <label>{{ __('translate.object') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -1881,7 +1881,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red">Country</label>
+                                <label style="color: red">{{ __('translate.country') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -1897,11 +1897,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>SIC Code</label>
+                                <label>{{ __('translate.siccode') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -1913,7 +1913,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Discount %</label>
+                                <label>{{ __('translate.discount%') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -1921,11 +1921,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red">Warehouse</label>
+                                <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">General Store</option>
+                                    <option selected="selected">{{ __('translate.generalstore') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -1937,11 +1937,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Sales Person</label>
+                                <label>{{ __('translate.salesperson') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -1953,11 +1953,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Shipping Product</label>
+                                <label>{{ __('translate.shippingproduct') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -1969,11 +1969,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Section</label>
+                                <label>{{ __('translate.section') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -1985,7 +1985,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Drop Ship?</label>
+                                <label>{{ __('translate.dropship?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -1994,7 +1994,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Print Tax?</label>
+                                <label>{{ __('translate.printtax?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2003,7 +2003,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Email-Success</label>
+                                <label>{{ __('translate.email-success') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2011,7 +2011,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Bank Code</label>
+                                <label>{{ __('translate.bankcode') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2019,7 +2019,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>PayPal UserID</label>
+                                <label>{{ __('translate.paypaluserid') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2027,11 +2027,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Item Group</label>
+                                <label>{{ __('translate.itemgroup') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2045,7 +2045,7 @@
                     <div class="col-md-3">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Customer Prefix</label>
+                                <label>{{ __('translate.customerprefix') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2061,7 +2061,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Unit of Distance</label>
+                                <label>{{ __('translate.unitofdistance') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2077,7 +2077,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Control Account-AR</label>
+                                <label>{{ __('translate.controlaccountar') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2093,7 +2093,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Customer Status</label>
+                                <label>{{ __('translate.customerstatus') }}</label>
                             </div>
                             <div class="col">
                                 <label>1-Open</label>
@@ -2101,7 +2101,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Agent</label>
+                                <label>{{ __('translate.agent') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2109,11 +2109,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Market</label>
+                                <label>{{ __('translate.market') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2125,11 +2125,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Project Manager</label>
+                                <label>{{ __('translate.projectmanager') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2141,7 +2141,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Residence?</label>
+                                <label>{{ __('translate.residence?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2150,11 +2150,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Project</label>
+                                <label>{{ __('translate.project') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2167,7 +2167,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Active</label>
+                                <label>{{ __('translate.active') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2176,7 +2176,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Time Cutoff</label>
+                                <label>{{ __('translate.timecutoff') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2184,7 +2184,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Email-Failure</label>
+                                <label>{{ __('translate.email-failure') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2192,7 +2192,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Account Number</label>
+                                <label>{{ __('translate.accountnumber') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2200,7 +2200,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Tax Code</label>
+                                <label>{{ __('translate.taxcode') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2216,29 +2216,29 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red;">Fulfillment Category</label>
+                                <label style="color: red;">{{ __('translate.fulfilmentcategory') }}</label>
                             </div>
                             <div class="col">
                                 <div class="row">
 
                                     <div class="col">
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio" checked>Auto
+                                            <input type="radio" name="optradio" checked>{{ __('translate.auto') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em;margin-left:10px">
-                                            <input type="radio" name="optradio">Manufacture
+                                            <input type="radio" name="optradio">{{ __('translate.manufacture') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.7em">
-                                            <input type="radio" name="optradio" checked>Rework
+                                            <input type="radio" name="optradio" checked>{{ __('translate.rework') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio">ExStock
+                                            <input type="radio" name="optradio">{{ __('translate.exstock') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.6em">
-                                            <input type="radio" name="optradio" checked>Purchase
+                                            <input type="radio" name="optradio" checked>{{ __('translate.purchase') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio">Transfer
+                                            <input type="radio" name="optradio">{{ __('translate.transfer') }}
 
                                         </label>
                                     </div>
@@ -2249,7 +2249,7 @@
                     <div class="col-md-3">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Order Prefix</label>
+                                <label>{{ __('translate.orderprefix') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2265,7 +2265,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Unit of Weight</label>
+                                <label>{{ __('translate.unitofweight') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100" tabindex="6">
@@ -2281,11 +2281,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Customer Group</label>
+                                <label>{{ __('translate.customergroup') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">Retail</option>
+                                    <option selected="selected">{{ __('translate.retail') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2297,7 +2297,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Credit Limit</label>
+                                <label>{{ __('translate.creditlimit') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2305,7 +2305,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Commission %</label>
+                                <label>{{ __('translate.comission%') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2313,11 +2313,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Region</label>
+                                <label>{{ __('translate.region') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2329,11 +2329,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Payment Code</label>
+                                <label>{{ __('translate.paymentcode') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2345,7 +2345,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Saturday Delivery?</label>
+                                <label>{{ __('translate.saturdaydelivery?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2354,11 +2354,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Code Basis</label>
+                                <label>{{ __('translate.codebasis') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">Our Code</option>
+                                    <option selected="selected">{{ __('translate.ourcode') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2370,7 +2370,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Prices Include Tax?</label>
+                                <label>{{ __('translate.pricesincludetaxyes?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2379,7 +2379,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Days To Deliver</label>
+                                <label>{{ __('translate.daystodeliver') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2387,11 +2387,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Bank</label>
+                                <label>{{ __('translate.bank') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2403,7 +2403,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Account Name</label>
+                                <label>{{ __('translate.accountname') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2411,7 +2411,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Tax Scope</label>
+                                <label>{{ __('translate.taxscope') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2427,7 +2427,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Show Supplier?</label>
+                                <label>{{ __('translate.showsupplier?') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input" type="checkbox" value=""
@@ -2438,7 +2438,7 @@
                     <div class="col-md-3">
                         <div class="row">
                             <div class="col-sm-5">
-                                <label>Quotation Prefix</label>
+                                <label>{{ __('translate.qoutationprefix') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2454,7 +2454,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>City</label>
+                                <label>{{ __('translate.city') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100" tabindex="6">
@@ -2470,7 +2470,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Price Group</label>
+                                <label>{{ __('translate.pricegroup') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2486,7 +2486,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Credit Terms</label>
+                                <label>{{ __('translate.creditterms') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2494,7 +2494,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label style="color: red">Currency</label>
+                                <label style="color: red">{{ __('translate.currency') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2510,11 +2510,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Territory</label>
+                                <label>{{ __('translate.territory') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2526,11 +2526,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Shipping Code</label>
+                                <label>{{ __('translate.shippingcode') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2542,11 +2542,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Division</label>
+                                <label>{{ __('translate.division') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2558,11 +2558,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Backorder Type</label>
+                                <label>{{ __('translate.backordertype') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">Future Stock</option>
+                                    <option selected="selected">{{ __('translate.futurestock') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2574,7 +2574,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Invoicing Rule</label>
+                                <label>{{ __('translate.invoicingrule') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
@@ -2590,7 +2590,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Email</label>
+                                <label>{{ __('translate.email') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2598,7 +2598,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Branch</label>
+                                <label>{{ __('translate.branch') }}</label>
                             </div>
                             <div class="col">
                                 <input class="form-control" />
@@ -2606,7 +2606,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Payment Codes</label>
+                                <label>{{ __('translate.paymentcodes') }}</label>
                             </div>
                             <div class="col">
                                 <select multiple="multiple" class="w-100">
@@ -2623,11 +2623,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Tax Category</label>
+                                <label>{{ __('translate.taxcategory') }}</label>
                             </div>
                             <div class="col">
                                 <select class="form-control select2bs4 w-100">
-                                    <option selected="selected">Standard Rated</option>
+                                    <option selected="selected">{{ __('translate.standardrated') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -2661,7 +2661,7 @@
         <!--Update Costs-->
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title">Update Costs</h3>
+                <h3 class="card-title">{{ __('translate.updatecosts') }}</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
@@ -2678,7 +2678,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-block btn-primary">Update Standard Costs</button>
+                        <button type="button" class="btn btn-block btn-primary">{{ __('translate.updatestandardcosts') }}</button>
                     </div>
                     <div class="col-md-1 w-20">
                         <button type="button" class="btn btn-block btn-primary">+</button>
