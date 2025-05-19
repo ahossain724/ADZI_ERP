@@ -1168,7 +1168,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-sm-5">
-                            <label>{{ __('translate.zippostalcode') }} </label>
+                            <label>{{ __('translate.zippostalcode') }}</label>
                         </div>
                         <div class="col">
                             <input class="form-control" />
