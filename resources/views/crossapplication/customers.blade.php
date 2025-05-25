@@ -1,6 +1,6 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header">
+    <section class="content-header"style="padding-top: 56px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -53,7 +53,8 @@
                                                 </select>
                                             </span>
                                         </div>
-                                        <input id="customer_number" name="customer_number" class="form-control" type="text">
+                                        <input id="customer_number" name="customer_number" class="form-control"
+                                            type="text">
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +119,8 @@
                                     <label style="color: red">{{ __('translate.controlaccountar') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="control_account_ar" name="control_account_ar" class="form-control select2bs4 w-100">
+                                    <select id="control_account_ar" name="control_account_ar"
+                                        class="form-control select2bs4 w-100">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -150,7 +152,8 @@
                                     <label>{{ __('translate.industrysegment') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="industry_segment" name="industry_segment" class="form-control select2bs4 w-100">
+                                    <select id="industry_segment" name="industry_segment"
+                                        class="form-control select2bs4 w-100">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -191,8 +194,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="expiration_date" name="expiration_date" type="text" class="form-control datetimepicker-input"
-                                            data-target="#reservationdate" />
+                                        <input id="expiration_date" name="expiration_date" type="text"
+                                            class="form-control datetimepicker-input" data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -207,7 +210,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="date_of_financial_statement" name="date_of_financial_statement" type="text" class="form-control datetimepicker-input"
+                                        <input id="date_of_financial_statement" name="date_of_financial_statement"
+                                            type="text" class="form-control datetimepicker-input"
                                             data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
@@ -249,7 +253,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group">
-                                        <input id="short_name" name="short_name" type="text" class="form-control" tabindex="2">
+                                        <input id="short_name" name="short_name" type="text" class="form-control"
+                                            tabindex="2">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
                                         </div>
@@ -309,7 +314,8 @@
                                     <label style="color: red">{{ __('translate.customergroup') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="customer_group" name="customer_group" class="form-control select2bs4 w-100">
+                                    <select id="customer_group" name="customer_group"
+                                        class="form-control select2bs4 w-100">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -366,7 +372,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="date_of_credit_application" name="date_of_credit_application" type="text" class="form-control datetimepicker-input"
+                                        <input id="date_of_credit_application" name="date_of_credit_application"
+                                            type="text" class="form-control datetimepicker-input"
                                             data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
@@ -381,8 +388,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="date_incorporated" name="date_incorporated" type="text" class="form-control datetimepicker-input"
-                                            data-target="#reservationdate" />
+                                        <input id="date_incorporated" name="date_incorporated" type="text"
+                                            class="form-control datetimepicker-input" data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -412,7 +419,8 @@
                                     <label>{{ __('translate.backordertype') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="backorder_type" name="backorder_type" class="form-control select2bs4 w-100">
+                                    <select id="backorder_type" name="backorder_type"
+                                        class="form-control select2bs4 w-100">
                                         <option selected="selected">None</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -438,7 +446,8 @@
                                     <label>{{ __('translate.city') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="city" name="city" class="form-control select2bs4 w-100" tabindex="6">
+                                    <select id="city" name="city" class="form-control select2bs4 w-100"
+                                        tabindex="6">
                                         <option selected="selected">Alabama</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -502,7 +511,8 @@
                                     <label>{{ __('translate.customertype') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="customer_type" name="customer_type" class="form-control select2bs4 w-100" tabindex="6">
+                                    <select id="customer_type" name="customer_type" class="form-control select2bs4 w-100"
+                                        tabindex="6">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -543,13 +553,16 @@
                                 </div>
                                 <div class="col">
                                     <label class="radio-inline">
-                                        <input id="customer_status" name="customer_status" type="radio" name="optradio" checked>{{ __('translate.held') }}
+                                        <input id="customer_status" name="customer_status" type="radio"
+                                            name="optradio" checked>{{ __('translate.held') }}
                                     </label>
                                     <label class="radio-inline">
-                                        <input id="customer_status" name="customer_status" type="radio" name="optradio">{{ __('translate.legal') }}
+                                        <input id="customer_status" name="customer_status" type="radio"
+                                            name="optradio">{{ __('translate.legal') }}
                                     </label>
                                     <label class="radio-inline">
-                                        <input id="customer_status" name="customer_status" type="radio" name="optradio" checked>{{ __('translate.open') }}
+                                        <input id="customer_status" name="customer_status" type="radio"
+                                            name="optradio" checked>{{ __('translate.open') }}
                                     </label>
                                 </div>
                             </div>
@@ -558,7 +571,8 @@
                                     <label>{{ __('translate.creditrating') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="credit_rating" name="credit_rating" class="form-control select2bs4 w-100" tabindex="6">
+                                    <select id="credit_rating" name="credit_rating" class="form-control select2bs4 w-100"
+                                        tabindex="6">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -575,8 +589,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="date_approved" name="date_approved" type="text" class="form-control datetimepicker-input"
-                                            data-target="#reservationdate" />
+                                        <input id="date_approved" name="date_approved" type="text"
+                                            class="form-control datetimepicker-input" data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -590,7 +604,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input id="date_of_credit_evaluation" name="date_of_credit_evaluation" type="text" class="form-control datetimepicker-input"
+                                        <input id="date_of_credit_evaluation" name="date_of_credit_evaluation"
+                                            type="text" class="form-control datetimepicker-input"
                                             data-target="#reservationdate" />
                                         <div class="input-group-append" data-target="#reservationdate"
                                             data-toggle="datetimepicker">
@@ -604,7 +619,8 @@
                                     <label>{{ __('translate.paymentmethod') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="payment_method" name="payment_method" class="form-control select2bs4 w-100" tabindex="6">
+                                    <select id="payment_method" name="payment_method"
+                                        class="form-control select2bs4 w-100" tabindex="6">
                                         <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -659,7 +675,7 @@
                         </div>
                     </div>
                 </form>
-            
+
             </div>
 
 

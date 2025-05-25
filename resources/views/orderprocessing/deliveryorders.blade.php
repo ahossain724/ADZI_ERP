@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header">
+    <section class="content-header"style="padding-top: 60px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Delivery Orders</h1>
+                    <h1>{{ __('translate.deliveryorders') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Delivery Orders</h3>
+            <h3 class="card-title">{{ __('translate.deliveryorders') }}</h3>
 
 
             <div class="card-tools">
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Delivery Order Number</label>
+                                <label>{{ __('translate.deliveryordernumber') }}</label>
                             </div>
                             <div class="col">
                                 <input id="delivery_order_number" name="delivery_order_number" class="form-control" tabindex="4" />
@@ -50,7 +50,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Name</label>
+                                <label>{{ __('translate.name') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Customer Order</label>
+                                <label>{{ __('translate.customerorder') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -68,7 +68,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -83,7 +83,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>GL Voucher</label>
+                                <label>{{ __('translate.glvoucher') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -93,7 +93,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Customer Number</label>
+                                <label>{{ __('translate.customernumber') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Invoices</label>
+                                <label>{{ __('translate.invoices') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -112,7 +112,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Header Message</label>
+                                    <label>{{ __('translate.headermessage') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="header_message" name="header_message" rows="2" class="form-control h-100 w-100"></textarea>
@@ -120,7 +120,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Footer Message</label>
+                                    <label>{{ __('translate.footermessage') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="footer_message" name="footer_message" rows="2" class="form-control h-100 w-100"></textarea>
@@ -128,7 +128,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="notes" name="notes" rows="2" class="form-control h-100 w-100"></textarea>
@@ -140,11 +140,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Vehicle Type</label>
+                                    <label>{{ __('translate.vehicletype') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="vehicle_type" name="vehicle_type" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -156,7 +156,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>VAT Challan No.</label>
+                                    <label>{{ __('translate.vatchallanno') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="vat_challan" name="vat_challan" class="form-control" tabindex="4" />
@@ -164,7 +164,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Total Net Weight</label>
+                                    <label>{{ __('translate.totalnetweight') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="total_net_weight" name="total_net_weight" class="form-control" tabindex="4" />
@@ -172,7 +172,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Delivery Flag</label>
+                                    <label>{{ __('translate.deliveryflag') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Last Confirmed By</label>
+                                    <label>{{ __('translate.lastconfirmedby') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -190,7 +190,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Vehicle No.</label>
+                                    <label>{{ __('translate.vehicleno') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="vehicle" name="vehicle" class="form-control" tabindex="4" />
@@ -198,7 +198,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>VAT Challan Date</label>
+                                    <label>{{ __('translate.vatchallandate') }}</label>
                                 </div>
                                 <div class="col">
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -213,7 +213,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Total Gross Weight</label>
+                                    <label>{{ __('translate.totalgrossweight') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="total_gross_weight" name="total_gross_weight" class="form-control" tabindex="4" />
@@ -221,7 +221,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Delivery Status</label>
+                                    <label>{{ __('translate.deliverystatus') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -231,11 +231,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team</label>
+                                    <label>{{ __('translate.team') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team" name="team" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -247,11 +247,11 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team Member</label>
+                                    <label>{{ __('translate.teammember') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team_member" name="team_member" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -263,7 +263,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Manager</label>
+                                    <label>{{ __('translate.manager') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -271,7 +271,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Driver/Resposible Person	</label>
+                                    <label>{{ __('translate.driverresponsibleperson') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="driver_responsible_person" name="driver_responsible_person" class="form-control" tabindex="4" />
@@ -279,7 +279,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Time (HH:MM:SS)</label>
+                                    <label>{{ __('translate.time') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="time" name="time" class="form-control" tabindex="4" />
@@ -287,7 +287,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>	Total Number of Carton(s)</label>
+                                    <label>{{ __('translate.totalnumberofcartons') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="total_cartons" name="total_cartons" class="form-control" tabindex="4" />
@@ -295,7 +295,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Invoicing Rule</label>
+                                    <label>{{ __('translate.invoicingrule') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>

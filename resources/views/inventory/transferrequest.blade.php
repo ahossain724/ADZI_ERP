@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header">
+    <section class="content-header"style="padding-top: 56px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Transfer Request</h1>
+                    <h1>{{ __('translate.transferrequest') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Transfer Request</h3>
+            <h3 class="card-title">{{ __('translate.transferrequest') }}</h3>
 
 
             <div class="card-tools">
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Transfer Request Number</label>
+                                <label>{{ __('translate.transferrequestnumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -56,17 +56,17 @@
                                             </select>
                                         </span>
                                     </div>
-                                    <input id="transfer_request_number" name="transfer_request_number" class="form-control" type="text">
+                                    <input id="transfer_request_number" name="transfer_request_number" class="form-control border border-success" type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date Sent</label>
+                                <label>{{ __('translate.datesent') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="date_sent" name="date_sent" type="text" class="form-control datetimepicker-input"
+                                    <input id="date_sent" name="date_sent" type="text" class="form-control border border-success datetimepicker-input"
                                         data-target="#reservationdate" />
                                     <div class="input-group-append" data-target="#reservationdate"
                                         data-toggle="datetimepicker">
@@ -77,11 +77,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>From Warehouse</label>
+                                <label>{{ __('translate.fromwarehouse') }}</label>
                             </div>
                             <div class="col">
-                                <select id="from_warehouse" name="from_warehouse" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="from_warehouse" name="from_warehouse" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -93,11 +93,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Warehouse</label>
+                                <label>{{ __('translate.towarehouse') }}</label>
                             </div>
                             <div class="col">
-                                <select id="to_warehouse" name="to_warehouse" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="to_warehouse" name="to_warehouse" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -111,11 +111,11 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Order Date</label>
+                                <label>{{ __('translate.orderdate') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="order_date" name="order_date" type="text" class="form-control datetimepicker-input"
+                                    <input id="order_date" name="order_date" type="text" class="form-control border border-success datetimepicker-input"
                                         data-target="#reservationdate" />
                                     <div class="input-group-append" data-target="#reservationdate"
                                         data-toggle="datetimepicker">
@@ -126,11 +126,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date Approved</label>
+                                <label>{{ __('translate.dateapproved') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="date_approved" name="date_approved" type="text" class="form-control datetimepicker-input"
+                                    <input id="date_approved" name="date_approved" type="text" class="form-control border border-success datetimepicker-input"
                                         data-target="#reservationdate" />
                                     <div class="input-group-append" data-target="#reservationdate"
                                         data-toggle="datetimepicker">
@@ -141,11 +141,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>From Division</label>
+                                <label>{{ __('translate.fromdivision') }}</label>
                             </div>
                             <div class="col">
-                                <select id="from_division" name="from_division" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="from_division" name="from_division" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -157,11 +157,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Division</label>
+                                <label>{{ __('translate.todivision') }}</label>
                             </div>
                             <div class="col">
-                                <select id="to_division" name="to_division" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="to_division" name="to_division" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -175,11 +175,11 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Requested Date</label>
+                                <label>{{ __('translate.requesteddate') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="requested_date" name="requested_date" type="text" class="form-control datetimepicker-input"
+                                    <input id="requested_date" name="requested_date" type="text" class="form-control border border-success datetimepicker-input"
                                         data-target="#reservationdate" />
                                     <div class="input-group-append" data-target="#reservationdate"
                                         data-toggle="datetimepicker">
@@ -190,19 +190,19 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Reference</label>
+                                <label>{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
-                                <input id="reference" name="reference" class="form-control" tabindex="4" />
+                                <input id="reference" name="reference" class="form-control border border-success" tabindex="4" />
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>From Section</label>
+                                <label>{{ __('translate.fromsection') }}</label>
                             </div>
                             <div class="col">
-                                <select id="from_section" name="from_section" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="from_section" name="from_section" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -214,11 +214,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Section</label>
+                                <label>{{ __('translate.tosection') }}</label>
                             </div>
                             <div class="col">
-                                <select id="to_section" name="to_section" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="to_section" name="to_section" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -239,7 +239,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Transfer Request Status</label>
+                                <label>{{ __('translate.transferrequeststatus') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -247,11 +247,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>From Project</label>
+                                <label>{{ __('translate.fromproject') }}</label>
                             </div>
                             <div class="col">
-                                <select id="from_project" name="from_project" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="from_project" name="from_project" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -263,11 +263,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Project</label>
+                                <label>{{ __('translate.toproject') }}</label>
                             </div>
                             <div class="col">
-                                <select id="to_project" name="to_project" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                <select id="to_project" name="to_project" class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -282,26 +282,26 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Header Message</label>
+                                    <label>{{ __('translate.headermessage') }}</label>
                                 </div>
                                 <div class="col">
-                                    <textarea id="header_message" name="header_message" rows="2" class="form-control h-100 w-100"></textarea>
+                                    <textarea id="header_message" name="header_message" rows="2" class="form-control border border-success h-100 w-100"></textarea>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Footer Message</label>
+                                    <label>{{ __('translate.footermessage') }}</label>
                                 </div>
                                 <div class="col">
-                                    <textarea id="footer_message" name="footer_message" rows="2" class="form-control h-100 w-100"></textarea>
+                                    <textarea id="footer_message" name="footer_message" rows="2" class="form-control border border-success h-100 w-100"></textarea>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
-                                    <textarea id="notes" name="notes" rows="2" class="form-control h-100 w-100"></textarea>
+                                    <textarea id="notes" name="notes" rows="2" class="form-control border border-success h-100 w-100"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -310,11 +310,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team</label>
+                                    <label>{{ __('translate.team') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="team" name="team" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                    <select id="team" name="team" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -326,11 +326,11 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Location</label>
+                                    <label>{{ __('translate.location') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="location" name="location" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                    <select id="location" name="location" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -344,11 +344,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team Member</label>
+                                    <label>{{ __('translate.teammember') }}</label>
                                 </div>
                                 <div class="col">
-                                    <select id="team_member" name="team_member" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                    <select id="team_member" name="team_member" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -360,7 +360,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Transfer Request Flag</label>
+                                    <label>{{ __('translate.transferrequestflag') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -370,7 +370,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Manager</label>
+                                    <label>{{ __('translate.manager') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -378,7 +378,7 @@
                             </div>    
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>TOs</label>
+                                    <label>{{ __('translate.tos') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>

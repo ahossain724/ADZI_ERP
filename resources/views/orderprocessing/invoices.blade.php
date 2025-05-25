@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header">
+    <section class="content-header"style="padding-top: 56px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Invoices</h1>
+                    <h1>{{ __('translate.invoices') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
      <!--Requisition-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Invoices</h3>
+            <h3 class="card-title">{{ __('translate.invoices') }}</h3>
 
 
             <div class="card-tools">
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Invoice Number</label>
+                                <label>{{ __('translate.invoicenumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -56,13 +56,13 @@
                                             </select>
                                         </span>
                                     </div>
-                                    <input id="invoice_number" name="invoice_number" class="form-control" type="text">
+                                    <input id="invoice_number" name="invoice_number" class="form-control border border-success" type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Order Number</label>
+                                <label>{{ __('translate.ordernumber') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Invoice Status</label>
+                                <label>{{ __('translate.invoicestatus') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -80,11 +80,11 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="date" name="date" type="text" class="form-control datetimepicker-input"
+                                    <input id="date" name="date" type="text" class="form-control border border-success datetimepicker-input"
                                         data-target="#reservationdate" />
                                     <div class="input-group-append" data-target="#reservationdate"
                                         data-toggle="datetimepicker">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Milestone Row</label>
+                                <label>{{ __('translate.milestonerow') }}</label>
                             </div>
                             <div class="col">
                                 <label>0</label>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Voucher Number</label>
+                                <label>{{ __('translate.vouchernumber') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -113,15 +113,15 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Flag</label>
+                                <label>{{ __('translate.flag') }}</label>
                             </div>
                             <div class="col">
-                                <input id="flag" name="flag" class="form-control" tabindex="4" />
+                                <input id="flag" name="flag" class="form-control border border-success" tabindex="4" />
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Invoicing Rule</label>
+                                <label>{{ __('translate.invoicingrule') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Total Amount</label>
+                                <label>{{ __('translate.totalamount') }}</label>
                             </div>
                             <div class="col">
                                 <label>0.00</label>
@@ -139,7 +139,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Customer Number</label>
+                                <label>{{ __('translate.customernumber') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Delivery Order Number</label>
+                                <label>{{ __('translate.deliveryordernumber') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -155,7 +155,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Created By</label>
+                                <label>{{ __('translate.createdby') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -166,10 +166,10 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
-                                    <textarea id="notes" name="notes" rows="3" class="form-control h-100 w-100"></textarea>
+                                    <textarea id="notes" name="notes" rows="3" class="form-control border border-success h-100 w-100"></textarea>
                                 </div>
                             </div>
                         </div>

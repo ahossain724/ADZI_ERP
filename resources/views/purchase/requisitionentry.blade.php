@@ -1,6 +1,6 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header">
+    <section class="content-header" style="padding-top: 56px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -19,7 +19,7 @@
      <!--Requisition-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Requisition</h3>
+            <h3 class="card-title">{{ __('translate.requisition') }}</h3>
 
 
             <div class="card-tools">
@@ -41,7 +41,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Requisition Number</label>
+                                <label>{{ __('translate.requisitionnumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -76,11 +76,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Warehouse</label>
+                                <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
                                 <select id="warehouse" name="warehouse" class="form-control select2bs4">
-                                    <option selected="selected">AIMS Store</option>
+                                    <option selected="selected">{{ __('translate.aimsstore') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -92,11 +92,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Division</label>
+                                <label>{{ __('translate.division') }}</label>
                             </div>
                             <div class="col">
                                 <select id="division" name="division" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -108,11 +108,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Project</label>
+                                <label>{{ __('translate.project') }}</label>
                             </div>
                             <div class="col">
                                 <select id="project" name="project" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Total Amount</label>
+                                <label style="color: red">{{ __('translate.totalamount') }}</label>
                             </div>
                             <div class="col">
                                 <label>0.00</label>
@@ -134,7 +134,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Status</label>
+                                <label>{{ __('translate.status') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Required-By Date</label>
+                                <label>{{ __('translate.requiredbydate') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -157,7 +157,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Reference</label>
+                                <label>{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
                                 <input id="reference" name="reference" class="form-control" tabindex="4" />
@@ -165,11 +165,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Section</label>
+                                <label>{{ __('translate.section') }}</label>
                             </div>
                             <div class="col">
                                 <select id="section" name="section" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -181,11 +181,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Department</label>
+                                <label>{{ __('translate.department') }}</label>
                             </div>
                             <div class="col">
                                 <select id="department" name="department" class="form-control select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -197,7 +197,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Entry Type</label>
+                                <label>{{ __('translate.entrytype') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -208,7 +208,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="notes" name="notes" rows="3" class="form-control h-100 w-100"></textarea>
@@ -216,7 +216,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Terms and Conditions</label>
+                                    <label>{{ __('translate.termsandconditions') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="terms_and_conditions" name="terms_and_conditions" rows="7" class="form-control h-100 w-100"></textarea>
@@ -224,7 +224,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Other Specifications</label>
+                                    <label>{{ __('translate.otherspecifications') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="other_specifications" name="other_specifications" rows="2" class="form-control h-100 w-100"></textarea>
@@ -236,7 +236,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Entry Created By</label>
+                                    <label>{{ __('translate.entrycreatedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -244,7 +244,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Submitted By</label>
+                                    <label>{{ __('translate.submittedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -252,7 +252,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approved/Returned By</label>
+                                    <label>{{ __('translate.approvedby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -260,7 +260,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approval Undone By</label>
+                                    <label>{{ __('translate.undoneby') }}</label>
                                 </div>
                                 <div class="col">
                                    <label></label>
@@ -270,7 +270,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Last Updated-By</label>
+                                    <label>{{ __('translate.lastupdatedby') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -278,26 +278,26 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Submitted-On</label>
+                                    <label>{{ __('translate.submittedon') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>[Unknown]</label>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col">
-                                    <label>Approved/Returned On</label>
-                                </div>
-                                <div class="col">
-                                    <label>[Unknown]</label>
+                                    <label>{{ __('translate.unknown') }}</label>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approval Undone-On</label>
+                                    <label>{{ __('translate.approvedon') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>[Unknown]</label>
+                                    <label>{{ __('translate.unknown') }}</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <label>{{ __('translate.undoneon') }}</label>
+                                </div>
+                                <div class="col">
+                                    <label>{{ __('translate.unknown') }}</label>
                                 </div>
                             </div>
                         </div>

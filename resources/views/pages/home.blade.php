@@ -412,15 +412,6 @@
                                                 <p>Invoices</p>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="{{ url('/customerorders') }}"
-                                            class="nav-link 
-                    @if (app('request')->route()->uri == 'customerorders') active @endif
-                    ">
-                                                  <i class="far fa-dot-circle nav-icon"></i>
-                                                  <p>Sales Credit</p>
-                                              </a>
-                                          </li>
                                     </ul>
                                 </li>
                               </ul>
