@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>GL Voucher</h1>
+                    <h1>{{ __('translate.glvoucher') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -21,7 +21,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">GL Voucher</h3>
+            <h3 class="card-title">{{ __('translate.glvoucher') }}</h3>
 
 
             <div class="card-tools">
@@ -43,7 +43,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Voucher Number</label>
+                                <label>{{ __('translate.vouchernumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -63,7 +63,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Reference</label>
+                                <label class="text-md-end">{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
                                 <input id="reference" name="reference" class="form-control border border-success" tabindex="4" />
@@ -73,7 +73,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date border border-success" id="reservationdate" data-target-input="nearest">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Year</label>
+                                <label>{{ __('translate.year') }}</label>
                             </div>
                             <div class="col">
                                 <select id="year" name="year" class="form-control border border-success select2bs4">
@@ -106,7 +106,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Period</label>
+                                <label>{{ __('translate.period') }}</label>
                             </div>
                             <div class="col">
                                 <select id="period" name="period" class="form-control border border-success select2bs4">
@@ -125,7 +125,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Header Message</label>
+                                    <label>{{ __('translate.headermessage') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="header_message" name="header_message" rows="4" class="form-control border border-success h-100 w-100"></textarea>
@@ -137,11 +137,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team</label>
+                                    <label>{{ __('translate.team') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team" name="team" class="form-control border border-success select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -155,11 +155,11 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team Member</label>
+                                    <label>{{ __('translate.teammember') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team_member" name="team_member" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -173,7 +173,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Manager</label>
+                                    <label>{{ __('translate.manager') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -183,17 +183,17 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Approval Status</label>
+                                    <label>{{ __('translate.approvalstatus') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>No</label>
+                                    <label>{{ __('translate.no') }}</label>
                                 </div>
                             </div>  
                         </div>
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Document Type</label>
+                                    <label>{{ __('translate.documenttype') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -203,7 +203,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Document Number</label>
+                                    <label>{{ __('translate.documentnumber') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>

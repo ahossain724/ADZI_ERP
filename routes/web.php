@@ -23,6 +23,13 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\InvoiceSimpleController;
 use App\Http\Controllers\ComplexController;
 use App\Http\Controllers\AllocationController;
+use App\Http\Controllers\TransactionCodeController;
+use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\GLInterfaceController;
+use App\Http\Controllers\MessageController;
+
+
+
 
 
 
@@ -224,6 +231,30 @@ Route::get('/getall', [ComplexController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [ComplexController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [ComplexController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [ComplexController::class, 'delete'])->name('delete');
+
+Route::post('/storetransactioncode', [TransactionCodeController::class, 'storetransactioncode'])->name('storetransactioncode');
+Route::get('/getall', [TransactionCodeController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [TransactionCodeController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [TransactionCodeController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [TransactionCodeController::class, 'delete'])->name('delete');
+
+Route::post('/storecurrency', [CurrencyController::class, 'storecurrency'])->name('storecurrency');
+Route::get('/getall', [TransactionCodeController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [TransactionCodeController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [TransactionCodeController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [TransactionCodeController::class, 'delete'])->name('delete');
+
+Route::post('/storeglinterface', [GLInterfaceController::class, 'storeglinterface'])->name('storeglinterface');
+Route::get('/getall', [GLInterfaceController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [GLInterfaceController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [GLInterfaceController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [GLInterfaceController::class, 'delete'])->name('delete');
+
+Route::post('/storemessage', [MessageController::class, 'storemessage'])->name('storemessage');
+Route::get('/getall', [MessageController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [MessageController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [MessageController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [MessageController::class, 'delete'])->name('delete');
 
 
 

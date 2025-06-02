@@ -1801,6 +1801,96 @@
                 }
             });
         });
+
+    //TransactionCode insert
+         $('form#transactioncode_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //Currency insert
+         $('form#currency_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //GLInterface insert
+         $('form#glinterface_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Message insert
+         $('form#message_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
         $(function() {
             //Initialize Select2 Elements
             $('.select2').select2()

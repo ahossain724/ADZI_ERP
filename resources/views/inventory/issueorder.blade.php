@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header"style="padding-top: 56px;">
+    <section class="content-header"style="padding-top: 60px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Issue Order</h1>
+                    <h1>{{ __('translate.issueorder') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Issue Order</h3>
+            <h3 class="card-title">{{ __('translate.issueorder') }}</h3>
 
 
             <div class="card-tools">
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Transfer Order Number</label>
+                                <label>{{ __('translate.transferordernumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -62,15 +62,15 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Confirm Date</label>
+                                <label>{{ __('translate.confirmdate') }}</label>
                             </div>
                             <div class="col">
-                                <label>[Unknown]</label>
+                                <label>{{ __('translate.unknown') }}</label>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Order Number</label>
+                                <label>{{ __('translate.ordernumber') }}</label>
                             </div>
                             <div class="col">
                                 <input id="order_number" name="order_number" class="form-control border border-success" tabindex="4" />
@@ -78,11 +78,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Warehouse</label>
+                                <label>{{ __('translate.towarehouse') }}</label>
                             </div>
                             <div class="col">
                                 <select id="to_warehouse" name="to_warehouse" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -96,7 +96,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Order Date</label>
+                                <label>{{ __('translate.orderdate') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date border border-success" id="reservationdate" data-target-input="nearest">
@@ -111,7 +111,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Reference</label>
+                                <label>{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
                                 <input id="reference" name="reference" class="form-control border border-success" tabindex="4" />
@@ -119,11 +119,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Division</label>
+                                <label>{{ __('translate.todivision') }}</label>
                             </div>
                             <div class="col">
                                 <select id="to_division" name="to_division" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -137,15 +137,15 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Release Date</label>
+                                <label>{{ __('translate.releasedate') }}</label>
                             </div>
                             <div class="col">
-                                <label>[Unknown]</label>
+                                <label>{{ __('translate.unknown') }}</label>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>TO Status</label>
+                                <label>{{ __('translate.tostatus') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -153,11 +153,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Section</label>
+                                <label>{{ __('translate.tosection') }}</label>
                             </div>
                             <div class="col">
                                 <select id="to_section" name="to_section" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -171,11 +171,11 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>To Project</label>
+                                <label>{{ __('translate.toproject') }}</label>
                             </div>
                             <div class="col">
                                 <select id="to_project" name="to_project" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -190,7 +190,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Header Message</label>
+                                    <label>{{ __('translate.headermessage') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="header_message" name="header_message" rows="2" class="form-control border border-success h-100 w-100"></textarea>
@@ -198,7 +198,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Footer Message</label>
+                                    <label>{{ __('translate.footermessage') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="footer_message" name="footer_message" rows="2" class="form-control border border-success h-100 w-100"></textarea>
@@ -206,7 +206,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
-                                    <label>Notes</label>
+                                    <label>{{ __('translate.notes') }}</label>
                                 </div>
                                 <div class="col">
                                     <textarea id="notes" name="notes" rows="2" class="form-control border border-success h-100 w-100"></textarea>
@@ -218,19 +218,19 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Action</label>
+                                    <label>{{ __('translate.action') }}</label>
                                 </div>
                                 <div class="col">
-                                    <label>Issue</label>
+                                    <label>{{ __('translate.issue') }}</label>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team</label>
+                                    <label>{{ __('translate.team') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team" name="team" class="form-control border border-success select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -242,7 +242,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>GL Voucher</label>
+                                    <label>{{ __('translate.glvoucher') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -250,11 +250,11 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Location</label>
+                                    <label>{{ __('translate.location') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="location" name="location" class="form-control border border-success select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -268,7 +268,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Customer Number</label>
+                                    <label>{{ __('translate.customernumber') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="customer_number" name="customer_number" class="form-control border border-success" tabindex="4" />
@@ -276,11 +276,11 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Team Member</label>
+                                    <label>{{ __('translate.teammember') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="team_member" name="team_member" class="form-control select2bs4">
-                                        <option selected="selected">[Select]</option>
+                                        <option selected="selected">{{ __('translate.select') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -292,7 +292,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Work Order Number</label>
+                                    <label>{{ __('translate.workordernumber') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -302,7 +302,7 @@
                         <div class="col">
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Supplier Number</label>
+                                    <label>{{ __('translate.suppliernumber') }}</label>
                                 </div>
                                 <div class="col">
                                     <input id="supplier_number" name="supplier_number" class="form-control border border-success" tabindex="4" />
@@ -310,7 +310,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Manager</label>
+                                    <label>{{ __('translate.manager') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>
@@ -318,7 +318,7 @@
                             </div>    
                             <div class="row mt-2">
                                 <div class="col">
-                                    <label>Transfer Request Number</label>
+                                    <label>{{ __('translate.transferrequestnumber') }}</label>
                                 </div>
                                 <div class="col">
                                     <label></label>

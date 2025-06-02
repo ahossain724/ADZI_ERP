@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header"style="padding-top: 56px;">
+    <section class="content-header"style="padding-top: 60px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>IOU Adjustment</h1>
+                    <h1>{{ __('translate.iouadjustment') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -21,7 +21,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">IOU Adjustment</h3>
+            <h3 class="card-title">{{ __('translate.iouadjustment') }}</h3>
 
 
             <div class="card-tools">
@@ -43,7 +43,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Voucher Number</label>
+                                <label>{{ __('translate.vouchernumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -62,11 +62,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">Adjustment From:</label>
+                                <label style="color: red">{{ __('translate.adjustmentfrom') }}</label>
                             </div>
                             <div class="col">
                                 <select id="adjustment_from" name="adjustment_from" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Undefined]</option>
+                                    <option selected="selected">{{ __('translate.undefined') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Amount</label>
+                                <label class="text-md-end">{{ __('translate.amount') }}</label>
                             </div>
                             <div class="col">
                                 <input id="amount" name="amount" class="form-control border border-success" tabindex="4" />
@@ -86,7 +86,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>GL Posting Flag</label>
+                                <label>{{ __('translate.glpostingflag') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -94,7 +94,7 @@
                         </div> 
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Entry By</label>
+                                <label>{{ __('translate.entryby') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -104,7 +104,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date border border-success" id="reservationdate" data-target-input="nearest">
@@ -119,7 +119,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Narration</label>
+                                <label>{{ __('translate.narration') }}</label>
                             </div>
                             <div class="col">
                                 <textarea id="narration" name="narration" rows="4" class="form-control border border-success h-100 w-100"></textarea>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>GL Voucher</label>
+                                <label>{{ __('translate.glvoucher') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>
@@ -135,7 +135,7 @@
                         </div> 
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Last Updated By</label>
+                                <label>{{ __('translate.lastupdatedby') }}</label>
                             </div>
                             <div class="col">
                                 <label></label>

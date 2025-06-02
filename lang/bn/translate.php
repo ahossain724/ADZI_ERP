@@ -483,6 +483,41 @@ return[
    'fromproject' => 'যে প্রকল্প থেকে',
    'toproject' => 'যে প্রকল্পে',
 
+   "receiptorder"=> "প্রাপ্তি আদেশ",
+   "transferordernumber"=> "স্থানান্তর আদেশ নম্বর",
+   "confirmdate"=> "নিশ্চিতকরণের তারিখ",
+   "action"=> "কার্যসম্পাদন",
+   "receipt"=> "প্রাপ্তি",
+   "workordernumber"=> "ওয়ার্ক অর্ডার নম্বর",
+   "releasedate"=> "মুক্তির তারিখ",
+   "tostatus"=> "স্থানান্তর আদেশের অবস্থা",
+
+   "issueorder"=> "আদেশ জারি করুন",
+   "issue"=> "জারি করা",
+   "no"=> "না",
+
+   'yearendprocessing'=> 'বছরের শেষ প্রক্রিয়াকরণ',
+   'transferamount'=> 'স্থানান্তর পরিমাণ',
+   'glvoucherprefix'=> 'জেনারেল লেজার ভাউচার প্রিফিক্স',
+
+   'iouvoucherentry'=> 'আইওইউ ভাউচার এন্ট্রি',
+   'advanceto'=> 'অগ্রিম প্রদান',
+   'amount'=> 'পরিমাণ',
+   'glpostingflag'=> 'জেনারেল লেজার পোস্টিং ফ্ল্যাগ',
+   'entryby'=> 'এন্ট্রি করেছেন',
+   'paidfromamount'=> 'থেকে পরিশোধিত পরিমাণ',
+   'undefined'=> '[অনির্ধারিত]',
+   'iouadjustment'=> 'আইওইউ সমন্বয়',
+   'adjustmentfrom'=> 'থেকে সমন্বয়',
+
+   'checkrefnumber'=> 'চেক/রেফারেন্স নম্বর',
+   'checkrefdate'=> 'চেক/রেফারেন্স তারিখ',
+   'ledgerac'=> 'খতিয়ান হিসাব',
+   'taxable'=> 'করযোগ্য?',
+   'suffix'=> 'পরে',
+
+
+
 
 
 ];

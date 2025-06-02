@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header"style="padding-top: 56px;">
+    <section class="content-header"style="padding-top: 60px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Year End Processing</h1>
+                    <h1>{{ __('translate.yearendprocessing') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -21,7 +21,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Year End Processing</h3>
+            <h3 class="card-title">{{ __('translate.yearendprocessing') }}</h3>
 
 
             <div class="card-tools">
@@ -43,7 +43,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Year</label>
+                                <label class="text-md-end">{{ __('translate.year') }}</label>
                             </div>
                             <div class="col">
                                 <input id="year" name="year" class="form-control border border-success" tabindex="4" />
@@ -53,7 +53,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Transfer Amount</label>
+                                <label class="text-md-end">{{ __('translate.transferamount') }}</label>
                             </div>
                             <div class="col">
                                 <input id="transfer_amount" name="transfer_amount" class="form-control border border-success" tabindex="4" />
@@ -63,7 +63,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>GL Voucher Prefix</label>
+                                <label>{{ __('translate.glvoucherprefix') }}</label>
                             </div>
                             <div class="col">
                                 <select id="voucher_prefix" name="voucher_prefix" class="form-control border border-success select2bs4">

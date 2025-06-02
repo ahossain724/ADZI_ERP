@@ -487,5 +487,39 @@ return[
    'fromproject'=> 'From Project',
    'toproject'=> 'To Project',
 
+   'receiptorder'=> 'Receipt Order',
+   'transferordernumber'=> 'Transfer Order Number',
+   'confirmdate'=> 'Confirm Date',
+   'action'=> 'Action',
+   'receipt'=> 'Receipt',
+   'workordernumber'=> 'Work Order Number',
+   'releasedate'=> 'Release Date',
+   'tostatus'=> 'TO Status',
+
+   'issueorder'=> 'Issue Order',
+   'issue'=> 'Issue',
+   'no'=> 'No', 
+
+   'yearendprocessing'=> 'Year End Processing ',
+   'transferamount'=> 'Transfer Amount',
+   'glvoucherprefix'=> 'GL Voucher Prefix',
+
+   'iouvoucherentry'=> 'IOU Voucher Entry',
+   'advanceto'=> 'Advance To',
+   'amount'=> 'Amount',
+   'glpostingflag'=> 'GL Posting Flag',
+   'entryby'=> 'Entry By',
+   'paidfromamount'=> 'Paid From Amount',
+   'undefined'=> '[Undefined]',
+   'iouadjustment'=> 'IOU Adjustment',
+   'adjustmentfrom'=> 'Adjustment From',
+
+   'checkrefnumber'=> 'Check/Ref Number',
+   'checkrefdate'=> 'Check/Ref Date',
+   'ledgerac'=> 'Ledger A/C',
+   'taxable'=> 'Taxable?',
+   'suffix'=> 'Suffix',
+
+
 
 ];

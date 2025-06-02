@@ -1,10 +1,10 @@
 @extends('pages.home')
 @section('content')
-    <section class="content-header"style="padding-top: 56px;">
+    <section class="content-header"style="padding-top: 60px;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Receipts</h1>
+                    <h1>{{ __('translate.receipts') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
      <!--Orders-->
      <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Receipts</h3>
+            <h3 class="card-title">{{ __('translate.receipts') }}</h3>
 
 
             <div class="card-tools">
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Voucher Number</label>
+                                <label>{{ __('translate.vouchernumber') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -61,11 +61,11 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Bank</label>
+                                <label>{{ __('translate.bank') }}</label>
                             </div>
                             <div class="col">
                                 <select id="bank" name="bank" class="form-control border border-success select2bs4">
-                                    <option selected="selected">[Select]</option>
+                                    <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red" class="text-md-end">Cheque/Ref Number</label>
+                                <label style="color: red" class="text-md-end">{{ __('translate.checkrefnumber') }}</label>
                             </div>
                             <div class="col">
                                 <input id="ref_number" name="ref_number" class="form-control border border-success" tabindex="4" />
@@ -85,7 +85,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Cheque/Ref Date</label>
+                                <label>{{ __('translate.checkrefdate') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date border border-success" id="reservationdate" data-target-input="nearest">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Customer/Payer</label>
+                                <label class="text-md-end">{{ __('translate.customerpayer') }}</label>
                             </div>
                             <div class="col">
                                 <input id="customer_payer" name="customer_payer" class="form-control border border-success" tabindex="4" />
@@ -108,7 +108,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Ledger A/C</label>
+                                <label class="text-md-end">{{ __('translate.ledgerac') }}</label>
                             </div>
                             <div class="col">
                                 <input id="ledger" name="ledger" class="form-control border border-success" tabindex="4" />
@@ -126,7 +126,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Date</label>
+                                <label>{{ __('translate.date') }}</label>
                             </div>
                             <div class="col">
                                 <div class="input-group date border border-success" id="reservationdate" data-target-input="nearest">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Invoice Number</label>
+                                <label class="text-md-end">{{ __('translate.invoicenumber') }}</label>
                             </div>
                             <div class="col">
                                 <input id="invoice_number" name="invoice_number" class="form-control border border-success" tabindex="4" />
@@ -149,7 +149,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-sm-5">
-                                <label>Taxable?</label>
+                                <label>{{ __('translate.taxable') }}</label>
                             </div>
                             <div class="col">
                                 <input id="taxable" name="taxable" class="form-check-input" type="checkbox" value=""
@@ -159,11 +159,11 @@
                         <div class="row mt-2">
                             
                                 <div class="col">
-                                    <label style="color: red">Currency</label>
+                                    <label style="color: red">{{ __('translate.currency') }}</label>
                                 </div>
                                 <div class="col">
                                     <select id="currency" name="currency" class="form-control select2bs4">
-                                        <option selected="selected">BDT</option>
+                                        <option selected="selected">{{ __('translate.bdt') }}</option>
                                         <option>Alaska</option>
                                         <option>California</option>
                                         <option>Delaware</option>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label class="text-md-end">Amount Received</label>
+                                <label class="text-md-end">{{ __('translate.amountreceived') }}</label>
                             </div>
                             <div class="col">
                                 <input id="amount_received" name="amount_received" class="form-control border border-success" tabindex="4" />
@@ -183,7 +183,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Year</label>
+                                <label>{{ __('translate.year') }}</label>
                             </div>
                             <div class="col">
                                 <select id="year" name="year" class="form-control border border-success select2bs4">
@@ -199,7 +199,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Period</label>
+                                <label>{{ __('translate.period') }}</label>
                             </div>
                             <div class="col">
                                 <select id="period" name="period" class="form-control border border-success select2bs4">
