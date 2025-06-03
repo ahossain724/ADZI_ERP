@@ -655,6 +655,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storedepot')}}" method="POST" id="depot_form">
+                @csrf
                 <div class="row">
                     <div class="col-md-4">
                         <div class="row">
@@ -662,7 +664,7 @@
                                 <label>{{ __('translate.depotrow') }}</label>
                             </div>
                             <div class="col-sm-4">
-                                <input class="form-control border border-success" tabindex="1" />
+                                <input id="depotrow" name="depotrow" class="form-control border border-success" tabindex="1" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -670,7 +672,7 @@
                                 <label>{{ __('translate.address1') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" tabindex="4" />
+                                <input id="address1" name="address1" class="form-control border border-success" tabindex="4" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -678,7 +680,7 @@
                                 <label>{{ __('translate.stateprovince') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="stateprovince" name="stateprovince" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -686,7 +688,7 @@
                                 <label>{{ __('translate.salutation') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="salutation" name="salutation" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -702,7 +704,7 @@
                                 <label>{{ __('translate.lastname') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="lastname" name="lastname" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -710,7 +712,7 @@
                                 <label>{{ __('translate.phone') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="phone" name="phone" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -718,7 +720,7 @@
                                 <label>{{ __('translate.taxscope') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="taxscope" name="taxscope" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -734,7 +736,7 @@
                                 <label>{{ __('translate.portofdischarge') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="portofdischarge" name="portofdischarge" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -742,7 +744,7 @@
                                 <label>{{ __('translate.remarks') }}</label>
                             </div>
                             <div class="col">
-                                <textarea rows="3" class="form-control border border-success h-100 w-100"></textarea>
+                                <textarea id="remarks" name="remarks" rows="3" class="form-control border border-success h-100 w-100"></textarea>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -750,7 +752,7 @@
                                 <label>Id</label>
                             </div>
                             <div class="col-sm-4">
-                                <input class="form-control border border-success" />
+                                <input id="i_d" class="form-control border border-success" />
                             </div>
                         </div>
                     </div>
@@ -761,7 +763,7 @@
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border border-success" tabindex="2">
+                                    <input id="depotname" name="depotname" type="text" class="form-control border border-success" tabindex="2">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
                                     </div>
@@ -773,7 +775,7 @@
                                 <label>{{ __('translate.address2') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" tabindex="5" />
+                                <input id="address2" name="address2" class="form-control border border-success" tabindex="5" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -781,7 +783,7 @@
                                 <label>{{ __('translate.zippostalcode') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="zippostalcode" name="zippostalcode" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -789,7 +791,7 @@
                                 <label>{{ __('translate.firstname') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="firstname" name="firstname" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -797,7 +799,7 @@
                                 <label>{{ __('translate.title') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="title" name="title" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -805,7 +807,7 @@
                                 <label>{{ __('translate.fax') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="fax" name="fax" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -813,7 +815,7 @@
                                 <label>{{ __('translate.taxnumber') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="taxnumber" name="taxnumber" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -821,7 +823,7 @@
                                 <label>{{ __('translate.alternatecode') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="alternatecode" name="alternatecode" class="form-control border border-success" />
                             </div>
                         </div>
                     </div>
@@ -831,7 +833,7 @@
                                 <label>{{ __('translate.name') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" tabindex="3" />
+                                <input id="name" name="name" class="form-control border border-success" tabindex="3" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -839,7 +841,7 @@
                                 <label>{{ __('translate.city') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100" tabindex="6">
+                                <select id="city" name="city" class="form-control border border-success select2bs4 w-100" tabindex="6">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -855,7 +857,7 @@
                                 <label style="color: red">{{ __('translate.country') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="country" name="country" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -871,7 +873,7 @@
                                 <label>{{ __('translate.middlename') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="middlename" name="middlename" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -879,7 +881,7 @@
                                 <label>{{ __('translate.email') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="email" name="email" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -887,7 +889,7 @@
                                 <label>{{ __('translate.url') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="url" name="url" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -895,7 +897,7 @@
                                 <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="warehouse" name="warehouse" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -911,7 +913,7 @@
                                 <label>{{ __('translate.shortname') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="shortname" name="shortname" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -919,7 +921,7 @@
                                 <label>{{ __('translate.depottype') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="depottype" name="depottype" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -937,7 +939,7 @@
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -947,6 +949,7 @@
                     </div>
                 </div>
             </div>
+            <form>
             <div class="card-footer">
 
             </div>

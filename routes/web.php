@@ -27,6 +27,7 @@ use App\Http\Controllers\TransactionCodeController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\GLInterfaceController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\DepotController;
 
 
 
@@ -255,6 +256,12 @@ Route::get('/getall', [MessageController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [MessageController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [MessageController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [MessageController::class, 'delete'])->name('delete');
+
+Route::post('/storedepot', [DepotController::class, 'storedepot'])->name('storedepot');
+Route::get('/getall', [DepotController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [DepotController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [DepotController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [DepotController::class, 'delete'])->name('delete');
 
 
 
