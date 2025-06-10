@@ -261,7 +261,7 @@ return[
    'updatestandardcosts'=> 'স্ট্যান্ডার্ড খরচ আপডেট',
    'customerorder'=> 'গ্রাহক অর্ডার',
    'rework'=> 'পুনরায় কাজ',
-   'lulableno'=> 'LU লেবেল নম্বর',
+   'lulabelno'=> 'LU লেবেল নম্বর',
 
    'customernumber' => 'গ্রাহক নম্বর',
    'customer'=> 'গ্রাহক',

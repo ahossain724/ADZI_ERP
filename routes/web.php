@@ -28,6 +28,15 @@ use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\GLInterfaceController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\DepotController;
+use App\Http\Controllers\TaxTableController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\SettingsReceiptController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\VehicleController;
+
+
+
+
 
 
 
@@ -263,6 +272,35 @@ Route::get('/codes/{id}/edit', [DepotController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [DepotController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [DepotController::class, 'delete'])->name('delete');
 
+Route::post('/storetaxtable', [TaxTableController::class, 'storetaxtable'])->name('storetaxtable');
+Route::get('/getall', [TaxTableController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [TaxTableController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [TaxTableController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [TaxTableController::class, 'delete'])->name('delete');
+
+Route::post('/storelocation', [LocationController::class, 'storelocation'])->name('storelocation');
+Route::get('/getall', [LocationController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [LocationController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [LocationController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [LocationController::class, 'delete'])->name('delete');
+
+Route::post('/storesettingsreceipt', [SettingsReceiptController::class, 'storesettingsreceipt'])->name('storesettingsreceipt');
+Route::get('/getall', [SettingsReceiptController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [SettingsReceiptController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [SettingsReceiptController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [SettingsReceiptController::class, 'delete'])->name('delete');
+
+Route::post('/storeholiday', [HolidayController::class, 'storeholiday'])->name('storeholiday');
+Route::get('/getall', [HolidayController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [HolidayController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [HolidayController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [HolidayController::class, 'delete'])->name('delete');
+
+Route::post('/storevehicle', [VehicleController::class, 'storevehicle'])->name('storevehicle');
+Route::get('/getall', [VehicleController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [VehicleController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [VehicleController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [VehicleController::class, 'delete'])->name('delete');
 
 
 

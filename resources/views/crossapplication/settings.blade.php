@@ -948,8 +948,9 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+                </form>
             </div>
-            <form>
+            
             <div class="card-footer">
 
             </div>
@@ -971,6 +972,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storetaxtable')}}" method="POST" id="taxtable_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
@@ -1026,7 +1029,7 @@
                         <div>
                             <label>{{ __('translate.account') }}</label>
                             <div class="input-group">
-                                <input type="text" class="form-control border border-success">
+                                <input id="account" name="account" type="text" class="form-control border border-success">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
                                 </div>
@@ -1054,7 +1057,7 @@
                     </br>
                     <div class="row">
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-block btn-primary">Save</button>
+                            <button type="submit" class="btn btn-block btn-primary">Save</button>
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1065,8 +1068,8 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
+                </form>
                 <div class="card-footer">
-
                 </div>
             </div>
         </div>
@@ -1089,12 +1092,14 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storelocation')}}" method="POST" id="location_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>{{ __('translate.location') }}</label>
                             <div class="input-group">
-                                <input type="text" class="form-control border border-success">
+                                <input id="location" name="location" type="text" class="form-control border border-success">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
                                 </div>
@@ -1107,7 +1112,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label>{{ __('translate.locationtype') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="locationtype" name="locationtype" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1122,7 +1127,7 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.region') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="region" name="region" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1136,7 +1141,7 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.country') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="country" name="country" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1151,7 +1156,7 @@
                         <div>
                             <label>{{ __('translate.effectivitydate') }}</label>
                             <div class="input-group date" id="locationeffectivitydate" data-target-input="nearest">
-                                <input type="text" class="form-control border border-success datetimepicker-input"
+                                <input id="effectivitydate" name="effectivitydate" type="text" class="form-control border border-success datetimepicker-input"
                                     data-target="#locationeffectivitydate" />
                                 <div class="input-group-append" data-target="#locationeffectivitydate"
                                     data-toggle="datetimepicker">
@@ -1164,7 +1169,7 @@
                         <div>
                             <label>{{ __('translate.expirationdate') }}</label>
                             <div class="input-group date" id="locationexpirydate" data-target-input="nearest">
-                                <input type="text" class="form-control border border-success datetimepicker-input"
+                                <input id="expirationdate" name="expirationdate" type="text" class="form-control border border-success datetimepicker-input"
                                     data-target="#locationexpirydate" />
                                 <div class="input-group-append" data-target="#locationexpirydate"
                                     data-toggle="datetimepicker">
@@ -1178,7 +1183,7 @@
                         <div class="col">
                             <div>
                                 <label>{{ __('translate.depotname') }}</label>
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="depotname" name="depotname" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1192,7 +1197,7 @@
                         <div class="col">
                             <div>
                                 <label>{{ __('translate.defaultpaymentcode') }}</label>
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="defaultpaymentcode" name="defaultpaymentcode" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1206,7 +1211,7 @@
                         <div class="col">
                             <div>
                                 <label>{{ __('translate.timeslots') }}</label>
-                                <select multiple="multiple" class="border border-success w-100">
+                                <select id="timeslots" name="timeslots" multiple="multiple" class="border border-success w-100">
                                     <option selected>Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1220,18 +1225,18 @@
                         <div class="col">
                             <div>
                                 <label>{{ __('translate.ipaddress') }}</label>
-                                <input class="form-control border border-success w-100" />
+                                <input id="ipaddress" name="ipaddress" class="form-control border border-success w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label>{{ __('translate.titleimageurl') }}</label>
-                                <input class="form-control border border-success w-100" />
+                                <input id="titleimageurl" name="titleimageurl" class="form-control border border-success w-100" />
                             </div>
                         </div>
                         <div class="col">
                             <label>{{ __('translate.backgroundimageurl') }}</label>
-                            <input class="form-control border border-success w-100" />
+                            <input id="backgroundimageurl" name="backgroundimageurl" class="form-control border border-success w-100" />
                         </div>
 
                     </div>
@@ -1240,7 +1245,7 @@
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1249,8 +1254,10 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+                </form>
             </div>
             <!-- /.card-body -->
+        
             <div class="card-footer">
 
             </div>
@@ -1273,11 +1280,13 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storesettingsreceipt')}}" method="POST" id="settingsreceipt_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>{{ __('translate.paymentcode') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="paymentcode" name="paymentcode" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1292,7 +1301,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label>{{ __('translate.account') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="account" name="account" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1306,7 +1315,7 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.transactioncode') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="transactioncode" name="transactioncode" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1321,7 +1330,7 @@
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1330,8 +1339,10 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+                </form>
             </div>
             <!-- /.card-body -->
+            
             <div class="card-footer">
 
             </div>
@@ -1354,11 +1365,13 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storeholiday')}}" method="POST" id="holiday_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>{{ __('translate.locale') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="locale" name="locale" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1374,7 +1387,7 @@
                         <div class="form-group">
                             <label>{{ __('translate.date') }}</label>
                             <div class="input-group date" id="holidaysdate" data-target-input="nearest">
-                                <input type="text" class="form-control border border-success datetimepicker-input"
+                                <input id="date" name="date" type="text" class="form-control border border-success datetimepicker-input"
                                     data-target="#holidaysdate" />
                                 <div class="input-group-append" data-target="#holidaysdate" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -1385,14 +1398,14 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.available%') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="available" name="available" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.notes') }}</label>
                             <div class="input-group">
-                                <input type="text" class="form-control border border-success">
+                                <input id="notes" name="notes" type="text" class="form-control border border-success">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
                                 </div>
@@ -1403,7 +1416,7 @@
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1412,6 +1425,7 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+                </form>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
@@ -1434,24 +1448,26 @@
                 </div>
             </div>
             <div class="card-body">
+                <form action="{{route('storevehicle')}}" method="POST" id="vehicle_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>{{ __('translate.vehicle') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="vehicle" name="vehicle" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col">
                         <div class="form-group">
                             <label>{{ __('translate.description') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="description" name="description" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.vehicletype') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="vehicletype" name="vehicletype" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Car</option>
                                 <option>Two wheeler/Bike</option>
@@ -1463,26 +1479,26 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.length') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="length" name="length" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.width') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="width" name="width" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.height') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="height" name="height" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.ctsize') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                            <select id="ctsize" name="ctsize" class="form-control border border-success select2bs4 w-100">
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Placeholder</option>
                                 <option>Placeholder2</option>
                             </select>
@@ -1494,7 +1510,7 @@
                                 <label>{{ __('translate.notes') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input id="notes" name="notes" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                                     checked />
                             </div>
                         </div>
@@ -1504,44 +1520,44 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.lulabelno') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="lulabelno" name="lulabelno" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.owner') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="owner" name="owner" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.mlwkg') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="mlwkg" name="mlwkg" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.uwkg') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="uwkg" name="uwkg" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.tonnage') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="tonnage" name="tonnage" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.budcapacity') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="budcapacity" name="budcapacity" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.cttype') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                            <select id="cttype" name="cttype" class="form-control border border-success select2bs4 w-100">
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Placeholder</option>
                                 <option>Placeholder2</option>
                             </select>
@@ -1553,7 +1569,7 @@
                                 <label>{{ __('translate.dg') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input id="dg" name="dg" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                                     checked />
                             </div>
                         </div>
@@ -1562,7 +1578,7 @@
                         <div class="col-md-2">
                             <div>
                                 <label>{{ __('translate.deliveryzone') }}</label>
-                                <select class="form-control border border-success select2bs4 w-100">
+                                <select id="deliveryzone" name="deliveryzone" class="form-control border border-success select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Delivery Zone A</option>
                                     <option>Delivery Zone B</option>
@@ -1572,12 +1588,12 @@
                         </div>
                         <div class="col-md-10">
                             <label>{{ __('translate.remarks') }}</label>
-                            <textarea rows="3" class="form-control border border-success"></textarea>
+                            <textarea id="remarks" name="remarks" rows="3" class="form-control border border-success"></textarea>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-block btn-primary">Save</button>
+                            <button type="submit" class="btn btn-block btn-primary">Save</button>
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1594,7 +1610,7 @@
                             <label style="font-size: 2em">{{ __('translate.teamassignmentto') }}</label>
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-block btn-primary">Save</button>
+                            <button type="submit" class="btn btn-block btn-primary">Save</button>
                         </div>
                     </div>
 
@@ -1602,7 +1618,7 @@
                         <div class="col">
                             <label>{{ __('translate.effectivitydate') }} ⇑</label>
                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" class="form-control border border-success datetimepicker-input"
+                                <input id="effectivitydate" name="effectivitydate" type="text" class="form-control border border-success datetimepicker-input"
                                     data-target="#reservationdate" />
                                 <div class="input-group-append" data-target="#reservationdate"
                                     data-toggle="datetimepicker">
@@ -1612,7 +1628,7 @@
                         </div>
                         <div class="col">
                             <label>{{ __('translate.team') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="team" name="team" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Undefined</option>
                                 <option>Undefined</option>
@@ -1628,14 +1644,14 @@
                             <label style="font-size: 2em">{{ __('translate.admininfo') }}</label>
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-block btn-primary">Save</button>
+                            <button type="submit" class="btn btn-block btn-primary">Save</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>{{ __('translate.documenttypedocumentnumber') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                            <select id="documenttypedocumentnumber" class="form-control border border-success select2bs4 w-100">
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Undefined</option>
                                 <option>Undefined</option>
                                 <option>Undefined</option>
@@ -1644,7 +1660,7 @@
                         <div class="col">
                             <label>{{ __('translate.dateissuedexpirationdate') }}</label>
                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" class="form-control border border-success datetimepicker-input"
+                                <input id="expirationdate" name="expirationdate" type="text" class="form-control border border-success datetimepicker-input"
                                     data-target="#reservationdate" />
                                 <div class="input-group-append" data-target="#reservationdate"
                                     data-toggle="datetimepicker">
@@ -1670,6 +1686,7 @@
                     </div>
 
                 </div>
+                </form>
 
             </div>
             <div class="card-footer">

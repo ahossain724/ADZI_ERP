@@ -179,7 +179,7 @@ return[
    'width'=> 'Width',
    'height'=> 'Height',
    'ctsize'=> 'CT size',
-   'lulableno'=> 'LU Label No',
+   'lulabelno'=> 'LU Label No',
    'owner'=> 'Owner',
    'mlwkg'=> 'MLW/KG',
    'uwkg'=> 'UW/KG',
