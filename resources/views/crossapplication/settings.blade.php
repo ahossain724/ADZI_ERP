@@ -1713,22 +1713,24 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storeuserdoc')}}" method="POST" id="userdoc_form">
+                @csrf
                 <div class="row">
                     <div class="col">
                         <div>
                             <label>{{ __('translate.documentname') }}</label>
-                            <input type="text" class="form-control border border-success" />
+                            <input id="documentname" name="documentname" type="text" class="form-control border border-success" />
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col">
                         <label>{{ __('translate.title') }}</label>
-                        <input type="text" class="form-control border border-success" />
+                        <input id="title" name="title" type="text" class="form-control border border-success" />
                     </div>
                     <div class="col">
                         <div>
                             <label>{{ __('translate.sourcedocuments') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
+                            <select id="sourcedocuments" name="sourcedocuments" class="form-control border border-success select2bs4 w-100">
                                 <option selected="selected">{{ __('translate.customerorder') }}</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1742,8 +1744,8 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.ordertype') }}</label>
-                            <select class="form-control border border-success select2bs4 w-100">
-                                <option selected="selected">[Select]</option>
+                            <select id="ordertype" name="ordertype" class="form-control border border-success select2bs4 w-100">
+                                <option selected="selected">{{ __('translate.select') }}</option>
                                 <option>Alaska</option>
                                 <option>California</option>
                                 <option>Delaware</option>
@@ -1756,7 +1758,7 @@
                     <div class="col">
                         <div>
                             <label>{{ __('translate.referencefield') }}</label>
-                            <select class="form-control select2bs4 w-100">
+                            <select id="referencefield" name="referencefield" class="form-control select2bs4 w-100">
                                 <option selected="selected">Customer Number</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -1773,7 +1775,7 @@
                 <div class="row">
                     <div class="col">
                         <label>{{ __('translate.infogroups') }}</label>
-                        <select multiple="multiple" class="border border-success w-100">
+                        <select id="infogroups" name="infogroups" multiple="multiple" class="border border-success w-100">
                             <option></option>
                             <option selected>Alabama</option>
                             <option>Alaska</option>
@@ -1789,62 +1791,62 @@
                         <label>{{ __('translate.printorgname') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printorgname" name="printorgname" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
 
                     <div class="col">
                         <label>{{ __('translate.printorgaddresss') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printorgaddress" name="printorgaddress" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
                         <label>{{ __('translate.printlogo') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printlogo" name="printlogo" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
                         <label>{{ __('translate.printcustomerdetails') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printcustomerdetails" name="printcustomerdetails" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
                         <label>{{ __('translate.printdeliverydetails') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printdeliverydetails" name="printdeliverydetails" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
                         <label>{{ __('translate.printstandardfooter') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="printstandardfooter" name="printstandardfooter" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                     <div class="col">
                         <label>{{ __('translate.active') }}</label>
                     </div>
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
+                        <input id="active" name="active" class="form-check-input" type="checkbox" value="" id="flexCheckChecked"checked />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label>{{ __('translate.header') }}</label>
-                        <textarea rows="3" class="form-control border border-success"></textarea>
+                        <textarea id="header" name="header" rows="3" class="form-control border border-success"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label>{{ __('translate.footer') }}</label>
-                        <textarea rows="3" class="form-control border border-success"></textarea>
+                        <textarea id="footer" name="footer" rows="3" class="form-control border border-success"></textarea>
                     </div>
                 </div>
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -1853,6 +1855,7 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+                </form>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
@@ -1876,6 +1879,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                <form action="{{route('storesitedefault')}}" method="POST" id="sitedefault_form">
+                @csrf
                 <div class="row">
                     <div class="col-md-3">
                         <div class="row">
@@ -1883,7 +1888,7 @@
                                 <label>{{ __('translate.sitename') }}</label>
                             </div>
                             <div class="col-sm-4">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="sitename" name="sitename" class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1899,7 +1904,7 @@
                                 <label>{{ __('translate.object') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="object" name="object" class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1915,7 +1920,7 @@
                                 <label style="color: red">{{ __('translate.country') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="country" name="country" class="form-control select2bs4 w-100">
                                     <option selected="selected">Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1931,7 +1936,7 @@
                                 <label>{{ __('translate.siccode') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="siccode" name="siccode" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1947,7 +1952,7 @@
                                 <label>{{ __('translate.discount%') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="discount" name="discount" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -1955,7 +1960,7 @@
                                 <label style="color: red">{{ __('translate.warehouse') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="warehouse" name="warehouse" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.generalstore') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1971,7 +1976,7 @@
                                 <label>{{ __('translate.salesperson') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="salesperson" name="salesperson" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -1987,7 +1992,7 @@
                                 <label>{{ __('translate.shippingproduct') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="shippingproduct" name="shippingproduct" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2003,7 +2008,7 @@
                                 <label>{{ __('translate.section') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="section" name="section" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2019,7 +2024,7 @@
                                 <label>{{ __('translate.dropship?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="dropship" name="dropship" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2028,7 +2033,7 @@
                                 <label>{{ __('translate.printtax?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="printtax" name="printtax" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2037,7 +2042,7 @@
                                 <label>{{ __('translate.email-success') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="emailsuccess" name="emailsuccess" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2045,7 +2050,7 @@
                                 <label>{{ __('translate.bankcode') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="bankcode" name="bankcode" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2053,7 +2058,7 @@
                                 <label>{{ __('translate.paypaluserid') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="paypaluserid" name="paypaluserid" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2061,7 +2066,7 @@
                                 <label>{{ __('translate.itemgroup') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="itemgroup" name="itemgroup" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2079,7 +2084,7 @@
                                 <label>{{ __('translate.customerprefix') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="customerprefix" name="customerprefix" class="form-control select2bs4 w-100">
                                     <option selected="selected">RETA</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2095,7 +2100,7 @@
                                 <label>{{ __('translate.unitofdistance') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="unitofdistance" name="unitofdistance" class="form-control select2bs4 w-100">
                                     <option selected="selected">KM</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2111,7 +2116,7 @@
                                 <label>{{ __('translate.controlaccountar') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="controlaccountar" name="controlaccountar" class="form-control select2bs4 w-100">
                                     <option selected="selected">3100</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2135,7 +2140,7 @@
                                 <label>{{ __('translate.agent') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="agent" name="agent" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2143,7 +2148,7 @@
                                 <label>{{ __('translate.market') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="market" name="market" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2159,7 +2164,7 @@
                                 <label>{{ __('translate.projectmanager') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="projectmanager" name="projectmanager" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2175,7 +2180,7 @@
                                 <label>{{ __('translate.residence?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="residence" name="residence" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2184,7 +2189,7 @@
                                 <label>{{ __('translate.project') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="project" name="project" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2201,7 +2206,7 @@
                                 <label>{{ __('translate.active') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="active" name="active" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2210,7 +2215,7 @@
                                 <label>{{ __('translate.timecutoff') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="timecutoff" name="timecutoff" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2218,7 +2223,7 @@
                                 <label>{{ __('translate.email-failure') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="emailfailure" name="emailfailure" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2226,7 +2231,7 @@
                                 <label>{{ __('translate.accountnumber') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="accountnumber" name="accountnumber" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2234,7 +2239,7 @@
                                 <label>{{ __('translate.taxcode') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="taxcode" name="taxcode" class="form-control select2bs4 w-100">
                                     <option selected="selected">GST</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2254,22 +2259,22 @@
 
                                     <div class="col">
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio" checked>{{ __('translate.auto') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio" checked>{{ __('translate.auto') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em;margin-left:10px">
-                                            <input type="radio" name="optradio">{{ __('translate.manufacture') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio">{{ __('translate.manufacture') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.7em">
-                                            <input type="radio" name="optradio" checked>{{ __('translate.rework') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio" checked>{{ __('translate.rework') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio">{{ __('translate.exstock') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio">{{ __('translate.exstock') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.6em">
-                                            <input type="radio" name="optradio" checked>{{ __('translate.purchase') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio" checked>{{ __('translate.purchase') }}
                                         </label>
                                         <label class="radio-inline" style="font-size: 0.8em">
-                                            <input type="radio" name="optradio">{{ __('translate.transfer') }}
+                                            <input id="fulfilmentcategory" name="fulfilmentcategory" type="radio" name="optradio">{{ __('translate.transfer') }}
 
                                         </label>
                                     </div>
@@ -2283,7 +2288,7 @@
                                 <label>{{ __('translate.orderprefix') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="orderprefix" name="orderprefix" class="form-control select2bs4 w-100">
                                     <option selected="selected">RETA</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2299,7 +2304,7 @@
                                 <label>{{ __('translate.unitofweight') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100" tabindex="6">
+                                <select id="unitofweight" name="unitofweight" class="form-control select2bs4 w-100" tabindex="6">
                                     <option selected="selected">kg(s)</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2315,7 +2320,7 @@
                                 <label>{{ __('translate.customergroup') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="customergroup" name="customergroup" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.retail') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2331,7 +2336,7 @@
                                 <label>{{ __('translate.creditlimit') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="creditlimit" name="creditlimit" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2339,7 +2344,7 @@
                                 <label>{{ __('translate.comission%') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="comission" name="comission" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2347,7 +2352,7 @@
                                 <label>{{ __('translate.region') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="region" name="region" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2363,7 +2368,7 @@
                                 <label>{{ __('translate.paymentcode') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="paymentcode" name="paymentcode" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2379,7 +2384,7 @@
                                 <label>{{ __('translate.saturdaydelivery?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="saturdaydelivery" name="saturdaydelivery" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2388,7 +2393,7 @@
                                 <label>{{ __('translate.codebasis') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="codebasis" name="codebasis" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.ourcode') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2404,7 +2409,7 @@
                                 <label>{{ __('translate.pricesincludetaxyes?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="priceincludetax" name="priceincludetax" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2413,7 +2418,7 @@
                                 <label>{{ __('translate.daystodeliver') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="daystodeliver" name="daystodeliver" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2421,7 +2426,7 @@
                                 <label>{{ __('translate.bank') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="bank" name="bank" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2437,7 +2442,7 @@
                                 <label>{{ __('translate.accountname') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="accountname" name="accountname" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2445,7 +2450,7 @@
                                 <label>{{ __('translate.taxscope') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="taxscope" name="taxscope" class="form-control select2bs4 w-100">
                                     <option selected="selected">11.Local Supply</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2461,7 +2466,7 @@
                                 <label>{{ __('translate.showsupplier?') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="checkbox" value=""
+                                <input id="showsupplier" name="showsupplier" class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked"checked />
                             </div>
                         </div>
@@ -2472,7 +2477,7 @@
                                 <label>{{ __('translate.qoutationprefix') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="qoutationprefix" name="qoutationprefix" class="form-control select2bs4 w-100">
                                     <option selected="selected">QT</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2488,7 +2493,7 @@
                                 <label>{{ __('translate.city') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100" tabindex="6">
+                                <select id="city" name="city" class="form-control select2bs4 w-100" tabindex="6">
                                     <option selected="selected">Singapore</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2504,7 +2509,7 @@
                                 <label>{{ __('translate.pricegroup') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="pricegroup" name="pricegroup" class="form-control select2bs4 w-100">
                                     <option selected="selected">End-User</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2520,7 +2525,7 @@
                                 <label>{{ __('translate.creditterms') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="creditterms" name="creditterms" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2528,7 +2533,7 @@
                                 <label style="color: red">{{ __('translate.currency') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="currency" name="currency" class="form-control select2bs4 w-100">
                                     <option selected="selected">SGD</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2544,7 +2549,7 @@
                                 <label>{{ __('translate.territory') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="territory" name="territory" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2560,7 +2565,7 @@
                                 <label>{{ __('translate.shippingcode') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="shippingcode" name="shippingcode" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2576,7 +2581,7 @@
                                 <label>{{ __('translate.division') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="division" name="division" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.select') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2592,7 +2597,7 @@
                                 <label>{{ __('translate.backordertype') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="backordertype" name="backordertype" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.futurestock') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2608,7 +2613,7 @@
                                 <label>{{ __('translate.invoicingrule') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="invoicingrule" name="invoicingrule" class="form-control select2bs4 w-100">
                                     <option selected="selected">1-From DO after Confirmation</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2624,7 +2629,7 @@
                                 <label>{{ __('translate.email') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="email" name="email" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2632,7 +2637,7 @@
                                 <label>{{ __('translate.branch') }}</label>
                             </div>
                             <div class="col">
-                                <input class="form-control border border-success" />
+                                <input id="branch" name="branch" class="form-control border border-success" />
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -2640,7 +2645,7 @@
                                 <label>{{ __('translate.paymentcodes') }}</label>
                             </div>
                             <div class="col">
-                                <select multiple="multiple" class="border border-success w-100">
+                                <select id="paymentcodes" name="paymentcodes" multiple="multiple" class="border border-success w-100">
                                     <option></option>
                                     <option selected>Alabama</option>
                                     <option>Alaska</option>
@@ -2657,7 +2662,7 @@
                                 <label>{{ __('translate.taxcategory') }}</label>
                             </div>
                             <div class="col">
-                                <select class="form-control select2bs4 w-100">
+                                <select id="taxcategory" name="taxcategory" class="form-control select2bs4 w-100">
                                     <option selected="selected">{{ __('translate.standardrated') }}</option>
                                     <option>Alaska</option>
                                     <option>California</option>
@@ -2675,7 +2680,7 @@
                 </br>
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary">Save</button>
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-block btn-primary">Delete</button>
@@ -2684,6 +2689,7 @@
                         <button type="button" class="btn btn-block btn-primary">Refresh</button>
                     </div>
                 </div>
+            </form>
             </div>
             <div class="card-footer">
 

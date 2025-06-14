@@ -33,6 +33,10 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\SettingsReceiptController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\UserDocController;
+use App\Http\Controllers\SiteDefaultController;
+
+
 
 
 
@@ -301,6 +305,18 @@ Route::get('/getall', [VehicleController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [VehicleController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [VehicleController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [VehicleController::class, 'delete'])->name('delete');
+
+Route::post('/storeuserdoc', [UserDocController::class, 'storeuserdoc'])->name('storeuserdoc');
+Route::get('/getall', [UserDocController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [UserDocController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [UserDocController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [UserDocController::class, 'delete'])->name('delete');
+
+Route::post('/storesitedefault', [SiteDefaultController::class, 'storesitedefault'])->name('storesitedefault');
+Route::get('/getall', [SiteDefaultController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [SiteDefaultController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [SiteDefaultController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [SiteDefaultController::class, 'delete'])->name('delete');
 
 
 
