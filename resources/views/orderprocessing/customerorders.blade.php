@@ -71,6 +71,85 @@
                     </div>
                     <div class="col">
                         <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">{{ __('translate.rbo') }}</label>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <select  id="rbo" name="rbo" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>{{ __('translate.aimsstore') }}</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">{{ __('translate.customernumber') }}</label>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <select class="form-control border border-success select2bs4 w-10" style="height: 10px">
+                                                <option selected="selected">CUS-</option>
+                                                <option>PO-</option>
+                                                <option>WALK</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <input id="customer_number" name="customer_number" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">{{ __('translate.reference') }}</label>
+                            </div>
+                            <div class="col">
+                                <select id="reference" name="reference" class="form-control border border-success select2bs4 w-10" style="height: 10px">
+                                                <option selected="selected">{{ __('translate.select') }}</option>
+                                                <option>PO-</option>
+                                                <option>WALK</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">{{ __('translate.brand') }}</label>
+                            </div>
+                            <div class="col">
+                                <select id="brand" name="brand" class="form-control border border-success select2bs4 w-10" style="height: 10px">
+                                                <option selected="selected">{{ __('translate.select') }}</option>
+                                                <option>PO-</option>
+                                                <option>WALK</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                                <div class="col">
+                                    <label style="color: red">{{ __('translate.project') }}</label>
+                                </div>
+                                <div class="col">
+                                    <select id="project" name="project" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
                             <div class="col-sm-5">
                                 <label>{{ __('translate.date') }}</label>
                             </div>
@@ -101,36 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row mt-2">
-                            <div class="col">
-                                <label style="color: red">{{ __('translate.customernumber') }}</label>
-                            </div>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <select class="form-control border border-success select2bs4 w-10" style="height: 10px">
-                                                <option selected="selected">CUS-</option>
-                                                <option>PO-</option>
-                                                <option>WALK</option>
-
-                                            </select>
-                                        </span>
-                                    </div>
-                                    <input id="customer_number" name="customer_number" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col">
-                                <label>{{ __('translate.reference') }}</label>
-                            </div>
-                            <div class="col">
-                                <input id="reference" name="reference" class="form-control border border-success" tabindex="4" />
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="col">
                             <div class="row mt-2">
@@ -161,22 +211,6 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="row mt-2">
-                                <div class="col">
-                                    <label style="color: red">{{ __('translate.project') }}</label>
-                                </div>
-                                <div class="col">
-                                    <select id="project" name="project" class="form-control border border-success select2bs4">
-                                        <option selected="selected">{{ __('translate.select') }}</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="row mt-2">
                                 <div class="col-sm-5">
                                     <label>{{ __('translate.printtax?') }}</label>

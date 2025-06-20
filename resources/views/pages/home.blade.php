@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>AIMS | ERP</title>
+    <title>ADZI | ERP</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -216,7 +216,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AIMS</span>
+                <span class="brand-text font-weight-light">ADZI</span>
             </a>
 
             <!-- Sidebar -->

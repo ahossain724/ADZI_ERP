@@ -37,6 +37,8 @@ return new class extends Migration
             $table->string('exchange_rate');
             $table->string('location_of_installation')->nullable();
             $table->date('issue_date')->nullable();
+            $table->string('rbo');
+            $table->string('brand');
             $table->timestamps();
             });
         }

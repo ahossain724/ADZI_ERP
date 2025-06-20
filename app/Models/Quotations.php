@@ -40,6 +40,8 @@ class Quotations extends Model
           'department',
           'location_of_installation',
           'international_commercial_terms',
+          'brand',
+          'rbo',
         ];
      use HasFactory;
 }

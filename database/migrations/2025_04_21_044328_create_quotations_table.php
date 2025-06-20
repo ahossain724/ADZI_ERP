@@ -42,6 +42,8 @@ return new class extends Migration
         $table->string('department')->nullable();;
         $table->string('location_of_installation')->nullable();
         $table->string('international_commercial_terms')->nullable();
+        $table->string('brand');
+        $table->string('rbo')->nullable();
         $table->timestamps();
         });
     }

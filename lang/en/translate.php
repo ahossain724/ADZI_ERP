@@ -520,6 +520,8 @@ return[
    'taxable'=> 'Taxable?',
    'suffix'=> 'Suffix',
 
+   'rbo'=> 'RBO',
+
 
 
 ];

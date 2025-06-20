@@ -34,6 +34,8 @@ class CustomerOrder extends Model
           'exchange_rate',
           'location_of_installation',
           'issue_date',
+          'rbo',
+          'brand',
         ];
      use HasFactory;
 }

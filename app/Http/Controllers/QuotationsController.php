@@ -38,7 +38,9 @@ class QuotationsController extends Controller
             'print_tax' => $request->print_tax,
             'department' => $request->department,
             'location_of_installation' => $request->location_of_installation,
-            'international_commercial_terms' => $request->international_commercial_terms
+            'international_commercial_terms' => $request->international_commercial_terms,
+            'brand' => $request->brand,
+            'rbo' => $request->rbo
         ];
         $save=Quotations::create($quotationData);
         if ($save){

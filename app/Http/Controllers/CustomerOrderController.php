@@ -33,7 +33,9 @@ class CustomerOrderController extends Controller
             'section' => $request->section,
             'exchange_rate' => $request->exchange_rate,
             'location_of_installation' => $request->location_of_installation,
-            'issue_date' => $request->issue_date
+            'issue_date' => $request->issue_date,
+            'rbo' => $request->rbo,
+            'brand' => $request->brand
         ];
         $save=CustomerOrder::create($customerorderData);
         if ($save){
