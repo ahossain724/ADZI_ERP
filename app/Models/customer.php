@@ -9,7 +9,7 @@ class Customer extends Model
 {
     protected $table = 'customer';
     protected $primaryKey = 'id';
-     protected $fillable = [
+    protected $fillable = [
           'customer_number',
           'address',
           'state_province',

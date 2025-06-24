@@ -45,6 +45,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -2067,6 +2068,87 @@
                 }
             });
         });
+         //RBO insert
+         $('form#rbo_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+         //Reference insert
+         $('form#reference_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        
+       
+            // This event fires just before the modal is shown
+            $('#modal-rbo').on('show.bs.modal', function (event) {
+                var customerSelect2 = $('#customer_name').select2({
+                placeholder: "Select Customer",
+                theme: 'bootstrap4',
+                dropdownParent: $('#modal-rbo') // This is crucial for Select2 to display correctly within Bootstrap modals
+            });
+
+                var button = $(event.relatedTarget);
+                var customerListData = button.data('customer-list');
+                var customerList = customerListData; // Assuming jQuery's .data() auto-parses JSON
+
+                // Transform your customer list into the format Select2 expects: { id: ..., text: ... }
+                var formattedCustomers = customerList.map(function(customer) {
+                    return {
+                        id: customer.id,
+                        text: customer.name // Or any other property you want to display
+                    };
+                });
+
+                // Set the data for the Select2 dropdown
+                customerSelect2.select2('destroy'); // Destroy previous instance to re-init with new data
+                customerSelect2 = $('#customer_name').select2({
+                    placeholder: "Select Customer",
+                    data: formattedCustomers, // Provide the formatted data
+                    theme: 'bootstrap4',
+                    dropdownParent: $('#modal-rbo')
+                });
+
+                // Optionally, clear any previous selection
+                customerSelect2.val(null).trigger('change');
+            });
+
+       
+
         $(function() {
             //Initialize Select2 Elements
             $('.select2').select2()
@@ -2117,8 +2199,8 @@
                     time: 'far fa-clock'
                 }
             });
-
-            //Date range picker
+ 
+                    //Date range picker
             $('#reservation').daterangepicker()
             //Date range picker with time picker
             $('#reservationtime').daterangepicker({
@@ -2216,7 +2298,7 @@
                 myDropzone.enqueueFile(file)
             }
         })
-
+            
         // Update the total progress bar
         myDropzone.on("totaluploadprogress", function(progress) {
             document.querySelector("#total-progress .progress-bar").style.width = progress + "%"

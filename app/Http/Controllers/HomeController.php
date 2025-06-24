@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Rbo;
+use App\Models\Referencetbl;
+use App\Models\customer;
+
 
 class HomeController extends Controller
 {
@@ -33,7 +37,9 @@ class HomeController extends Controller
         return view('crossapplication.settings');
     }
     public function customers(Request $request){
-        return view('crossapplication.customers');
+        $customerList= customer::select('id','customer_number')->get();
+        //return $rboList;
+        return view('crossapplication.customers',compact('customerList'));
     }
     public function supplier(Request $request){
         return view('crossapplication.supplier');
@@ -50,11 +56,18 @@ class HomeController extends Controller
     }
     //Order Precessing Views Route
     public function quotations(Request $request){
-        return view('orderprocessing.quotations');
+        $rboList= Rbo::select('id','rbo_name')->get();
+        $referencetblList= Referencetbl::select('id','reference')->get();
+        $customerList= customer::select('id','name')->get();
+        //return $rboList;
+        return view('orderprocessing.quotations',compact('rboList','referencetblList','customerList'));
     }
     //Order Precessing Views Route
     public function customerorders(Request $request){
-        return view('orderprocessing.customerorders');
+        $rboList= Rbo::select('id','rbo_name')->get();
+        $referencetblList= Referencetbl::select('id','reference')->get();
+        //return $rboList;
+        return view('orderprocessing.customerorders',compact('rboList','referencetblList'));
     }
     //Order Precessing Views Route
     public function deliveryorders(Request $request){

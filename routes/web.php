@@ -35,6 +35,10 @@ use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\UserDocController;
 use App\Http\Controllers\SiteDefaultController;
+use App\Http\Controllers\RboController;
+use App\Http\Controllers\ReferenceController;
+
+
 
 
 
@@ -318,7 +322,17 @@ Route::get('/codes/{id}/edit', [SiteDefaultController::class, 'edit'])->name('ed
 Route::post('/codes/update', [SiteDefaultController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [SiteDefaultController::class, 'delete'])->name('delete');
 
+Route::post('/storerbo', [RboController::class, 'storerbo'])->name('storerbo');
+Route::get('/getall', [RboController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [RboController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [RboController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [RboController::class, 'delete'])->name('delete');
 
+Route::post('/storereference', [ReferenceController::class, 'storereference'])->name('storereference');
+Route::get('/getall', [ReferenceController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ReferenceController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ReferenceController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ReferenceController::class, 'delete'])->name('delete');
 
 
 /*

@@ -78,12 +78,9 @@
                                 <div class="col">
                                     <select  id="rbo" name="rbo" class="form-control border border-success select2bs4">
                                         <option selected="selected">{{ __('translate.select') }}</option>
-                                        <option>{{ __('translate.aimsstore') }}</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
+                                        @foreach ($rboList as $item)
+                                            <option value="{{$item->id}}">{{$item->rbo_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -112,11 +109,12 @@
                                 <label style="color: red">{{ __('translate.reference') }}</label>
                             </div>
                             <div class="col">
-                                <select id="reference" name="reference" class="form-control border border-success select2bs4 w-10" style="height: 10px">
-                                                <option selected="selected">{{ __('translate.select') }}</option>
-                                                <option>PO-</option>
-                                                <option>WALK</option>
-                                </select>
+                                <select  id="reference" name="reference" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                         @foreach ($referencetblList as $item)
+                                            <option value="{{$item->id}}">{{$item->reference}}</option>
+                                        @endforeach
+                                    </select>
                             </div>
                         </div>
                         <div class="row mt-2">
