@@ -58,6 +58,11 @@ class Customer extends Model
           'date_approved',
           'date_of_credit_evaluation',
           'payment_method',
+          'rbo_id',
       ];
       use HasFactory;
+      public function rbo()
+    {
+        return $this->belongsTo(Rbo::class);
+    }
 }

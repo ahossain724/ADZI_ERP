@@ -455,6 +455,15 @@
                                               </a>
                                           </li>
                                           <li class="nav-item">
+                                            <a href="{{ url('/classesdimensions') }}"
+                                            class="nav-link 
+                    @if (app('request')->route()->uri == 'classesdimensions') active @endif
+                    ">
+                                                  <i class="far fa-dot-circle nav-icon"></i>
+                                                  <p>Classes and Dimensions</p>
+                                              </a>
+                                          </li>
+                                          <li class="nav-item">
                                             <a href="{{ url('/issueorder') }}"
                                             class="nav-link 
                     @if (app('request')->route()->uri == 'issueorder') active @endif
@@ -2113,10 +2122,56 @@
             });
         });
         
+         //Classes insert
+         $('form#class_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        
+         //Dimensions insert
+         $('form#dimension_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        
        
             // This event fires just before the modal is shown
             $('#modal-rbo').on('show.bs.modal', function (event) {
-                var customerSelect2 = $('#customer_name').select2({
+                var customerSelect2 = $('#customer_id').select2({
                 placeholder: "Select Customer",
                 theme: 'bootstrap4',
                 dropdownParent: $('#modal-rbo') // This is crucial for Select2 to display correctly within Bootstrap modals
@@ -2136,7 +2191,7 @@
 
                 // Set the data for the Select2 dropdown
                 customerSelect2.select2('destroy'); // Destroy previous instance to re-init with new data
-                customerSelect2 = $('#customer_name').select2({
+                customerSelect2 = $('#customer_id').select2({
                     placeholder: "Select Customer",
                     data: formattedCustomers, // Provide the formatted data
                     theme: 'bootstrap4',
@@ -2145,6 +2200,36 @@
 
                 // Optionally, clear any previous selection
                 customerSelect2.val(null).trigger('change');
+            });
+
+            //Flitering
+            
+
+        $('#rbo').on('change', function() {
+                var rboId = $(this).val();
+                
+                if (rboId) {
+                    $.ajax({
+                        url: '/get-customers-by-rbo/' + rboId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            
+                            
+                            $('#customer_name').empty();
+                            $('#customer_name').append('<option value="">-- Select Customer --</option>');
+                            $.each(data, function(key, customer) {
+                                $('#customer_name').append('<option value="' + customer.id + '">' + customer.name + '</option>');
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("AJAX Error: " + status + error);
+                        }
+                    });
+                } else {
+                    $('#customer_name').empty();
+                    $('#customer_name').append('<option value="">-- Select Customer --</option>');
+                }
             });
 
        

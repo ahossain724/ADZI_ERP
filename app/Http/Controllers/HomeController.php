@@ -66,8 +66,10 @@ class HomeController extends Controller
     public function customerorders(Request $request){
         $rboList= Rbo::select('id','rbo_name')->get();
         $referencetblList= Referencetbl::select('id','reference')->get();
+        $customerList= customer::select('id','name')->get();
+
         //return $rboList;
-        return view('orderprocessing.customerorders',compact('rboList','referencetblList'));
+        return view('orderprocessing.customerorders',compact('rboList','referencetblList','customerList'));
     }
     //Order Precessing Views Route
     public function deliveryorders(Request $request){
@@ -89,6 +91,10 @@ class HomeController extends Controller
     //Issue Views Route
     public function issueorder(Request $request){
         return view('inventory.issueorder');
+    }
+     //Issue Views Route
+    public function classesdimensions(Request $request){
+        return view('inventory.classesdimensions');
     }
     //General Ledger Views Route
     public function glvoucher(Request $request){

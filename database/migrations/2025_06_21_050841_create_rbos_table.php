@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('rbo_name')->nullable();
             $table->string('short_name')->nullable();
-            $table->string('customer_name')->nullable();
+            $table->string('customer_id')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
         });

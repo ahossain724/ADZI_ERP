@@ -80,7 +80,7 @@
                                 <label>Customer Name</label>
                             </div>
                               <div class="col">
-                                    <select  id="customer_name"  class="form-control" style="height:120%;">
+                                    <select  id="customer_id" name="customer_id"  class="form-control" style="height:120%;">
                             
                                     </select>
                              </div>
@@ -253,7 +253,7 @@
                         </div>
                     </div>
                     <div class="col">
-                         <div class="row mt-2">
+                           <div class="row mt-2">
                                 <div class="col">
                                     <label style="color: red">RBO</label>
                                 </div>
@@ -266,26 +266,19 @@
                                     </select>
                                 </div>
                             </div>
-                        <div class="row mt-2">
-                            <div class="col">
-                                <label style="color: red">{{ __('translate.customernumber') }}</label>
-                            </div>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <select class="form-control border border-success select2bs4 w-10" style="height: 10px">
-                                                <option selected="selected">CUS-</option>
-                                                <option>PO-</option>
-                                                <option>WALK</option>
-
-                                            </select>
-                                        </span>
-                                    </div>
-                                    <input id="customer_number" name="customer_number" class="form-control border border-success" type="text">
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <label style="color: red">Customer Name</label>
+                                </div>
+                                <div class="col">
+                                    <select  id="customer_name" name="customer_name" class="form-control select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        @foreach ($customerList as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
-                        </div>
                             <div class="row mt-2">
                                 <div class="col">
                                     <label style="color: red">{{ __('translate.brand') }}</label>

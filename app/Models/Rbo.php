@@ -13,8 +13,12 @@ class Rbo extends Model
     protected $fillable = [
           'rbo_name',
           'short_name',
-          'customer_name',
+          'customer_id',
           'address',
         ];
      use HasFactory;
+     public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
 }

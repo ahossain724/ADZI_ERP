@@ -13,7 +13,7 @@ class RboController extends Controller
         $rboData = [
             'rbo_name' => $request->rbo_name,
             'short_name' => $request->short_name,
-            'customer_name' => $request->short_name,
+            'customer_id' => $request->customer_id,
             'address' => $request->address,
         ];
         $save=Rbo::create($rboData);

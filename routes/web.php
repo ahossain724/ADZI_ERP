@@ -37,7 +37,9 @@ use App\Http\Controllers\UserDocController;
 use App\Http\Controllers\SiteDefaultController;
 use App\Http\Controllers\RboController;
 use App\Http\Controllers\ReferenceController;
-
+use App\Http\Controllers\DropdownController;
+use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\DimensionController;
 
 
 
@@ -96,6 +98,9 @@ Route::get('/deliveryorders', [App\Http\Controllers\HomeController::class, 'deli
 Route::get('/invoices', [App\Http\Controllers\HomeController::class, 'invoices'])
     ->name('orderprocessing.invoices');
 
+//Dropdown filter
+//Route::get('/dropdowns', [DropdownController::class, 'index'])->name('dropdowns.index');
+Route::get('/get-customers-by-rbo/{rbo_id}', [DropdownController::class, 'getCustomersByRbo']);
 //inventory Routes
 Route::get('/transferrequest', [App\Http\Controllers\HomeController::class, 'transferrequest'])
     ->name('inventory.transferrequest');
@@ -103,6 +108,8 @@ Route::get('/receiptorder', [App\Http\Controllers\HomeController::class, 'receip
     ->name('inventory.receiptorder');
 Route::get('/issueorder', [App\Http\Controllers\HomeController::class, 'issueorder'])
     ->name('inventory.issueorder');
+Route::get('/classesdimensions', [App\Http\Controllers\HomeController::class, 'classesdimensions'])
+    ->name('inventory.classesdimensions');
     //General Ledger Routes
 Route::get('/glvoucher', [App\Http\Controllers\HomeController::class, 'glvoucher'])
     ->name('generalledger.glvoucher');
@@ -334,7 +341,17 @@ Route::get('/codes/{id}/edit', [ReferenceController::class, 'edit'])->name('edit
 Route::post('/codes/update', [ReferenceController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [ReferenceController::class, 'delete'])->name('delete');
 
+Route::post('/storeclass', [ClassesController::class, 'storeclass'])->name('storeclass');
+Route::get('/getall', [ClassesController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [ClassesController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [ClassesController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [ClassesController::class, 'delete'])->name('delete');
 
+Route::post('/storedimension', [DimensionController::class, 'storedimension'])->name('storedimension');
+Route::get('/getall', [DimensionController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [DimensionController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [DimensionController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [DimensionController::class, 'delete'])->name('delete');
 /*
 Route::get('/', function () {
     return view('auth.login');

@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+     public function up(): void
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->id()->primary();
@@ -61,7 +61,20 @@ return new class extends Migration
             $table->date('date_approved')->nullable();
             $table->date('date_of_credit_evaluation')->nullable();
             $table->string('payment_method')->nullable();
+
+            // Add the foreign key column
+            // Assuming 'id' in 'Rbos' table is an auto-incrementing primary key,
+            // unsignedBigInteger is the appropriate type for the foreign key.
+            $table->unsignedBigInteger('rbos_id')->nullable(); // Use nullable() if a customer doesn't always have an Rbos entry
+
             $table->timestamps();
+
+            // Define the foreign key constraint
+            // This assumes your 'Rbos' table is named 'rbos' and its primary key is 'id'.
+            // onDelete('set null') means that if an Rbos record is deleted, this foreign key will be set to NULL.
+            // You might choose 'cascade' if you want customer records to be deleted when the related Rbos record is deleted,
+            // or 'restrict' if you want to prevent the deletion of an Rbos record if it has related customer records.
+            $table->foreign('rbos_id')->references('id')->on('rbos')->onDelete('set null');
         });
     }
 
