@@ -100,19 +100,6 @@
                             </div>
                         <div class="row mt-2">
                             <div class="col">
-                                <label style="color: red">{{ __('translate.reference') }}</label>
-                            </div>
-                            <div class="col">
-                                <select  id="reference" name="reference" class="form-control border border-success select2bs4">
-                                        <option selected="selected">{{ __('translate.select') }}</option>
-                                         @foreach ($referencetblList as $item)
-                                            <option value="{{$item->id}}">{{$item->reference}}</option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col">
                                 <label style="color: red">{{ __('translate.brand') }}</label>
                             </div>
                             <div class="col">
@@ -125,7 +112,7 @@
                         </div>
                         <div class="row mt-2">
                                 <div class="col">
-                                    <label style="color: red">{{ __('translate.project') }}</label>
+                                    <label style="color: red">Product Category</label>
                                 </div>
                                 <div class="col">
                                     <select id="project" name="project" class="form-control border border-success select2bs4">
@@ -139,6 +126,19 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">{{ __('translate.reference') }}</label>
+                            </div>
+                            <div class="col">
+                                <select  id="references" name="references" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                         @foreach ($referencetblList as $item)
+                                            <option value="{{$item->id}}">{{$item->reference}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
                         <div class="row mt-2">
@@ -463,6 +463,218 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row h-10"></div>
+                <!-- /.row -->
+                </br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-block btn-primary">Save</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Delete</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Refresh</button>
+                    </div>
+                
+                </div>
+            </form>
+        </div>
+
+
+        <div class="card-footer">
+
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">PD</h3>
+
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Card Header -->
+        <div class="card-body">
+            <form action="{{ route('storepd') }}" method="POST" id="pd_form">
+                @csrf
+                <div class="row">
+                    <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>PD Row</label>
+                            </div>
+                            <div class="col">
+                                    <input id="pd_row" name="pd_row" class="form-control border border-success" type="text">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Approved Rate Per Unit</label>
+                            </div>
+                            <div class="col">
+                                    <input id="unit_rate" name="unit_rate" class="form-control border border-success" type="text">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Rate Calculation for Qty:</label>
+                            </div>
+                            <div class="col" style="background: aqua;">
+                                <div class="row">
+                                    <input id="rate_qty" name="rate_qty" class="form-control border border-success" type="text">
+                                    <div class="col">
+
+                                    <select id="rate_select" name="rate_select" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">Type</label>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <select id="type" name="type" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                                <div class="col">
+                                    <label style="color: red">Item</label>
+                                </div>
+                                <div class="col">
+                                    <input id="item" name="item" class="form-control border border-success" type="text">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>BOM Key</label>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <select id="bom_key" name="bom_key" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <label>Entry Date</label>
+                            </div>
+                            <div class="col">
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                    <input id="entry_date" name="entry_date" type="text" class="form-control border border-success datetimepicker-input"
+                                        data-target="#reservationdate" />
+                                    <div class="input-group-append" data-target="#reservationdate"
+                                        data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="row mt-2">
+                                <div class="col-sm-5">
+                                    <label>Specifications</label>
+                                </div>
+                                <div class="col">
+                                    <textarea id="specifications" name="specifications" rows="2" class="form-control border border-success h-100 w-100"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-5">
+                                    <label>Additional Requirements</label>
+                                </div>
+                                <div class="col">
+                                    <textarea id="additional_requirements" name="additional_requirements" rows="2" class="form-control border border-success h-100 w-100"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                            <div class="col">
+                                <label style="color: red">Material Warehouse</label>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <select id="material_warehouse" name="material_warehouse" class="form-control border border-success select2bs4">
+                                        <option selected="selected">{{ __('translate.select') }}</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <table id="exampledelivery" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>PD Class</th>
+                                    <th>Detailed Description</th>
+                                    <th>Alternate Code</th>
+                                    <th>Team</th>
+                                    <th>Active</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FINISHED GOODS</td>
+                                    <td>FINISHED GOODS</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                </tr>
+
+                        </table>
                 </div>
                 <div class="row h-10"></div>
                 <!-- /.row -->

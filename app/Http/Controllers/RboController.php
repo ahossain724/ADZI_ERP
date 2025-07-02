@@ -15,6 +15,8 @@ class RboController extends Controller
             'short_name' => $request->short_name,
             'customer_id' => $request->customer_id,
             'address' => $request->address,
+            'brand_id' => $request->brand_id,
+            'reference_id' => $request->reference_id,
         ];
         $save=Rbo::create($rboData);
         if ($save){

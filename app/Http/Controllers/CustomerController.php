@@ -57,7 +57,8 @@ class CustomerController extends Controller
             'credit_rating' => $request->credit_rating,
             'date_approved' => $request->date_approved,
             'date_of_credit_evaluation' => $request->date_of_credit_evaluation,
-            'payment_method' => $request->payment_method
+            'payment_method' => $request->payment_method,
+            'rbos_id' => $request->rbos_id,
         ];
         $save=Customer::create($customerData);
         if ($save){

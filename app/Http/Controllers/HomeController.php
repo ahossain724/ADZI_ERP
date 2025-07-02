@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Rbo;
 use App\Models\Referencetbl;
 use App\Models\customer;
+use App\Models\Brand;
 
 
 class HomeController extends Controller
@@ -56,11 +57,12 @@ class HomeController extends Controller
     }
     //Order Precessing Views Route
     public function quotations(Request $request){
-        $rboList= Rbo::select('id','rbo_name')->get();
+        $rboList = Rbo::select('id','rbo_name')->distinct()->get();
+        $rbo2List = Rbo::select('id','rbo_name')->get();
         $referencetblList= Referencetbl::select('id','reference')->get();
+        $brandList= Brand::select('id','brand')->get();
         $customerList= customer::select('id','name')->get();
-        //return $rboList;
-        return view('orderprocessing.quotations',compact('rboList','referencetblList','customerList'));
+        return view('orderprocessing.quotations',compact('rboList','referencetblList','customerList','brandList','rbo2List'));
     }
     //Order Precessing Views Route
     public function customerorders(Request $request){

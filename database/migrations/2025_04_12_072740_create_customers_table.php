@@ -74,7 +74,7 @@ return new class extends Migration
             // onDelete('set null') means that if an Rbos record is deleted, this foreign key will be set to NULL.
             // You might choose 'cascade' if you want customer records to be deleted when the related Rbos record is deleted,
             // or 'restrict' if you want to prevent the deletion of an Rbos record if it has related customer records.
-            $table->foreign('rbos_id')->references('id')->on('rbos')->onDelete('set null');
+           $table->foreign('rbos_id')->references('id')->on('rbos')->onDelete('set null');
         });
     }
 

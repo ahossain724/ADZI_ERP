@@ -217,7 +217,7 @@
                     <div class="col">
                         <div class="row mt-2">
                             <div class="col">
-                                <label>Detailed Description</label>
+                                <label>Product Dimension</label>
                             </div>
                             <div class="col">
                                 <div class="input-group">
@@ -251,7 +251,7 @@
                     <hr>
                     <div class="row">
                     <div>
-                        <table id="exampledelivery" class="table table-bordered table-striped table-hover">
+                        <table id="dimensiongrid" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Sequence</th>

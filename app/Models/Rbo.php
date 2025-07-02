@@ -15,10 +15,20 @@ class Rbo extends Model
           'short_name',
           'customer_id',
           'address',
+          'reference_id',
+          'brand_id',
         ];
      use HasFactory;
      public function customers()
     {
         return $this->hasMany(Customer::class);
+    }
+      public function reference()
+    {
+        return $this->belongsTo(Referencetbl::class);
+    }
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
     }
 }

@@ -1369,7 +1369,8 @@
 
                 success: function(data) {
                     if (data.status == 1) {
-                        alert(data.message);
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
                         $(form)[0].reset();
                     }
 
@@ -2167,6 +2168,50 @@
                 }
             });
         });
+        //PDs insert
+         $('form#pd_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
+        //Brand insert
+         $('form#brand_form').on('submit', function(e) {
+            e.preventDefault();
+            let form = this;
+            let formdata = new FormData(form);
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: formdata,
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+
+                success: function(data) {
+                    if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
+                        $(form)[0].reset();
+                    }
+                }
+            });
+        });
         
        
             // This event fires just before the modal is shown
@@ -2202,36 +2247,204 @@
                 customerSelect2.val(null).trigger('change');
             });
 
-            //Flitering
+            //Reference
+             $('#modal-reference').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+
+                // Initialize Select2 for rbo_id
+                var rbo2Select = $('#rbo_id').select2({ 
+                    placeholder: "Select RBO",
+                    theme: 'bootstrap4',
+                    dropdownParent: $('#modal-reference')
+                });
+
+                // Get RBO list data from the button's data attribute
+                var rbo2ListData = button.data('rbo2-list');
+                var rbo2List = rbo2ListData; // Assuming jQuery's .data() auto-parses JSON
+
+                // Transform your RBO list into the format Select2 expects: { id: ..., text: ... }
+                var formattedRbos = rbo2List.map(function(rbo) { // Changed 'rbos' to 'rbo' here
+                    return {
+                        id: rbo.id,   // Corrected: using 'rbo'
+                        text: rbo.rbo_name // Corrected: using 'rbo'
+                    };
+                });
+
+                // Set the data for the Select2 dropdown
+                rbo2Select.select2('destroy'); // Destroy previous instance to re-init with new data
+                rbo2Select = $('#rbo_id').select2({
+                    placeholder: "Select RBO",
+                    data: formattedRbos, // Provide the formatted data
+                    theme: 'bootstrap4',
+                    dropdownParent: $('#modal-reference')
+                });
+
+                // Optionally, clear any previous selection
+                rbo2Select.val(null).trigger('change');
+            });
+
+            //Brand Populate
+             $('#modal-brand').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+
+                // Initialize Select2 for rbo_id
+                var rboSelect = $('#brbo_id').select2({ 
+                    placeholder: "Select RBO",
+                    theme: 'bootstrap4',
+                    dropdownParent: $('#modal-brand')
+                });
+
+                // Get RBO list data from the button's data attribute
+                var rboListData = button.data('rbo-list');
+                var rboList = rboListData; // Assuming jQuery's .data() auto-parses JSON
+
+                // Transform your RBO list into the format Select2 expects: { id: ..., text: ... }
+                var formattedRbos = rboList.map(function(rbo) { // Changed 'rbos' to 'rbo' here
+                    return {
+                        id: rbo.id,   // Corrected: using 'rbo'
+                        text: rbo.rbo_name // Corrected: using 'rbo'
+                    };
+                });
+
+                // Set the data for the Select2 dropdown
+                rboSelect.select2('destroy'); // Destroy previous instance to re-init with new data
+                rboSelect = $('#brbo_id').select2({
+                    placeholder: "Select RBO",
+                    data: formattedRbos, // Provide the formatted data
+                    theme: 'bootstrap4',
+                    dropdownParent: $('#modal-brand')
+                });
+
+                // Optionally, clear any previous selection
+                rboSelect.val(null).trigger('change');
+            });
             
 
-        $('#rbo').on('change', function() {
-                var rboId = $(this).val();
-                
-                if (rboId) {
-                    $.ajax({
-                        url: '/get-customers-by-rbo/' + rboId,
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function(data) {
-                            
-                            
-                            $('#customer_name').empty();
-                            $('#customer_name').append('<option value="">-- Select Customer --</option>');
-                            $.each(data, function(key, customer) {
-                                $('#customer_name').append('<option value="' + customer.id + '">' + customer.name + '</option>');
-                            });
-                        },
-                        error: function(xhr, status, error) {
-                            console.error("AJAX Error: " + status + error);
-                        }
+        
+            /*$('#rbo').on('change', function() {
+            // Get the selected option element
+            var selectedOption = $(this).find('option:selected');
+            // Get the rbo_name from the text of the selected option
+            var rboName = selectedOption.text();
+            // Get the rbo_id from the value of the selected option (if you still need it for other purposes, though the prompt specifies rbo_name)
+            var rboId = selectedOption.val();
+
+
+            if (rboName && rboName !== '-- Select RBO --') { // Assuming '-- Select RBO --' is your default option text
+                $.ajax({
+                    url: '/get-customers-by-rbo/' + encodeURIComponent(rboName), // Changed URL to use rboName
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        alert(data);
+                        $('#customer_name').empty();
+                        $('#customer_name').append('<option value="">-- Select Customer --</option>');
+                        $.each(data, function(key, customer) {
+                            $('#customer_name').append('<option value="' + customer.id + '">' + customer.name + '</option>');
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error: " + status + error);
+                    }
+                });
+            } else {
+                $('#customer_name').empty();
+                $('#customer_name').append('<option value="">-- Select Customer --</option>');
+            }
+        });*/
+
+        //Reference Filter
+        /*$('#rbo').on('change', function() {
+    // Get the selected option element
+    var selectedOption = $(this).find('option:selected');
+    // Get the rbo_name from the text of the selected option
+    var rboName = selectedOption.text();
+    // Get the rbo_id from the value of the selected option (if you still need it for other purposes, though the prompt specifies rbo_name)
+    var rboId = selectedOption.val();
+
+    alert(rboName);
+
+    if (rboName && rboName !== '-- Select RBO --') { // Assuming '-- Select RBO --' or the translated 'select' is your default option text
+        $.ajax({
+            url: '/get-references-by-rbo/' + encodeURIComponent(rboName), // Changed URL to use rboName and match your controller route
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                alert(data);
+                $('#reference').empty(); // <--- CHANGED THIS ID
+                $('#reference').append('<option value="">-- Select Reference --</option>'); // <--- CHANGED THIS TEXT
+                $.each(data, function(key, reference) {
+                    $('#reference').append('<option value="' + reference.id + '">' + reference.reference + '</option>'); // <--- CHANGED THIS ID
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error: " + status + error);
+                // Optionally, re-populate with default if an error occurs
+                $('#reference').empty();
+                $('#reference').append('<option value="">-- Select Reference --</option>');
+            }
+        });
+    } else {
+        $('#reference').empty(); // <--- CHANGED THIS ID
+        $('#reference').append('<option value="">-- Select Reference --</option>'); // <--- CHANGED THIS TEXT
+    }
+});*/
+$('#rbo').on('change', function() {
+        // Get the selected option element
+        var selectedOption = $(this).find('option:selected');
+        // Get the rbo_name from the text of the selected option
+        var rboName = selectedOption.text();
+        // Get the rbo_id from the value of the selected option (if needed, though rbo_name is used in URLs)
+        var rboId = selectedOption.val(); // Keep this if you need it for other purposes, otherwise it can be removed
+
+        // Clear both dropdowns immediately to provide visual feedback
+        // and prevent old data from lingering if no RBO is selected
+        $('#customer_name').empty().append('<option value="">-- Select Customer --</option>');
+        $('#references').empty().append('<option value="">-- Select Reference --</option>');
+        
+        // Proceed with AJAX calls only if a valid RBO is selected
+        if (rboName && rboName !== '-- Select RBO --') { 
+            alert(rboId);
+            // Assuming '-- Select RBO --' is your default option text
+            // AJAX Call 1: Get Customers by RBO
+            $.ajax({
+                url: '/get-customers-by-rbo/' + encodeURIComponent(rboName), // Use rboName
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // console.log("Customers data:", data); // Use console.log for debugging instead of alert
+                    $('#customer_name').empty().append('<option value="">-- Select Customer --</option>');
+                    $.each(data, function(key, customer) {
+                        $('#customer_name').append('<option value="' + customer.id + '">' + customer.name + '</option>');
                     });
-                } else {
-                    $('#customer_name').empty();
-                    $('#customer_name').append('<option value="">-- Select Customer --</option>');
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error (Customers): " + status + " - " + error);
+                    // Optionally re-populate with default if an error occurs
+                    $('#customer_name').empty().append('<option value="">-- Select Customer --</option>');
                 }
             });
 
+            // AJAX Call 2: Get References by RBO
+            console.log('rboId:', rboId);
+            $.ajax({
+                url: '/get-by-rbo/' + encodeURIComponent(rboId), // Use rboName
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    //alert(data);
+                    console.log("References data:", data); // Use console.log for debugging instead of alert
+                    $('#references').empty().append('<option value="">-- Select Reference --</option>');
+                    $.each(data, function(key, reference) {
+                        $('#references').append('<option value="' + reference.id + '">' + reference.reference + '</option>');
+                    });
+                }
+                
+            });
+        }
+        // The 'else' block for clearing is now handled before the 'if' condition
+        // so it applies both when no valid RBO is selected and initially.
+    });
        
 
         $(function() {
@@ -2309,6 +2522,13 @@
                 "autoWidth": false,
                 "buttons": ["print"]
             }).buttons().container().appendTo('#exampledelivery_wrapper .col-md-6:eq(0)');
+             $("#dimensiongrid").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["print"]
+            }).buttons().container().appendTo('#dimensiongrid_wrapper .col-md-6:eq(0)');
+
 
             //Date range as a button
             $('#daterange-btn').daterangepicker({

@@ -40,6 +40,10 @@ use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\DropdownController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\DimensionController;
+use App\Http\Controllers\PDController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\BrandDropdownController;
+use App\Http\Controllers\ReferenceDropdownController;
 
 
 
@@ -101,6 +105,8 @@ Route::get('/invoices', [App\Http\Controllers\HomeController::class, 'invoices']
 //Dropdown filter
 //Route::get('/dropdowns', [DropdownController::class, 'index'])->name('dropdowns.index');
 Route::get('/get-customers-by-rbo/{rbo_id}', [DropdownController::class, 'getCustomersByRbo']);
+Route::get('/get-by-rbo/{rbo_id}', [ReferenceDropdownController::class, 'getReferencesByRbo']);
+Route::get('/get-brands-by-rbo/{rbo_id}', [BrandDropdownController::class, 'getBrandsByRbo']);
 //inventory Routes
 Route::get('/transferrequest', [App\Http\Controllers\HomeController::class, 'transferrequest'])
     ->name('inventory.transferrequest');
@@ -352,6 +358,18 @@ Route::get('/getall', [DimensionController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [DimensionController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [DimensionController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [DimensionController::class, 'delete'])->name('delete');
+
+Route::post('/storepd', [PDController::class, 'storepd'])->name('storepd');
+Route::get('/getall', [PDController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [PDController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [PDController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [PDController::class, 'delete'])->name('delete');
+
+Route::post('/storebrand', [BrandController::class, 'storebrand'])->name('storebrand');
+Route::get('/getall', [BrandController::class, 'getall'])->name('getall');
+Route::get('/codes/{id}/edit', [BrandController::class, 'edit'])->name('edit');
+Route::post('/codes/update', [BrandController::class, 'update'])->name('update');
+Route::delete('/codes/delete', [BrandController::class, 'delete'])->name('delete');
 /*
 Route::get('/', function () {
     return view('auth.login');
