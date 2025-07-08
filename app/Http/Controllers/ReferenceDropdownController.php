@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ReferenceDropdownController extends Controller
 {
-    public function getReferencesByRbo($rboId)
+    public function getReferencesByRbo($rboName)
     {
         /*$rboId=  DB::table('rbos')
                   ->select('id')
@@ -20,8 +20,8 @@ class ReferenceDropdownController extends Controller
         //$customers = Customer::where('rbos_id', $rbo_id)->get();
          $references = DB::table('referencestbl AS b')
                         ->select('b.id', 'b.reference') // Select only the customer ID and name
-                        ->join('rbos AS r', 'b.id', '=', 'r.reference_id')
-                        ->where('b.rbo_id', $rboId) // Filter by the rboId passed from the AJAX request
+                        ->join('rbos AS r', 'r.id', '=', 'b.rbos_id')
+                        ->where('r.rbo_name', $rboName) // Filter by the rboId passed from the AJAX request
                         ->get();
         //return $references;
         return response()->json($references);

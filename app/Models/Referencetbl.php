@@ -12,11 +12,11 @@ class Referencetbl extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
           'reference',
-          'rbo_id',
+          'rbos_id',
         ];
      use HasFactory;
      public function rbo()
     {
-        return $this->hasMany(Rbo::class);
+        return $this->belongsTo(Rbo::class);
     }
 }

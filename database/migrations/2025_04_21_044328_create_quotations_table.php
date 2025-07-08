@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('quotations', function (Blueprint $table) {
         $table->id();
-        $table->string('quotation_number');
+        $table->string('quotation_number')->nullable();
         $table->string('deadline')->nullable();
-        $table->string('project');
         $table->date('quotation_deadline')->nullable();
+        $table->string('rbo')->nullable();
+        $table->string('customer_name')->nullable();
+        $table->string('brand')->nullable();
+        $table->string('product_category')->nullable();
+        $table->string('references')->nullable();
         $table->date('date')->nullable();
-        $table->string('currency');
-        $table->string('division')->nullable();
-        $table->string('customer_enquiry')->nullable();
-        $table->date('validity')->nullable();
-        $table->string('customer_number');
-        $table->string('exchange_rate');
+        $table->string('exchange_rate')->nullable();
         $table->string('section')->nullable();
         $table->date('customer_enquiry_date')->nullable();
         $table->string('invoicing_rule')->nullable();
@@ -35,15 +34,17 @@ return new class extends Migration
         $table->string('team')->nullable();
         $table->string('location')->nullable();
         $table->string('delivery')->nullable();
-        $table->string('payment_confirmation');
+        $table->string('payment_confirmation')->nullable();
         $table->string('team_member')->nullable();
         $table->date('start_date')->nullable();
         $table->string('print_tax')->nullable();
-        $table->string('department')->nullable();;
+        $table->string('department')->nullable();
         $table->string('location_of_installation')->nullable();
         $table->string('international_commercial_terms')->nullable();
-        $table->string('brand');
-        $table->string('rbo')->nullable();
+        $table->string('currency')->nullable();
+        $table->string('division')->nullable();
+        $table->string('customer_enquiry')->nullable();
+        $table->date('validity')->nullable();
         $table->timestamps();
         });
     }

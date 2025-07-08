@@ -15,8 +15,4 @@ class Brand extends Model
           'brbo_id',
         ];
      use HasFactory;
-     public function rbo()
-    {
-        return $this->hasMany(Rbo::class);
-    }
 }

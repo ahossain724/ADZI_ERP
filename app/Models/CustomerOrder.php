@@ -12,14 +12,16 @@ class CustomerOrder extends Model
      protected $fillable = [
           'order_number',
           'customer_po',
+          'rbo',
+          'customer_name',
+          'brand',
+          'project',
+          'references',
           'date',
           'customer_po_date',
-          'customer_number',
-          'reference',
           'header_message',
           'footer_message',
           'notes',
-          'project',
           'print_tax',
           'quote_by',
           'team',
@@ -34,8 +36,6 @@ class CustomerOrder extends Model
           'exchange_rate',
           'location_of_installation',
           'issue_date',
-          'rbo',
-          'brand',
         ];
      use HasFactory;
 }

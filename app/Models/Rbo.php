@@ -15,8 +15,7 @@ class Rbo extends Model
           'short_name',
           'customer_id',
           'address',
-          'reference_id',
-          'brand_id',
+          
         ];
      use HasFactory;
      public function customers()
@@ -25,10 +24,7 @@ class Rbo extends Model
     }
       public function reference()
     {
-        return $this->belongsTo(Referencetbl::class);
+        return $this->hasMany(Referencetbl::class);
     }
-    public function brand()
-    {
-        return $this->belongsTo(Brand::class);
-    }
+    
 }

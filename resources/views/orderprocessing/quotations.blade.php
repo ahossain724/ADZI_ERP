@@ -25,13 +25,13 @@
 
 
             <div class="card-tools">
-        
+                
                 <button type="button" class="btn btn-secondary" data-customer-list="{{ json_encode($customerList) }}" data-toggle="modal" data-target="#modal-rbo">
                   Create RBO
                 </button>
-                <button type="button" class="btn btn-secondary" data-rbo2-list="{{ json_encode($rbo2List) }}" data-toggle="modal" data-target="#modal-reference">
-                  Create Reference
-                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-reference">
+               Open Reference Modal
+               </button>
                 <button type="button" class="btn btn-secondary" data-rbo-list="{{ json_encode($rboList) }}" data-toggle="modal" data-target="#modal-brand">
                   Create Brand
                 </button>
@@ -46,6 +46,8 @@
             </div>
 
         </div>
+               
+        
         <!-- /.Rbo modal -->
         <div class="modal fade" id="modal-rbo">
         <div class="modal-dialog modal-xl">
@@ -58,7 +60,7 @@
             </div>
             <div class="modal-body">
              <div class="card-body">
-            <form action="{{ route('storerbo') }}" method="POST" id="rbo_form">
+            <form method="POST" id="rbo_form">
                 @csrf
                 <div class="row">
                     <div class="col">
@@ -165,7 +167,7 @@
                                 <label>Rbo Name</label>
                             </div>
                               <div class="col">
-                                    <select  id="rbo_id" name="rbo_id"  class="form-control" style="height:120%;">
+                                    <select  id="rbos_id" name="rbos_id"  class="form-control" style="height:120%;">
                                     </select>
                              </div>
                         </div>
@@ -373,14 +375,14 @@
                                 <label style="color: red">Product Category</label>
                             </div>
                             <div class="col">
-                                <select id="project" name="project" class="form-control border border-success select2bs4">
+                                <select id="product_category" name="product_category" class="form-control border border-success select2bs4">
                                     <option selected="selected">{{ __('translate.accessories') }}</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
+                                    <option>Elastic</option>
+                                    <option>Finishing Accessories</option>
+                                    <option>Poly</option>
+                                    <option>Tape</option>
+                                    <option>Loop</option>
+                                    <option>Thermal</option>
                                 </select>
                             </div>
                         </div>
@@ -785,7 +787,48 @@
                             </div>
                             
                         </div>
+                        
                     </div>
+                    <div class="row">
+                    <div>
+                        <table id="exampledelivery" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Quotation Number</th>
+                                    <th>Notes</th>
+                                    <th>Currency</th>
+                                    <th>Brand</th>
+                                    <th>Product Category</th>
+                                    
+                                    {{-- Add more headers if you have more columns to display --}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{-- Check if $quotations is not empty before looping --}}
+                                @if($quotations->isNotEmpty())
+                                    {{-- Loop through each quotation --}}
+                                    @foreach($quotations as $quotation)
+                                        <tr>
+                                            {{-- Make sure these match your database column names EXACTLY --}}
+                                            <td>{{ $quotation->quotation_number }}</td>
+                                            <td>{{ $quotation->notes }}</td> {{-- Assuming 'rbo' column exists --}}
+                                            <td>{{ $quotation->currency }}</td> {{-- Assuming 'customer_name' column exists --}}
+                                            <td>{{ $quotation->brand }}</td> {{-- Assuming 'brand' column exists --}}
+                                            <td>{{ $quotation->product_category }}</td> {{-- Assuming 'product_category' column exists --}}
+                                             {{-- Assuming 'reference' column exists --}}
+                                            {{-- Add more <td> elements for other columns you want to display --}}
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="6" class="text-center">No quotations found.</td>
+                                    </tr>
+                                @endif
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
                 </div>
                 <div class="row h-10"></div>
                 <!-- /.row -->
@@ -808,6 +851,128 @@
         <div class="card-footer">
 
         </div>
+     </div>
+        <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Item Info</h3>
+
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Card Header -->
+        <div class="card-body">
+            <form action="{{ route('storedetails') }}" method="POST" id="item_form">
+                @csrf
+                <div class="row">
+                    <div class="col">
+                         <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Item</label>
+                            </div>
+                            
+                                <select id="display" name="display" class="form-control border border-success select2bs4">
+                                    <option selected="selected">[Select]</option>
+                                    <option>HEAT TRANSFER LABEL</option>
+                                    <option value="Loop">LOOP</option>
+                                    <option>OFFSET</option>
+                                    <option>PRINTED FABRIC LABEL</option>
+                                    <option>RAW MATERIAL</option>
+                                    <option>RUBBER PATCH</option>
+                                    <option>SCREEN PRINT LABEL</option>
+                                    <option>SPARE PARTS</option>
+                                    <option>STATIONARY</option>
+                                    <option>THERMAL</option>
+                                    <option>Radiobutton</option>
+                                    <option>Woven</option>
+                                </select>
+                            
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
+                        <div class="form-group">
+                            <label>Dimension</label>
+                            <select id="dimension" name="dimension" class="select2bs4" multiple="multiple" data-placeholder="Select Dimensions"   style="width: 100%;">
+                                <option value="Size">SIZE</option>
+                                <option value="Frontside Colour">FRONTSIDE COLOUR</option>
+                                <option value="Backside Colour">BACKSIDE COLOUR</option>
+                                <option>WIDTH</option>
+                                <option>HEIGHT</option>
+                                <option>TOTAL LENGTH</option>
+                                <option>MATERIAL</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Row</label>
+                            </div>
+                            
+                                <div class="input-group">
+                                    <input id="row" name="row" class="form-control border border-success" type="text" min="1" value="1">
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label>Rate</label>
+                            </div>
+                            
+                                <div class="input-group">
+                                    <input id="rate" name="rate" class="form-control border border-success" type="number" step="0.012">
+                                </div>
+                            
+                        </div>
+                        
+                        <div class="row mt-2">
+                            <div class="col-md-6">
+                        <button id="showButton" type="button" class="btn btn-block btn-secondary">Show</button>
+                        </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row h-10"></div>
+                <!-- /.row -->
+                </br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="submit" id="saveGrid" class="btn btn-block btn-primary">Save</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Delete</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary">Refresh</button>
+                    </div>
+                </div>
+            </form>
+            <div id="grid-container" class="mt-4"></div>
+        </div>
+
+
+        <div class="card-footer">
+
+        </div>
+        
+    </div>
     </div>
     </section>
     

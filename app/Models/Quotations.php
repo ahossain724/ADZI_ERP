@@ -13,14 +13,13 @@ class Quotations extends Model
      protected $fillable = [
           'quotation_number',
           'deadline',
-          'project',
           'quotation_deadline',
+          'rbo',
+          'customer_name',
+          'brand',
+          'product_category',
+          'references',
           'date',
-          'currency',
-          'division',
-          'customer_enquiry',
-          'validity',
-          'customer_number',
           'exchange_rate',
           'section',
           'customer_enquiry_date',
@@ -40,8 +39,10 @@ class Quotations extends Model
           'department',
           'location_of_installation',
           'international_commercial_terms',
-          'brand',
-          'rbo',
+          'currency',
+          'division',
+          'customer_enquiry',
+          'validity',
         ];
      use HasFactory;
 }

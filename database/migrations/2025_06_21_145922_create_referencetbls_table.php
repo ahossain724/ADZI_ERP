@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('referencestbl', function (Blueprint $table) {
             $table->id();
             $table->string('reference')->nullable();
-            $table->string('rbo_id')->nullable();
+            $table->unsignedBigInteger('rbos_id')->nullable();
+            $table->foreign('rbos_id')->references('id')->on('rbos')->onDelete('set null');
             $table->timestamps();
         });
     }

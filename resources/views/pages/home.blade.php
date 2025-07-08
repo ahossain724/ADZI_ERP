@@ -1486,8 +1486,9 @@
                 contentType: false,
 
                 success: function(data) {
-                    if (data.status == 1) {
-                        alert(data.message);
+                   if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
                         $(form)[0].reset();
                     }
                 }
@@ -1508,8 +1509,9 @@
                 contentType: false,
 
                 success: function(data) {
-                    if (data.status == 1) {
-                        alert(data.message);
+                   if (data.status == 1) {
+                        toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                        //alert(data.message);
                         $(form)[0].reset();
                     }
                 }
@@ -2247,40 +2249,60 @@
                 customerSelect2.val(null).trigger('change');
             });
 
-            //Reference
-             $('#modal-reference').on('show.bs.modal', function (event) {
+            // Reference
+            $('#modal-reference').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
 
-                // Initialize Select2 for rbo_id
-                var rbo2Select = $('#rbo_id').select2({ 
+                // Initialize Select2 for rbo_id - without data initially
+                var rboSelect = $('#rbos_id').select2({
                     placeholder: "Select RBO",
                     theme: 'bootstrap4',
-                    dropdownParent: $('#modal-reference')
+                    dropdownParent: $('#modal-reference'),
+                    // No 'data' property here yet, as we'll fetch it via Ajax
                 });
 
-                // Get RBO list data from the button's data attribute
-                var rbo2ListData = button.data('rbo2-list');
-                var rbo2List = rbo2ListData; // Assuming jQuery's .data() auto-parses JSON
+                // Optionally, clear any previous selection or data
+                rboSelect.val(null).trigger('change');
+                rboSelect.empty(); // Clear existing options if any
 
-                // Transform your RBO list into the format Select2 expects: { id: ..., text: ... }
-                var formattedRbos = rbo2List.map(function(rbo) { // Changed 'rbos' to 'rbo' here
-                    return {
-                        id: rbo.id,   // Corrected: using 'rbo'
-                        text: rbo.rbo_name // Corrected: using 'rbo'
-                    };
+                // Make an Ajax call to fetch RBO data
+                $.ajax({
+                    url: '{{ route('api.rbos.list') }}', // Use Laravel's route helper
+                    method: 'GET',
+                    dataType: 'json', // Expect JSON response
+                    success: function(rboListData) {
+                        // Transform your RBO list into the format Select2 expects: { id: ..., text: ... }
+                        var formattedRbos = rboListData.map(function(rbo) {
+                            return {
+                                id: rbo.id,
+                                text: rbo.rbo_name
+                            };
+                        });
+
+                        // Destroy and re-initialize Select2 with the fetched data
+                        // It's often better to just update the data if Select2 supports it,
+                        // but destroying and re-initializing is a common robust method.
+                        rboSelect.select2('destroy'); // Destroy previous instance
+                        rboSelect = $('#rbos_id').select2({
+                            placeholder: "Select RBO",
+                            data: formattedRbos, // Provide the fetched formatted data
+                            theme: 'bootstrap4',
+                            dropdownParent: $('#modal-reference')
+                        });
+
+                        // If there's a pre-selected value you want to set, do it here
+                        // var preselectedValue = button.data('preselected-rbo-id'); // Example
+                        // if (preselectedValue) {
+                        //     rboSelect.val(preselectedValue).trigger('change');
+                        // }
+
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Error fetching RBO list:", textStatus, errorThrown);
+                        // Handle error, e.g., display a message to the user
+                        alert("Failed to load RBO list. Please try again.");
+                    }
                 });
-
-                // Set the data for the Select2 dropdown
-                rbo2Select.select2('destroy'); // Destroy previous instance to re-init with new data
-                rbo2Select = $('#rbo_id').select2({
-                    placeholder: "Select RBO",
-                    data: formattedRbos, // Provide the formatted data
-                    theme: 'bootstrap4',
-                    dropdownParent: $('#modal-reference')
-                });
-
-                // Optionally, clear any previous selection
-                rbo2Select.val(null).trigger('change');
             });
 
             //Brand Populate
@@ -2318,7 +2340,68 @@
                 // Optionally, clear any previous selection
                 rboSelect.val(null).trigger('change');
             });
-            
+           
+
+    // Handle the submission of the form that creates a new RBO
+    $('#rbo_form').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const form = $(this);
+        const url = form.attr('action') || '{{ route('rbos.store') }}'; // Get action URL from form or use named route
+        const formData = form.serialize(); // Serialize form data
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: formData,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), // CSRF token
+                'X-Requested-With': 'XMLHttpRequest' // Inform Laravel it's an Ajax request
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    const newRbo = response.rbo; // The newly created RBO object
+                    const rboSelect = $('#rbo'); // Your main RBO dropdown
+
+                    // Create a new option element
+                    const newOption = new Option(newRbo.rbo_name, newRbo.id, false, false); // text, value, defaultSelected, selected
+
+                    // Append the new option to the Select2 dropdown
+                    rboSelect.append(newOption).trigger('change'); // Append and trigger change to update Select2's display
+
+                    // Optionally, select the newly added RBO
+                    // rboSelect.val(newRbo.id).trigger('change');
+
+                    // Close the modal where the form is (if applicable)
+                    // $('#createRBOModal').modal('hide');
+
+                    // Clear the form
+                    form[0].reset();
+                    toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                } else {
+                    alert('Error: ' + response.message);
+                    // Handle specific errors if your backend sends more details
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error adding RBO:", textStatus, errorThrown, jqXHR.responseText);
+                let errorMessage = "An error occurred while adding the RBO.";
+
+                if (jqXHR.status === 422 && jqXHR.responseJSON && jqXHR.responseJSON.errors) {
+                    // Validation errors
+                    errorMessage = "Validation Error:\n";
+                    for (const field in jqXHR.responseJSON.errors) {
+                        errorMessage += `- ${jqXHR.responseJSON.errors[field].join(', ')}\n`;
+                    }
+                } else if (jqXHR.responseJSON && jqXHR.responseJSON.message) {
+                    errorMessage = jqXHR.responseJSON.message;
+                }
+
+                //alert(errorMessage);
+            }
+        });
+    });
 
         
             /*$('#rbo').on('change', function() {
@@ -2389,6 +2472,296 @@
         $('#reference').append('<option value="">-- Select Reference --</option>'); // <--- CHANGED THIS TEXT
     }
 });*/
+
+//Create Dimension Grid
+// Get a reference to the form
+const itemForm = document.forms.item_form;
+
+// Function to enforce 3 decimal places for specific numeric inputs
+function enforceThreeDecimalPlaces(event) {
+    let value = event.target.value;
+    
+    // Allow an empty string
+    if (value === '') {
+        return;
+    }
+
+    // This regex allows digits and a single decimal point, and nothing else.
+    // It also prevents more than 3 digits after the decimal point.
+    const regex = /^(\d*\.?\d{0,3})$/;
+
+    if (!regex.test(value)) {
+        // If the current value doesn't match the regex,
+        // revert to the last valid state or try to trim it.
+        // A simpler approach is to prevent the invalid character from being typed.
+        // For 'input' event, it's often easier to just remove invalid parts.
+
+        // Remove any characters that are not digits or a single dot
+       /* value = value.replace(/[^0-9.]/g, '');*/
+
+        // Ensure only one dot
+        const parts = value.split('.');
+        if (parts.length > 2) {
+            value = parts[0] + '.' + parts.slice(1).join('');
+        }
+
+        // Limit to 3 decimal places after the dot if a dot exists
+        if (parts[1] && parts[1].length > 3) {
+            value = parts[0] + '.' + parts[1].substring(0, 3);
+        }
+    }
+    
+    event.target.value = value;
+}
+
+// Attach the event listener to the save button within the form
+itemForm.showButton.addEventListener('click', function(event) {
+    // Prevent form from submitting
+    event.preventDefault();
+
+    // Get selected values using form elements by their 'name'
+    const item = itemForm.display.value;
+    const rate = itemForm.rate.value;
+    const rowCount = parseInt(itemForm.row.value, 10);
+    const dimensionSelect = itemForm.dimension
+    const selectedDimensions = Array.from(dimensionSelect.selectedOptions).map(option => option.value);
+    
+    // Basic validation
+    if (item === '[Select]' || !rate || isNaN(rowCount) || rowCount <= 0) {
+        toastr.warning("Please enter all fields",'Fail!',{timeOut:12000});
+        return;
+    }
+
+    // Create the grid structure
+    let gridHTML = '<table class="table table-bordered editable-grid"><thead><tr><th>Item</th><th>Rate</th><th>Quantity</th><th>Unit</th><th>ERD</th>'; // Added ERD column header
+    selectedDimensions.forEach(dim => {
+        gridHTML += `<th>${dim}</th>`;
+    });
+    gridHTML += '</tr></thead><tbody>';
+
+    // Create the specified number of rows
+    for (let i = 0; i < rowCount; i++) {
+        gridHTML += '<tr>';
+        gridHTML += `<td><input type="text" class="form-control" value="${item}" readonly></td>`;
+        // Apply decimal enforcement only to Rate and Quantity
+        gridHTML += `<td><input type="text" class="form-control numeric-input" value="${rate}"></td>`; // numeric-input for Rate
+        gridHTML += '<td><input type="text" class="form-control numeric-input" required></td>'; // numeric-input for Quantity
+        // Unit Dropdown
+        gridHTML += '<td><select class="form-control select2bs4" required><option value="">Select</option><option value="KG">KG</option><option value="Pcs">Pcs</option><option value="Meters">Meters</option><option value="Litres">Litres</option></select></td>';
+        // ERD Textbox - NO numeric-input class
+        gridHTML += '<td><input type="text" class="form-control" required></td>'; // ERD input field now accepts any characters
+        selectedDimensions.forEach(dim => {
+            gridHTML += `<td><input type="text" class="form-control"></td>`; // Dynamic dimensions also accept any characters
+        });
+        gridHTML += '</tr>';
+    }
+
+    gridHTML += '</tbody></table>';
+
+    // Find the grid container, which is the next element sibling of the form
+    const gridContainer = itemForm.nextElementSibling;
+    
+    // Display the grid
+    if (gridContainer) {
+        gridContainer.innerHTML = gridHTML;
+
+        // Attach the event listener ONLY to elements with the 'numeric-input' class
+        const numericInputs = gridContainer.querySelectorAll('.numeric-input');
+        numericInputs.forEach(input => {
+            input.addEventListener('input', enforceThreeDecimalPlaces);
+        });
+    }
+});
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get a reference to the form using its name attribute
+    const itemForm = document.forms.item_form;
+
+    // Get the grid container, which is the next element sibling of the form
+    const gridContainer = itemForm.nextElementSibling; // Assuming div.grid-container is directly after the form
+
+    // Function to collect data from the grid
+function collectGridData() {
+    // Find the table within the grid container
+    const gridContainer = document.forms.item_form.nextElementSibling;
+    const table = gridContainer.querySelector('.editable-grid');
+    if (!table) {
+        return []; // No grid table found
+    }
+
+    const rows = table.querySelectorAll('tbody tr');
+    const data = [];
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+
+    rows.forEach(row => {
+        const rowData = {};
+        const inputs = row.querySelectorAll('input[type="text"]');
+        const unitSelect = row.querySelector('select');
+
+        // Assign static fields
+        rowData['item'] = inputs[0] ? inputs[0].value : '';
+        rowData['rate'] = inputs[1] ? parseFloat(inputs[1].value) : 0;
+        rowData['quantity'] = inputs[2] ? parseInt(inputs[2].value, 10) : 0;
+        rowData['unit'] = unitSelect ? unitSelect.value : '';
+        rowData['erd'] = inputs[3] ? inputs[3].value : '';
+
+        // --- FIX STARTS HERE ---
+
+        const dimensions = {};
+
+ // Start inputs from index 4 (after Item, Rate, Quantity, Unit)
+
+ // Start headers from index 4 to get dimension headers
+
+ headers.slice(4).forEach((header, index) => {
+
+const input = inputs[index + 3]; // Adjust input index to match dimension fields
+
+if (input) {
+
+
+
+
+
+// OPTION 2: If using a JSON 'dimensions' column in DB
+ // This is more flexible. The header name becomes the key in the JSON object.
+
+ dimensions[header] = input.value;
+
+}
+
+ });
+
+
+
+ // If using a JSON 'dimensions' column, add the dimensions object to rowData
+
+ // If you choose OPTION 1, you would NOT include this line.
+
+ if (Object.keys(dimensions).length > 0) {
+
+rowData['dimensions'] = dimensions;
+
+ }
+
+
+
+ data.push(rowData);
+
+ });
+
+ return data;
+
+}
+
+
+    // Attach the event listener to the save button within the form
+    // Using event delegation on the form for the generate button
+    itemForm.addEventListener('click', function(event) {
+        // Check if the clicked element is the saveButton by its name attribute
+        if (event.target.name === 'saveButton') {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Get selected values using form elements by their 'name'
+            const item = itemForm.elements.display.value; // Access by elements collection
+            const rate = itemForm.elements.rate.value;
+            const rowCount = parseInt(itemForm.elements.row.value, 10);
+            const dimensionSelect = itemForm.elements.dimension; // Reference to the select element
+            const selectedDimensions = Array.from(dimensionSelect.selectedOptions).map(option => option.value);
+
+            // Basic validation
+            if (item === '[Select]' || !rate || isNaN(rowCount) || rowCount <= 0) {
+                alert('Please fill out all fields correctly.');
+                return;
+            }
+
+            // Create the grid structure
+            let gridHTML = '<table class="table table-bordered editable-grid"><thead><tr><th>Item</th><th>Rate</th><th><th>Quantity</th><th>Unit</th>';
+            selectedDimensions.forEach(dim => {
+                gridHTML += `<th>${dim}</th>`; // Use original dimension name for header
+            });
+            gridHTML += '</tr></thead><tbody>';
+
+            for (let i = 0; i < rowCount; i++) {
+                gridHTML += '<tr>';
+                gridHTML += `<td><input type="text" class="form-control border border-success" value="${item}" readonly></td>`;
+                gridHTML += `<td><input type="text" class="form-control border border-success" value="${rate}"></td>`;
+                gridHTML += '<td><input type="text" class="form-control border border-success" required></td>';
+                gridHTML += '<td><input type="text" class="form-control border border-success" required></td>';
+                selectedDimensions.forEach(() => {
+                    // No need for explicit `id` or `name` if collecting by index/traversal
+                    gridHTML += `<td><input type="text" class="form-control border border-success"></td>`;
+                });
+                gridHTML += '</tr>';
+            }
+
+            gridHTML += '</tbody></table>';
+
+            // Display the grid
+            if (gridContainer) {
+                gridContainer.innerHTML = gridHTML;
+            }
+        }
+    });
+
+    // Attach event listener to the "Save Grid Data to Database" button
+    // Using querySelector with a class name instead of an ID
+    const sGridDataButton = document.querySelector('.js-save-grid-data');
+    if (saveGrid) {
+        saveGrid.addEventListener('click', function() {
+            const gridData = collectGridData();
+            if (gridData.length === 0) {
+                alert('No data in the grid to save.');
+                return;
+            }
+
+            // Get CSRF token from the meta tag
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            // Send the data to the Laravel API endpoint
+            fetch('/item-dimensiondetails', { // Matches the route in routes/api.php
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken // Laravel CSRF protection
+                },
+                body: JSON.stringify(gridData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        let errorMessage = 'Error saving data.';
+                        if (errorData.message) {
+                            errorMessage += ' ' + errorData.message;
+                        }
+                        if (errorData.errors) {
+                            for (const key in errorData.errors) {
+                                errorMessage += '\n- ' + errorData.errors[key].join(', ');
+                            }
+                        }
+                        throw new Error(errorMessage);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
+                    // Optionally clear the grid or refresh the page
+                    
+                } else {
+                    alert('Error saving data: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('An error occurred while trying to save data: ' + error.message);
+            });
+        });
+    } else {
+        console.warn("Save Grid Data button with class 'js-save-grid-data' not found.");
+    }
+});
 $('#rbo').on('change', function() {
         // Get the selected option element
         var selectedOption = $(this).find('option:selected');
@@ -2400,11 +2773,11 @@ $('#rbo').on('change', function() {
         // Clear both dropdowns immediately to provide visual feedback
         // and prevent old data from lingering if no RBO is selected
         $('#customer_name').empty().append('<option value="">-- Select Customer --</option>');
-        $('#references').empty().append('<option value="">-- Select Reference --</option>');
+        $('#references').empty().append('<option value="">--Select Reference--</option>');
         
         // Proceed with AJAX calls only if a valid RBO is selected
         if (rboName && rboName !== '-- Select RBO --') { 
-            alert(rboId);
+           // alert(rboId);
             // Assuming '-- Select RBO --' is your default option text
             // AJAX Call 1: Get Customers by RBO
             $.ajax({
@@ -2426,15 +2799,14 @@ $('#rbo').on('change', function() {
             });
 
             // AJAX Call 2: Get References by RBO
-            console.log('rboId:', rboId);
             $.ajax({
-                url: '/get-by-rbo/' + encodeURIComponent(rboId), // Use rboName
+                url: '/get-by-rbo/' + encodeURIComponent(rboName), // Use rboName
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
                     //alert(data);
                     console.log("References data:", data); // Use console.log for debugging instead of alert
-                    $('#references').empty().append('<option value="">-- Select Reference --</option>');
+                    $('#references').empty().append('<option value="">--Select Reference--</option>');
                     $.each(data, function(key, reference) {
                         $('#references').append('<option value="' + reference.id + '">' + reference.reference + '</option>');
                     });

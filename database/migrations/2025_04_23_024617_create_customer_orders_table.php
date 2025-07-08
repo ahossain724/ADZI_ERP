@@ -13,16 +13,18 @@ return new class extends Migration
     {
         Schema::create('customer_orders', function (Blueprint $table) {
             $table->id();
-            $table->string('order_number');
+            $table->string('order_number')->nullable();
             $table->string('customer_po')->nullable();
-            $table->date('date')->nullable();
-            $table->date('customer_po_date')->nullable();
-            $table->string('customer_number');
-            $table->string('reference')->nullable();
+            $table->string('rbo')->nullable();
+            $table->string('customer_name')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('project')->nullable();
+            $table->string('references')->nullable();
+            $table->string('date')->nullable();
+            $table->string('customer_po_date')->nullable();
             $table->string('header_message')->nullable();
             $table->string('footer_message')->nullable();
             $table->string('notes')->nullable();
-            $table->string('project');
             $table->string('print_tax')->nullable();
             $table->string('quote_by')->nullable();
             $table->string('team')->nullable();
@@ -34,11 +36,9 @@ return new class extends Migration
             $table->string('partial_delivery')->nullable();
             $table->string('restrict_dos')->nullable();
             $table->string('section')->nullable();
-            $table->string('exchange_rate');
+            $table->string('exchange_rate')->nullable();
             $table->string('location_of_installation')->nullable();
-            $table->date('issue_date')->nullable();
-            $table->string('rbo');
-            $table->string('brand');
+            $table->string('issue_date')->nullable();
             $table->timestamps();
             });
         }

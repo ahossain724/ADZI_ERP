@@ -12,14 +12,13 @@ class QuotationsController extends Controller
         $quotationData = [
             'quotation_number' => $request->quotation_number,
             'deadline' => $request->deadline,
-            'project' => $request->project,
             'quotation_deadline' => $request->quotation_deadline,
+            'rbo' => $request->rbo,
+            'customer_name' => $request->customer_name,
+            'brand' => $request->brand,
+            'product_category' => $request->product_category,
+            'references' => $request->references,
             'date' => $request->date,
-            'currency' => $request->currency,
-            'division' => $request->division,
-            'customer_enquiry' => $request->customer_enquiry,
-            'validity' => $request->validity,
-            'customer_number' => $request->customer_number,
             'exchange_rate' => $request->exchange_rate,
             'section' => $request->section,
             'customer_enquiry_date' => $request->customer_enquiry_date,
@@ -39,8 +38,10 @@ class QuotationsController extends Controller
             'department' => $request->department,
             'location_of_installation' => $request->location_of_installation,
             'international_commercial_terms' => $request->international_commercial_terms,
-            'brand' => $request->brand,
-            'rbo' => $request->rbo
+            'currency' => $request->currency,
+            'division' => $request->division,
+            'customer_enquiry' => $request->customer_enquiry,
+            'validity' => $request->validity,
         ];
         $save=Quotations::create($quotationData);
         if ($save){
@@ -52,6 +53,7 @@ class QuotationsController extends Controller
         }
         
     }
+   
     public function getall()
     {
         $customer = Customer::all();

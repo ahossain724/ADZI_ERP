@@ -12,7 +12,7 @@ class ReferenceController extends Controller
     {
         $referenceData = [
             'reference' => $request->reference,
-            'rbo_id' => $request->rbo_id,
+            'rbos_id' => $request->rbos_id,
         ];
         $save=Referencetbl::create($referenceData);
         if ($save){

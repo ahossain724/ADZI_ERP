@@ -18,13 +18,13 @@ return new class extends Migration
             $table->string('customer_id')->nullable();
             $table->string('address')->nullable();
             // Removed ->change() as these are new columns being created
-            $table->unsignedBigInteger('reference_id')->nullable();
-            $table->unsignedBigInteger('brand_id')->nullable();
+            //$table->unsignedBigInteger('reference_id')->nullable();
+            //$table->unsignedBigInteger('brand_id')->nullable();
             
             // Define foreign key constraints
             // Ensure 'referencestbl' and 'brand' tables exist before running this migration
-            $table->foreign('reference_id')->references('id')->on('referencestbl')->onDelete('set null');
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');
+            //$table->foreign('reference_id')->references('id')->on('referencestbl')->onDelete('set null');
+            //$table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');
         
             $table->timestamps();
         });

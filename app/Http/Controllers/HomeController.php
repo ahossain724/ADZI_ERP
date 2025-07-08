@@ -7,6 +7,8 @@ use App\Models\Rbo;
 use App\Models\Referencetbl;
 use App\Models\customer;
 use App\Models\Brand;
+use App\Models\Quotations;
+use App\Models\CustomerOrder;
 
 
 class HomeController extends Controller
@@ -57,21 +59,24 @@ class HomeController extends Controller
     }
     //Order Precessing Views Route
     public function quotations(Request $request){
-        $rboList = Rbo::select('id','rbo_name')->distinct()->get();
+        $rboList = Rbo::select('rbo_name')->distinct()->get();
         $rbo2List = Rbo::select('id','rbo_name')->get();
         $referencetblList= Referencetbl::select('id','reference')->get();
         $brandList= Brand::select('id','brand')->get();
         $customerList= customer::select('id','name')->get();
-        return view('orderprocessing.quotations',compact('rboList','referencetblList','customerList','brandList','rbo2List'));
+        $quotations = Quotations::all();
+        return view('orderprocessing.quotations',compact('rboList','referencetblList','customerList','brandList','rbo2List','quotations'));
     }
     //Order Precessing Views Route
     public function customerorders(Request $request){
         $rboList= Rbo::select('id','rbo_name')->get();
         $referencetblList= Referencetbl::select('id','reference')->get();
         $customerList= customer::select('id','name')->get();
+        $quotations = Quotations::all();
+        $customerorder = CustomerOrder::all();
 
         //return $rboList;
-        return view('orderprocessing.customerorders',compact('rboList','referencetblList','customerList'));
+        return view('orderprocessing.customerorders',compact('rboList','referencetblList','customerList','quotations','customerorder'));
     }
     //Order Precessing Views Route
     public function deliveryorders(Request $request){

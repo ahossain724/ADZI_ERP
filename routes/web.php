@@ -44,6 +44,8 @@ use App\Http\Controllers\PDController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BrandDropdownController;
 use App\Http\Controllers\ReferenceDropdownController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemDetailController;
 
 
 
@@ -101,11 +103,16 @@ Route::get('/deliveryorders', [App\Http\Controllers\HomeController::class, 'deli
     ->name('orderprocessing.deliveryorders');
 Route::get('/invoices', [App\Http\Controllers\HomeController::class, 'invoices'])
     ->name('orderprocessing.invoices');
-
+//Reference Modal Population
+Route::get('/api/rbos', [RboController::class, 'getRboList'])->name('api.rbos.list');
+Route::post('/rbos', [RboController::class, 'storerbo'])->name('rbos.store');
+//Grid Population
+Route::get('/quotations', [HomeController::class, 'quotations'])->name('quotations.list');
+Route::get('/customerorder', [HomeController::class, 'customerorder'])->name('customerorder.list');
 //Dropdown filter
 //Route::get('/dropdowns', [DropdownController::class, 'index'])->name('dropdowns.index');
 Route::get('/get-customers-by-rbo/{rbo_id}', [DropdownController::class, 'getCustomersByRbo']);
-Route::get('/get-by-rbo/{rbo_id}', [ReferenceDropdownController::class, 'getReferencesByRbo']);
+Route::get('/get-by-rbo/{rbo_name}', [ReferenceDropdownController::class, 'getReferencesByRbo']);
 Route::get('/get-brands-by-rbo/{rbo_id}', [BrandDropdownController::class, 'getBrandsByRbo']);
 //inventory Routes
 Route::get('/transferrequest', [App\Http\Controllers\HomeController::class, 'transferrequest'])
@@ -335,7 +342,7 @@ Route::get('/codes/{id}/edit', [SiteDefaultController::class, 'edit'])->name('ed
 Route::post('/codes/update', [SiteDefaultController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [SiteDefaultController::class, 'delete'])->name('delete');
 
-Route::post('/storerbo', [RboController::class, 'storerbo'])->name('storerbo');
+//Route::post('/storerbo', [RboController::class, 'storerbo'])->name('storerbo');
 Route::get('/getall', [RboController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [RboController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [RboController::class, 'update'])->name('update');
@@ -370,6 +377,10 @@ Route::get('/getall', [BrandController::class, 'getall'])->name('getall');
 Route::get('/codes/{id}/edit', [BrandController::class, 'edit'])->name('edit');
 Route::post('/codes/update', [BrandController::class, 'update'])->name('update');
 Route::delete('/codes/delete', [BrandController::class, 'delete'])->name('delete');
+
+Route::post('/item-dimensiondetails', [ItemDetailController::class, 'storedetails'])->name('storedetails');
+
+
 /*
 Route::get('/', function () {
     return view('auth.login');

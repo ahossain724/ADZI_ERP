@@ -8,15 +8,13 @@ use App\Models\Rbo;
 
 class RboController extends Controller
 {
-    public function storerbo(Request $request)
+   /* public function storerbo(Request $request)
     {
         $rboData = [
             'rbo_name' => $request->rbo_name,
             'short_name' => $request->short_name,
             'customer_id' => $request->customer_id,
             'address' => $request->address,
-            'brand_id' => $request->brand_id,
-            'reference_id' => $request->reference_id,
         ];
         $save=Rbo::create($rboData);
         if ($save){
@@ -27,6 +25,40 @@ class RboController extends Controller
             ]);
         }
         
+    }*/
+    public function getRboList(Request $request)
+    {
+        // You might want to add authentication/authorization here
+        // if (!auth()->check()) {
+        //     return response()->json(['error' => 'Unauthorized'], 401);
+        // }
+
+        $rbos = Rbo::select('id', 'rbo_name')->get(); // Select only necessary columns
+
+        return response()->json($rbos);
+    }
+
+    public function storerbo(Request $request)
+    {
+        
+
+        $rbo = Rbo::create([
+            'rbo_name' => $request->rbo_name,
+            'short_name' => $request->short_name,
+            'customer_id' => $request->customer_id,
+            'address' => $request->address,
+            // ... other fields
+        ]);
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'rbo' => $rbo // Return the newly created RBO object
+            ]);
+        }
+
+        // Fallback for non-Ajax submission
+        return redirect()->route('quotations')->with('success', 'RBO added successfully!');
     }
     public function getall()
     {

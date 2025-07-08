@@ -12,14 +12,16 @@ class CustomerOrderController extends Controller
         $customerorderData = [
             'order_number' => $request->order_number,
             'customer_po' => $request->customer_po,
+            'rbo' => $request->rbo,
+            'customer_name' => $request->customer_name,
+            'brand' => $request->brand,
+            'project' => $request->project,
+            'references' => $request->references,
             'date' => $request->date,
             'customer_po_date' => $request->customer_po_date,
-            'customer_number' => $request->customer_number,
-            'reference' => $request->reference,
             'header_message' => $request->header_message,
             'footer_message' => $request->footer_message,
             'notes' => $request->notes,
-            'project' => $request->project,
             'print_tax' => $request->print_tax,
             'quote_by' => $request->quote_by,
             'team' => $request->team,
@@ -34,8 +36,6 @@ class CustomerOrderController extends Controller
             'exchange_rate' => $request->exchange_rate,
             'location_of_installation' => $request->location_of_installation,
             'issue_date' => $request->issue_date,
-            'rbo' => $request->rbo,
-            'brand' => $request->brand
         ];
         $save=CustomerOrder::create($customerorderData);
         if ($save){
