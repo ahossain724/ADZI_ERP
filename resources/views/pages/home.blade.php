@@ -2472,7 +2472,6 @@
         $('#reference').append('<option value="">-- Select Reference --</option>'); // <--- CHANGED THIS TEXT
     }
 });*/
-
 //Create Dimension Grid
 // Get a reference to the form
 const itemForm = document.forms.item_form;
@@ -2480,7 +2479,7 @@ const itemForm = document.forms.item_form;
 // Function to enforce 3 decimal places for specific numeric inputs
 function enforceThreeDecimalPlaces(event) {
     let value = event.target.value;
-    
+
     // Allow an empty string
     if (value === '') {
         return;
@@ -2497,7 +2496,7 @@ function enforceThreeDecimalPlaces(event) {
         // For 'input' event, it's often easier to just remove invalid parts.
 
         // Remove any characters that are not digits or a single dot
-       /* value = value.replace(/[^0-9.]/g, '');*/
+        /* value = value.replace(/[^0-9.]/g, '');*/
 
         // Ensure only one dot
         const parts = value.split('.');
@@ -2510,9 +2509,35 @@ function enforceThreeDecimalPlaces(event) {
             value = parts[0] + '.' + parts[1].substring(0, 3);
         }
     }
-    
+
     event.target.value = value;
 }
+
+// Function to calculate and update the grand total
+function updateGrandTotal() {
+    const gridContainer = itemForm.nextElementSibling;
+    if (!gridContainer) return;
+
+    const rows = gridContainer.querySelectorAll('.editable-grid tbody tr');
+    let grandTotal = 0;
+
+    rows.forEach(row => {
+        const rateInput = row.querySelector('.rate');
+        const qtyInput = row.querySelector('.qty');
+
+        const rate = parseFloat(rateInput.value) || 0;
+        const quantity = parseInt(qtyInput.value, 10) || 0;
+
+        grandTotal += rate * quantity;
+    });
+
+    const grandTotalContainer = document.getElementById('grandTotalContainer');
+    if (grandTotalContainer) {
+        grandTotalContainer.innerHTML = `<h3>Grand Total: ${grandTotal.toFixed(2)}</h3>`;
+    }
+     return grandTotal;
+}
+
 
 // Attach the event listener to the save button within the form
 itemForm.showButton.addEventListener('click', function(event) {
@@ -2525,10 +2550,12 @@ itemForm.showButton.addEventListener('click', function(event) {
     const rowCount = parseInt(itemForm.row.value, 10);
     const dimensionSelect = itemForm.dimension
     const selectedDimensions = Array.from(dimensionSelect.selectedOptions).map(option => option.value);
-    
+
     // Basic validation
     if (item === '[Select]' || !rate || isNaN(rowCount) || rowCount <= 0) {
-        toastr.warning("Please enter all fields",'Fail!',{timeOut:12000});
+        toastr.warning("Please enter all fields", 'Fail!', {
+            timeOut: 12000
+        });
         return;
     }
 
@@ -2544,8 +2571,8 @@ itemForm.showButton.addEventListener('click', function(event) {
         gridHTML += '<tr>';
         gridHTML += `<td><input type="text" class="form-control" value="${item}" readonly></td>`;
         // Apply decimal enforcement only to Rate and Quantity
-        gridHTML += `<td><input type="text" class="form-control numeric-input" value="${rate}"></td>`; // numeric-input for Rate
-        gridHTML += '<td><input type="text" class="form-control numeric-input" required></td>'; // numeric-input for Quantity
+        gridHTML += `<td><input type="text" class="form-control numeric-input rate" value="${rate}"></td>`; // numeric-input for Rate
+        gridHTML += '<td><input type="text" class="form-control numeric-input qty" required></td>'; // numeric-input for Quantity
         // Unit Dropdown
         gridHTML += '<td><select class="form-control select2bs4" required><option value="">Select</option><option value="KG">KG</option><option value="Pcs">Pcs</option><option value="Meters">Meters</option><option value="Litres">Litres</option></select></td>';
         // ERD Textbox - NO numeric-input class
@@ -2558,9 +2585,13 @@ itemForm.showButton.addEventListener('click', function(event) {
 
     gridHTML += '</tbody></table>';
 
+    // Add the grand total container
+    gridHTML += '<div id="grandTotalContainer" class="mt-3"></div>';
+
+
     // Find the grid container, which is the next element sibling of the form
     const gridContainer = itemForm.nextElementSibling;
-    
+
     // Display the grid
     if (gridContainer) {
         gridContainer.innerHTML = gridHTML;
@@ -2570,9 +2601,20 @@ itemForm.showButton.addEventListener('click', function(event) {
         numericInputs.forEach(input => {
             input.addEventListener('input', enforceThreeDecimalPlaces);
         });
+
+        // Add event listener to the grid for dynamic updates of the grand total
+        gridContainer.addEventListener('input', function(event) {
+            if (event.target.classList.contains('rate') || event.target.classList.contains('qty')) {
+                updateGrandTotal();
+            }
+        });
+
+        // Initial calculation of the grand total
+        updateGrandTotal();
+
     }
 });
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Get a reference to the form using its name attribute
     const itemForm = document.forms.item_form;
 
@@ -2580,78 +2622,78 @@ itemForm.showButton.addEventListener('click', function(event) {
     const gridContainer = itemForm.nextElementSibling; // Assuming div.grid-container is directly after the form
 
     // Function to collect data from the grid
-function collectGridData() {
-    // Find the table within the grid container
-    const gridContainer = document.forms.item_form.nextElementSibling;
-    const table = gridContainer.querySelector('.editable-grid');
-    if (!table) {
-        return []; // No grid table found
+    function collectGridData() {
+        // Find the table within the grid container
+        const gridContainer = document.forms.item_form.nextElementSibling;
+        const table = gridContainer.querySelector('.editable-grid');
+        if (!table) {
+            return []; // No grid table found
+        }
+
+        const rows = table.querySelectorAll('tbody tr');
+        const data = [];
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+
+        rows.forEach(row => {
+            const rowData = {};
+            const inputs = row.querySelectorAll('input[type="text"]');
+            const unitSelect = row.querySelector('select');
+
+            // Assign static fields
+            rowData['item'] = inputs[0] ? inputs[0].value : '';
+            rowData['rate'] = inputs[1] ? parseFloat(inputs[1].value) : 0;
+            rowData['quantity'] = inputs[2] ? parseInt(inputs[2].value, 10) : 0;
+            rowData['unit'] = unitSelect ? unitSelect.value : '';
+            rowData['erd'] = inputs[3] ? inputs[3].value : '';
+
+            // --- FIX STARTS HERE ---
+
+            const dimensions = {};
+
+            // Start inputs from index 4 (after Item, Rate, Quantity, Unit)
+
+            // Start headers from index 4 to get dimension headers
+
+            headers.slice(4).forEach((header, index) => {
+
+                const input = inputs[index + 3]; // Adjust input index to match dimension fields
+
+                if (input) {
+
+
+
+
+
+                    // OPTION 2: If using a JSON 'dimensions' column in DB
+                    // This is more flexible. The header name becomes the key in the JSON object.
+
+                    dimensions[header] = input.value;
+
+                }
+
+            });
+
+
+
+            // If using a JSON 'dimensions' column, add the dimensions object to rowData
+
+            // If you choose OPTION 1, you would NOT include this line.
+
+            if (Object.keys(dimensions).length > 0) {
+
+                rowData['dimensions'] = dimensions;
+
+            }
+
+
+
+            data.push(rowData);
+
+        });
+
+        return data;
+
     }
-
-    const rows = table.querySelectorAll('tbody tr');
-    const data = [];
-    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
-
-    rows.forEach(row => {
-        const rowData = {};
-        const inputs = row.querySelectorAll('input[type="text"]');
-        const unitSelect = row.querySelector('select');
-
-        // Assign static fields
-        rowData['item'] = inputs[0] ? inputs[0].value : '';
-        rowData['rate'] = inputs[1] ? parseFloat(inputs[1].value) : 0;
-        rowData['quantity'] = inputs[2] ? parseInt(inputs[2].value, 10) : 0;
-        rowData['unit'] = unitSelect ? unitSelect.value : '';
-        rowData['erd'] = inputs[3] ? inputs[3].value : '';
-
-        // --- FIX STARTS HERE ---
-
-        const dimensions = {};
-
- // Start inputs from index 4 (after Item, Rate, Quantity, Unit)
-
- // Start headers from index 4 to get dimension headers
-
- headers.slice(4).forEach((header, index) => {
-
-const input = inputs[index + 3]; // Adjust input index to match dimension fields
-
-if (input) {
-
-
-
-
-
-// OPTION 2: If using a JSON 'dimensions' column in DB
- // This is more flexible. The header name becomes the key in the JSON object.
-
- dimensions[header] = input.value;
-
-}
-
- });
-
-
-
- // If using a JSON 'dimensions' column, add the dimensions object to rowData
-
- // If you choose OPTION 1, you would NOT include this line.
-
- if (Object.keys(dimensions).length > 0) {
-
-rowData['dimensions'] = dimensions;
-
- }
-
-
-
- data.push(rowData);
-
- });
-
- return data;
-
-}
 
 
     // Attach the event listener to the save button within the form
@@ -2713,55 +2755,67 @@ rowData['dimensions'] = dimensions;
                 alert('No data in the grid to save.');
                 return;
             }
+             // --- NEW ---
+        // Get the calculated grand total
+        const grandTotal = updateGrandTotal();
+        
+        // Prepare the data payload
+        const payload = {
+            items: gridData,
+            grand_total: grandTotal
+        };
 
             // Get CSRF token from the meta tag
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             // Send the data to the Laravel API endpoint
             fetch('/item-dimensiondetails', { // Matches the route in routes/api.php
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken // Laravel CSRF protection
-                },
-                body: JSON.stringify(gridData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(errorData => {
-                        let errorMessage = 'Error saving data.';
-                        if (errorData.message) {
-                            errorMessage += ' ' + errorData.message;
-                        }
-                        if (errorData.errors) {
-                            for (const key in errorData.errors) {
-                                errorMessage += '\n- ' + errorData.errors[key].join(', ');
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken // Laravel CSRF protection
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            let errorMessage = 'Error saving data.';
+                            if (errorData.message) {
+                                errorMessage += ' ' + errorData.message;
                             }
-                        }
-                        throw new Error(errorMessage);
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    toastr.success("Data Saved Successfully",'Success!',{timeOut:12000});
-                    // Optionally clear the grid or refresh the page
-                    
-                } else {
-                    alert('Error saving data: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                alert('An error occurred while trying to save data: ' + error.message);
-            });
+                            if (errorData.errors) {
+                                for (const key in errorData.errors) {
+                                    errorMessage += '\n- ' + errorData.errors[key].join(', ');
+                                }
+                            }
+                            throw new Error(errorMessage);
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        toastr.success("Data Saved Successfully", 'Success!', {
+                            timeOut: 12000
+                        });
+                        // Optionally clear the grid or refresh the page
+
+                    } else {
+                        alert('Error saving data: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('An error occurred while trying to save data: ' + error.message);
+                });
         });
     } else {
         console.warn("Save Grid Data button with class 'js-save-grid-data' not found.");
     }
 });
+
 $('#rbo').on('change', function() {
         // Get the selected option element
         var selectedOption = $(this).find('option:selected');

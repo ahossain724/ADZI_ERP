@@ -20,9 +20,9 @@ class ItemDetail extends Model
         'quantity',
         'unit',
         'erd', // If using predefined columns
-        'dimension_width',  // If using predefined columns
-        'dimension_height', // If using predefined columns
-        'dimensions',       // If using a JSON column
+        // If using predefined columns
+        'dimensions', 
+        'grand_total',      // If using a JSON column
     ];
 
     // If using a JSON column, cast it to an array/object

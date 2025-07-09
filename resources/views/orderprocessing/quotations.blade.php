@@ -731,6 +731,19 @@
                                     <label></label>
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                            <div class="col">
+                                <label>Production Unit</label>
+                            </div>
+                            <div class="col">
+                                <select class="form-control border border-success select2bs4">
+                                    <option selected="selected">{{ __('translate.select') }}</option>
+                                    <option>Adzi</option>
+                                    <option>Labeledge</option>
+                                    <option>Label Makers</option>
+                                </select>
+                            </div>
+                        </div>
                              <div class="row mt-2">
                             <div class="col">
                                 <label style="color: red">{{ __('translate.currency') }}</label>
@@ -738,12 +751,9 @@
                             <div class="col">
                                 <select id="currency" name="currency" class="form-control border border-success select2bs4">
                                     <option selected="selected">{{ __('translate.bdt') }}</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
+                                    <option>BDT</option>
+                                    <option>USD</option>
+                                    <option>GBP(Pound)</option>
                                 </select>
                             </div>
                         </div>

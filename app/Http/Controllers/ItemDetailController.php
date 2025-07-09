@@ -12,61 +12,49 @@ class ItemDetailController extends Controller
      * Store a newly created resource in storage.
      */
     public function storedetails(Request $request)
-    {
-        // 1. Basic Validation (Laravel's validation is powerful)
-        $validatedData = $request->validate([
-            '*.item' => 'required|string|max:255',
-            '*.rate' => 'required|numeric',
-            '*.quantity' => 'required|integer|min:1',
-            '*.unit' => 'required|string|max:50',
-            // If using predefined dimension columns:
-            '*.erd' => 'nullable|string|max:255',
-            '*.dimension_width' => 'nullable|string|max:255',
-            '*.dimension_height' => 'nullable|string|max:255',
-            // If using a JSON dimension column:
-            '*.dimensions' => 'nullable|array', // Expecting an array if it's dynamic key-value pairs
-        ]);
+{
+    // 1. Validation
+   $validatedData = $request->validate([
+    'items' => 'required|array|min:1',
+    'items.*.item' => 'required|string|max:255',
+    'items.*.rate' => 'required|numeric',
+    'items.*.quantity' => 'required|integer|min:1',
+    'items.*.unit' => 'required|string|max:50',
+    'items.*.erd' => 'nullable|string|max:255',
+    'items.*.dimensions' => 'nullable|array',
+    'items.*.dimensions.*' => 'nullable|string|max:255',
+    'grand_total' => 'required|numeric',
+]);
 
-        try {
-            DB::beginTransaction(); // Start a database transaction
+    try {
+        DB::beginTransaction();
 
-            foreach ($validatedData as $itemData) {
-                // Prepare data for insertion based on your chosen dimension strategy
+        // Save grand_total separately if needed
+        $grandTotal = $validatedData['grand_total'];
+        // You can store $grandTotal in a parent table here if applicable
 
-                $dataToSave = [
-                    'item' => $itemData['item'],
-                    'rate' => $itemData['rate'],
-                    'quantity' => $itemData['quantity'],
-                    'unit' => $itemData['unit'],
-                    'erd' => $itemData['erd'],
-                ];
+        foreach ($validatedData['items'] as $itemData) {
+    $dataToSave = [
+        'item' => $itemData['item'],
+        'rate' => $itemData['rate'],
+        'quantity' => $itemData['quantity'],
+        'unit' => $itemData['unit'],
+        'erd' => $itemData['erd'],
+        'grand_total' => $validatedData['grand_total'],
+    ];
 
-                // OPTION 1: Handling predefined dimension columns
-                if (isset($itemData['dimension_length'])) {
-                    $dataToSave['dimension_length'] = $itemData['dimension_length'];
-                }
-                if (isset($itemData['dimension_width'])) {
-                    $dataToSave['dimension_width'] = $itemData['dimension_width'];
-                }
-                if (isset($itemData['dimension_height'])) {
-                    $dataToSave['dimension_height'] = $itemData['dimension_height'];
-                }
-                // ... add other predefined dimensions
-
-                // OPTION 2: Handling a JSON dimension column
-                if (isset($itemData['dimensions'])) {
-                    $dataToSave['dimensions'] = json_encode($itemData['dimensions']); // Laravel will cast this back to array if defined in model
-                }
-
-
-                ItemDetail::create($dataToSave);
-            }
-
-            DB::commit(); // Commit the transaction
-            return response()->json(['success' => true, 'message' => 'Item details saved successfully!'], 201); // 201 Created
-        } catch (\Exception $e) {
-            DB::rollBack(); // Rollback on error
-            return response()->json(['success' => false, 'message' => 'Failed to save item details: ' . $e->getMessage()], 500); // 500 Internal Server Error
-        }
+    if (isset($itemData['dimensions'])) {
+        $dataToSave['dimensions'] = $itemData['dimensions']; // Don't json_encode if casted in model
     }
+
+    ItemDetail::create($dataToSave);
+}
+
+        DB::commit();
+        return response()->json(['success' => true, 'message' => 'Item details saved successfully!'], 201);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return response()->json(['success' => false, 'message' => 'Failed to save item details: ' . $e->getMessage()], 500);
+    }
+}
 }

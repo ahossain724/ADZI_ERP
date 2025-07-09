@@ -22,15 +22,13 @@ return new class extends Migration
             // Since dimensions are dynamic, you have a few options:
             // OPTION 1: Predefine a reasonable number of dimension columns (simpler initially)
             $table->string('erd')->nullable();
-            $table->string('dimension_width')->nullable();
-            $table->string('dimension_height')->nullable();
-            $table->string('dimension_color')->nullable();
+            
             // Add more as needed, or make them dynamic in a JSON column (Option 2)
 
             // OPTION 2: Use a JSON column for dynamic dimensions (more flexible)
             // This is recommended if the number/names of dimensions can vary widely.
             $table->json('dimensions')->nullable(); // Stores dimensions as JSON (e.g., {"length": "10cm", "width": "5cm"})
-
+            $table->string('grand_total')->nullable();
             $table->timestamps(); // Adds `created_at` and `updated_at` columns
         });
     }
