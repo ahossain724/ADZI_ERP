@@ -46,6 +46,7 @@ use App\Http\Controllers\BrandDropdownController;
 use App\Http\Controllers\ReferenceDropdownController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemDetailController;
+use App\Http\Controllers\BarcodeController;
 
 
 
@@ -103,6 +104,9 @@ Route::get('/deliveryorders', [App\Http\Controllers\HomeController::class, 'deli
     ->name('orderprocessing.deliveryorders');
 Route::get('/invoices', [App\Http\Controllers\HomeController::class, 'invoices'])
     ->name('orderprocessing.invoices');
+Route::get('/itemprint', [App\Http\Controllers\HomeController::class, 'itemprint'])
+    ->name('orderprocessing.itemprint');
+Route::get('/barcode/{number}', [BarcodeController::class, 'showBarcode'])->name('showBarcode');
 //Reference Modal Population
 Route::get('/api/rbos', [RboController::class, 'getRboList'])->name('api.rbos.list');
 Route::post('/rbos', [RboController::class, 'storerbo'])->name('rbos.store');

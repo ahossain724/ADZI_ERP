@@ -501,6 +501,14 @@
                                     <textarea id="notes" name="notes" rows="2" class="form-control border border-success h-100 w-100"></textarea>
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-5">
+                                    <label>Remarks</label>
+                                </div>
+                                <div class="col">
+                                    <textarea rows="2" class="form-control border border-success h-100 w-100"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -864,18 +872,26 @@
      </div>
         <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Item Info</h3>
-
-
-            <div class="card-tools">
+            <h3 class="card-title">Info</h3>
+             <div class="card-tools">
+                
+                
+                <button type="button" class="btn btn-secondary @if (app('request')->route()->uri == 'itemprint') active @endif"onclick="window.location.href='{{ url('/itemprint') }}'">
+                Item Print
+                </button>
                 <button type="button" class="btn btn-tool" data-card-widget="maximize">
                     <i class="fas fa-expand"></i>
                 </button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                 </button>
+                
 
             </div>
+            
+
+
+            
 
         </div>
         <!-- Card Header -->

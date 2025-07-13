@@ -86,6 +86,15 @@ class HomeController extends Controller
       public function invoices(Request $request){
         return view('orderprocessing.invoices');
     }
+    //Order Precessing Views Route
+      public function itemprint(Request $request){
+       $barcode = (new \Picqer\Barcode\Types\TypeCode128())->getBarcode('01792527058');
+
+    //Output the barcode as HTML in the browser with a HTML Renderer
+       $renderer = new \Picqer\Barcode\Renderers\HtmlRenderer();
+       $barcodeImg =$renderer->render($barcode);
+        return view('orderprocessing.itemprint',compact('barcodeImg'));
+    }
 
     //Inventory Views Route
     public function transferrequest(Request $request){
